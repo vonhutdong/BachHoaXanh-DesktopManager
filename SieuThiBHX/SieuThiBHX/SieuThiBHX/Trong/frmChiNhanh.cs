@@ -49,6 +49,16 @@ namespace SieuThiBHX.Trong
             dgvChiNhanh.EnableHeadersVisualStyles = false;
             dgvChiNhanh.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
             dgvChiNhanh.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-        }   
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbDSCN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
