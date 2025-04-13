@@ -54,5 +54,35 @@ namespace DAL
             }
             return false;
         }
+
+        public bool XoaCaLam(int id)
+        {
+            try
+            {
+                // Tìm ca làm theo ID
+                var data = da.Db.CaLams.FirstOrDefault(dt => dt.id == id);
+
+                // Kiểm tra nếu không tìm thấy
+                if (data == null)
+                {
+                    return false;
+                }
+
+                // Xóa và lưu thay đổi
+                da.Db.CaLams.DeleteOnSubmit(data);
+                da.Db.SubmitChanges();
+
+                // Xóa thành công
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Có thể log lỗi ở đây nếu muốn: Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
+
+
     }
 }

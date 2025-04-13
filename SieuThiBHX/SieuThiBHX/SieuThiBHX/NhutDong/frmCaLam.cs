@@ -60,6 +60,7 @@ namespace SieuThiBHX
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             Reset();
+            LoadData();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -123,6 +124,55 @@ namespace SieuThiBHX
                 MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (txtTenCaLam.Text.Length > 0 && txtTenCaLam.Text.Length <= 100)
+            {
+                if (dgvCaLam.CurrentRow == null || dgvCaLam.CurrentRow.Cells[0].Value == null)
+                {
+                    MessageBox.Show("Vui lòng chọn một ca làm để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int currentId = int.Parse(dgvCaLam.CurrentRow.Cells[0].Value.ToString());
+                DialogResult dr = MessageBox.Show($"Bạn có chắc muốn xóa: [{txtTenCaLam.Text}] không?",
+                        "Thông báo",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                if (dr == DialogResult.Yes)
+                {
+
+                    
+                    bool result = bus_cl.XoaCaLam(currentId);
+
+                    if (result)
+                    {
+                        MessageBox.Show("Xóa ca làm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa ca làm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ca làm muốn thao tác!", "Thông báo",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+            }
+        
         }
     }
 }

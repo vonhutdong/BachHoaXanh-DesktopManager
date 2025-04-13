@@ -22,5 +22,9 @@ namespace BUS
         {
             return dal_cl.ThemCaLam(caLam);
         }
+        public bool XoaCaLam(int id)
+        {
+            return dal_cl.XoaCaLam(id);
+        }
     }
 }
