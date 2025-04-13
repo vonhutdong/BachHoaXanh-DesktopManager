@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SieuThiBHX.NhutDong;
+using SieuThiBHX.Trong;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SieuThiBHX.NhutDong;
 
 namespace SieuThiBHX
 {
@@ -17,7 +18,7 @@ namespace SieuThiBHX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCaLam());
+            Application.Run(new frmChiNhanh());
         }
     }
 }
