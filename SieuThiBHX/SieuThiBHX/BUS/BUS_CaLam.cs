@@ -26,5 +26,9 @@ namespace BUS
         {
             return dal_cl.XoaCaLam(id);
         }
+        public bool suaCaLam(DTO.DTO_CaLam caLam)
+        {
+            return dal_cl.SuaCaLam(caLam);
+        }
     }
 }

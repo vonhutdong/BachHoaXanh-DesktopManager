@@ -317,12 +317,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Trong\.vs\slnx.sqlite" />
-    <None Include="Trong\.vs\Trong\FileContentIndex\0e3b772f-8bf4-4bc3-a719-4a7b3c3fbc52.vsidx" />
-    <None Include="Trong\.vs\Trong\v17\.wsuo" />
-    <None Include="Trong\.vs\Trong\v17\DocumentLayout.json" />
-    <None Include="Trong\.vs\Trong\v17\ResourceExplorer\settings.json" />
-    <None Include="Trong\.vs\VSWorkspaceState.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

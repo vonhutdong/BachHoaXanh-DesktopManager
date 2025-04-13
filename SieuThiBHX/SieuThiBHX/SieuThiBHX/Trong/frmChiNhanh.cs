@@ -37,6 +37,18 @@ namespace SieuThiBHX.Trong
             dgvChiNhanh.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
             //ẩn cột
             dgvChiNhanh.Columns["id"].Visible = false;
-        }
+            dgvChiNhanh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvChiNhanh.ColumnHeadersHeight = 30; // hoặc cao hơn
+
+            // Thiết lập lại style để dữ liệu hiện rõ
+            dgvChiNhanh.DefaultCellStyle.BackColor = Color.White;
+            dgvChiNhanh.DefaultCellStyle.ForeColor = Color.Black;
+            dgvChiNhanh.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgvChiNhanh.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvChiNhanh.EnableHeadersVisualStyles = false;
+            dgvChiNhanh.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
+            dgvChiNhanh.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+        }   
     }
 }

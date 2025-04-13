@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
@@ -81,7 +82,31 @@ namespace DAL
                 return false;
             }
         }
+        public bool SuaCaLam(DTO_CaLam caLam)
+        {
+            try
+            {
+                //kiểm tra mã ca lam có tồn tại chưa
+                var kh = da.Db.CaLams.FirstOrDefault(dt => dt.id == caLam.Id);
+                if (kh != null)
+                {
+                    //kh.MaCaLam = caLam.MaCaLam;
+                    kh.TenCaLam = caLam.TenCaLam;
+                    kh.GioBatDau = caLam.GioBatDau;
+                    kh.GioKetThuc = caLam.GioKetThuc;
+                    da.Db.SubmitChanges();
 
+                    // Thông báo
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return false;
+        }
+            
 
 
     }

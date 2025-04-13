@@ -40,11 +40,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGioKetThuc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtGioBatDau = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenCaLam = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvCaLam = new System.Windows.Forms.DataGridView();
+            this.txtGioBatDau = new System.Windows.Forms.MaskedTextBox();
+            this.txtGioKetThuc = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -61,7 +61,7 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(59, 24);
+            this.btnXoa.Size = new System.Drawing.Size(59, 28);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -81,6 +81,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(58, 28);
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // toolStrip1
             // 
@@ -93,7 +94,7 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1260, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1260, 31);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -117,18 +118,18 @@
             // guna2GroupBox3
             // 
             this.guna2GroupBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.guna2GroupBox3.Controls.Add(this.txtGioKetThuc);
+            this.guna2GroupBox3.Controls.Add(this.txtGioBatDau);
             this.guna2GroupBox3.Controls.Add(this.label3);
             this.guna2GroupBox3.Controls.Add(this.label2);
             this.guna2GroupBox3.Controls.Add(this.label1);
-            this.guna2GroupBox3.Controls.Add(this.txtGioKetThuc);
-            this.guna2GroupBox3.Controls.Add(this.txtGioBatDau);
             this.guna2GroupBox3.Controls.Add(this.txtTenCaLam);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.DarkSeaGreen;
             this.guna2GroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(0, 27);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(0, 31);
             this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(1260, 216);
@@ -170,54 +171,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Tên ca làm";
             // 
-            // txtGioKetThuc
-            // 
-            this.txtGioKetThuc.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtGioKetThuc.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.txtGioKetThuc.BorderRadius = 2;
-            this.txtGioKetThuc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGioKetThuc.DefaultText = "";
-            this.txtGioKetThuc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGioKetThuc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGioKetThuc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGioKetThuc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGioKetThuc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGioKetThuc.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGioKetThuc.ForeColor = System.Drawing.Color.Black;
-            this.txtGioKetThuc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGioKetThuc.Location = new System.Drawing.Point(580, 152);
-            this.txtGioKetThuc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGioKetThuc.Name = "txtGioKetThuc";
-            this.txtGioKetThuc.PlaceholderText = "";
-            this.txtGioKetThuc.SelectedText = "";
-            this.txtGioKetThuc.Size = new System.Drawing.Size(196, 28);
-            this.txtGioKetThuc.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtGioKetThuc.TabIndex = 3;
-            // 
-            // txtGioBatDau
-            // 
-            this.txtGioBatDau.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtGioBatDau.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.txtGioBatDau.BorderRadius = 2;
-            this.txtGioBatDau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGioBatDau.DefaultText = "";
-            this.txtGioBatDau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGioBatDau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGioBatDau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGioBatDau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGioBatDau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGioBatDau.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGioBatDau.ForeColor = System.Drawing.Color.Black;
-            this.txtGioBatDau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGioBatDau.Location = new System.Drawing.Point(580, 101);
-            this.txtGioBatDau.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGioBatDau.Name = "txtGioBatDau";
-            this.txtGioBatDau.PlaceholderText = "";
-            this.txtGioBatDau.SelectedText = "";
-            this.txtGioBatDau.Size = new System.Drawing.Size(196, 28);
-            this.txtGioBatDau.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtGioBatDau.TabIndex = 2;
-            // 
             // txtTenCaLam
             // 
             this.txtTenCaLam.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -250,9 +203,9 @@
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 243);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 247);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1260, 339);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1260, 335);
             this.guna2GroupBox1.TabIndex = 15;
             this.guna2GroupBox1.Text = "Danh sách ca làm";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -267,9 +220,31 @@
             this.dgvCaLam.RowHeadersWidth = 51;
             this.dgvCaLam.RowTemplate.Height = 24;
             this.dgvCaLam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCaLam.Size = new System.Drawing.Size(1260, 299);
+            this.dgvCaLam.Size = new System.Drawing.Size(1260, 295);
             this.dgvCaLam.TabIndex = 0;
             this.dgvCaLam.Click += new System.EventHandler(this.dgvCaLam_Click);
+            // 
+            // txtGioBatDau
+            // 
+            this.txtGioBatDau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGioBatDau.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtGioBatDau.Location = new System.Drawing.Point(580, 105);
+            this.txtGioBatDau.Mask = "90:00";
+            this.txtGioBatDau.Name = "txtGioBatDau";
+            this.txtGioBatDau.Size = new System.Drawing.Size(62, 34);
+            this.txtGioBatDau.TabIndex = 20;
+            this.txtGioBatDau.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtGioKetThuc
+            // 
+            this.txtGioKetThuc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGioKetThuc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtGioKetThuc.Location = new System.Drawing.Point(580, 149);
+            this.txtGioKetThuc.Mask = "90:00";
+            this.txtGioKetThuc.Name = "txtGioKetThuc";
+            this.txtGioKetThuc.Size = new System.Drawing.Size(62, 34);
+            this.txtGioKetThuc.TabIndex = 21;
+            this.txtGioKetThuc.ValidatingType = typeof(System.DateTime);
             // 
             // frmCaLam
             // 
@@ -304,13 +279,13 @@
         private System.Windows.Forms.ToolStripButton btnLamMoi;
         private System.Windows.Forms.ToolStripButton btnThoat;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
-        private Guna.UI2.WinForms.Guna2TextBox txtGioKetThuc;
-        private Guna.UI2.WinForms.Guna2TextBox txtGioBatDau;
         private Guna.UI2.WinForms.Guna2TextBox txtTenCaLam;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCaLam;
+        private System.Windows.Forms.MaskedTextBox txtGioBatDau;
+        private System.Windows.Forms.MaskedTextBox txtGioKetThuc;
     }
 }

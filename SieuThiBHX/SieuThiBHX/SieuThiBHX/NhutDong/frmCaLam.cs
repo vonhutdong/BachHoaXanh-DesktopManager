@@ -174,5 +174,43 @@ namespace SieuThiBHX
             }
         
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTenCaLam.Text.Length > 0 && txtGioBatDau.Text.Length > 0 && txtGioKetThuc.Text.Length > 0)
+                {
+                    DialogResult dr = MessageBox.Show($"Bạn có chắc muốn sửa: [{txtTenCaLam.Text}] không?",
+                       "Thông báo",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning);
+                    if (dr == DialogResult.Yes)
+                    {
+                        bool result = bus_cl.suaCaLam(new DTO_CaLam(currentID, txtTenCaLam.Text, txtGioBatDau.Text, txtGioKetThuc.Text));
+                        if (result)
+                        {
+                            MessageBox.Show("Sửa ca làm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                        }
+                        else{ 
+                        MessageBox.Show("Sửa ca làm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        
+                    }
+
+                }
+                else
+                {
+                    //thông báo khi chưa đầy đủ dữ liệu
+                    MessageBox.Show("Chưa nhập dữ liệu!!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                //thông báo khi có lỗi xảy ra
+                MessageBox.Show(ex.Message, "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
