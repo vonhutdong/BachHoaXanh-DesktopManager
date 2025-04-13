@@ -123,6 +123,7 @@
             this.btnDangNhap.Size = new System.Drawing.Size(164, 44);
             this.btnDangNhap.TabIndex = 7;
             this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // Form1
             // 
