@@ -21,5 +21,11 @@ namespace SieuThiBHX
         {
 
         }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            frm_main f = new frm_main();
+            f.Show();
+        }
     }
 }
