@@ -29,6 +29,12 @@ namespace SieuThiBHX.Trong
         }
         private void LoadDSChiNhanh()
         {
+
+            txtMaChiNhanh.Focus();
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+          
             dgvChiNhanh.DataSource = bus_chinhanh.LayDSChiNhanh();
             //dổi tên cột
             dgvChiNhanh.Columns["MaChiNhanh"].HeaderText = "Mã chi nhánh";
@@ -38,7 +44,7 @@ namespace SieuThiBHX.Trong
             //ẩn cột
             dgvChiNhanh.Columns["id"].Visible = false;
             dgvChiNhanh.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvChiNhanh.ColumnHeadersHeight = 30; // hoặc cao hơn
+            dgvChiNhanh.ColumnHeadersHeight = 40; // hoặc cao hơn
 
             // Thiết lập lại style để dữ liệu hiện rõ
             dgvChiNhanh.DefaultCellStyle.BackColor = Color.White;
@@ -51,14 +57,144 @@ namespace SieuThiBHX.Trong
             dgvChiNhanh.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Kiểm tra nhập đầy đủ
+                if (string.IsNullOrWhiteSpace(txtMaChiNhanh.Text) ||
+                    string.IsNullOrWhiteSpace(txtTenChiNhanh.Text) ||
+                    string.IsNullOrWhiteSpace(txtSoDienThoai.Text) ||
+                    string.IsNullOrWhiteSpace(txtDiaChi.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Tạo DTO và gửi đi
+                DTO_ChiNhanh chiNhanh = new DTO_ChiNhanh(
+                    txtMaChiNhanh.Text.Trim(),
+                    txtTenChiNhanh.Text.Trim(),
+                    txtDiaChi.Text.Trim(),
+                    txtSoDienThoai.Text.Trim()
+                );
+
+                // Gọi BUS để thêm
+                bus_chinhanh.themChiNhanh(chiNhanh);
+
+                MessageBox.Show("Thêm chi nhánh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Làm mới form
+                LoadDSChiNhanh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void gbDSCN_Click(object sender, EventArgs e)
+        private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            //làm mới txt
+            txtMaChiNhanh.Focus();
+            txtMaChiNhanh.Clear();
+            txtTenChiNhanh.Clear();
+            txtSoDienThoai.Clear();
+            txtDiaChi.Clear();
+            //load lai chi nhanh
+            LoadDSChiNhanh();
+        }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (currentID > 0)
+            {
+                //Hỏi
+                DialogResult resuflt = MessageBox.Show("Có chắc xóa dữ liệu này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resuflt == DialogResult.Yes)
+                {
+                    //gọi hàm xóa chi nhánh
+                    bus_chinhanh.xoaChiNhanh(currentID);
+                    //Thông báo
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
+                    //làm mới
+                    LoadDSChiNhanh();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dữ liệu!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvChiNhanh_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            //lấy dòng đang click
+            int dong = dgvChiNhanh.CurrentRow.Index;
+            //điền thông tin lên textbox
+            txtMaChiNhanh.Text = dgvChiNhanh.Rows[dong].Cells["MaChiNhanh"].Value.ToString();
+            txtTenChiNhanh.Text = dgvChiNhanh.Rows[dong].Cells["TenChiNhanh"].Value.ToString();
+            txtDiaChi.Text = dgvChiNhanh.Rows[dong].Cells["DiaChi"].Value.ToString();
+            txtSoDienThoai.Text = dgvChiNhanh.Rows[dong].Cells["SoDienThoai"].Value.ToString();
+            //gán id cho currnentID
+            currentID = int.Parse(dgvChiNhanh.Rows[dong].Cells["id"].Value.ToString());
+
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtMaChiNhanh.Text.Length > 0
+                    && txtTenChiNhanh.Text.Length > 0
+                    && txtSoDienThoai.Text.Length > 0
+                    && txtDiaChi.Text.Length > 0)
+                {
+                    //thêm loại hàng
+                    bus_chinhanh.suaChinhNhanh(new DTO_ChiNhanh(currentID, txtMaChiNhanh.Text, txtTenChiNhanh.Text, txtDiaChi.Text, txtSoDienThoai.Text));
+                    MessageBox.Show("Sửa thành công!", "Thoát", MessageBoxButtons.OK);
+                    //làm mới
+                    LoadDSChiNhanh();
+                }
+                else
+                {
+                    //thông báo khi chưa đầy đủ dữ liệu
+                    MessageBox.Show("Chưa nhập dữ liệu!!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                //thông báo khi có lỗi xảy ra
+                MessageBox.Show(ex.Message, "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar != Keys.Back && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng nhập số!!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                txtSoDienThoai.Focus();
+            }
+        }
+
+        private void frmChiNhanh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát chương trình", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
