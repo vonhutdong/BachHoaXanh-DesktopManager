@@ -90,7 +90,6 @@
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
 
             this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(114, 32);
-=======
             this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
 
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
@@ -410,3 +409,5 @@
     }
 }
 
+
+            

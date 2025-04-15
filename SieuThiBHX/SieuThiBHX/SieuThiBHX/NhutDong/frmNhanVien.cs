@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DTO;
 
 namespace SieuThiBHX
 {
@@ -15,6 +16,7 @@ namespace SieuThiBHX
     {
         BUS_NhanVien bus_nv = new BUS_NhanVien();
         BUS_LoaiNhanVien bus_lnv = new BUS_LoaiNhanVien();
+        BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         //BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         DataValidation dv = new DataValidation();
         public frmNhanVien()
@@ -24,6 +26,14 @@ namespace SieuThiBHX
 
         void loadDSNV()
         {
+            txtTenNhanVien.Focus();
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            txtTenNhanVien.Text = string.Empty;
+            txtSoDienThoai.Text = string.Empty;
+            txtDiaChi.Text = string.Empty;
+
             dgvNV.DataSource = bus_nv.LayDSNhanVien();
 
             dgvNV.Columns["id"].Visible = false;
@@ -88,10 +98,11 @@ namespace SieuThiBHX
 
                 // cboMaTaiKhoan
                 int idMaTaiKhoan = int.Parse(dgvNV.Rows[n].Cells[6].Value.ToString());
-                //cboMaTaiKhoan.DataSource = bus_tk.GetListOneTKByTenTK(idMaTaiKhoan);
-                //cboMaTaiKhoan.DisplayMember = "TenTaiKhoan";
-                //cboMaTaiKhoan.ValueMember = "Id";
-                //cboMaTaiKhoan.SelectedIndex = idMaTaiKhoan - 1;
+                cboMaTaiKhoan.DataSource = bus_tk.GetOneTaiKhoanById(idMaTaiKhoan);
+                cboMaTaiKhoan.DisplayMember = "TenTaiKhoan";
+                cboMaTaiKhoan.ValueMember = "Id";
+                cboMaTaiKhoan.SelectedValue = idMaTaiKhoan;
+                // cboMaTaiKhoan.SelectedIndex = idMaTaiKhoan - 1;
             }
             else
             {
@@ -102,7 +113,8 @@ namespace SieuThiBHX
             }
         }
 
-        bool checkDATA(string tenNV, string SDT, string diaChi) 
+
+        bool checkDATA(string tenNV, string SDT, string diaChi)
         {
             int count = 0;
             if (dv.CheckString(tenNV, 100))
@@ -149,15 +161,199 @@ namespace SieuThiBHX
             }
             return false;
         }
-        
+
         private void btnThem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (checkDATA(txtTenNhanVien.Text, txtSoDienThoai.Text, txtDiaChi.Text))
+                {
+                    bool query = bus_nv.AddNV2(new DTO_NhanVien(
+                        txtTenNhanVien.Text,
+                        txtSoDienThoai.Text,
+                        txtDiaChi.Text,
+                        int.Parse(cboMaLoaiNhanVien.SelectedValue.ToString()),
+                        int.Parse(cboMaTaiKhoan.SelectedValue.ToString())));
 
+                    //lay ma nhan vien moi
+                    int model_id = bus_nv.GetMaxIdNV();
+                    if (query)
+                    {
+                        MessageBox.Show($"Thêm nhân viên thành công!\n" +
+                                    $"Mã nhân viên: {model_id}\n" +
+                                    $"Tên nhân viên: {txtTenNhanVien.Text}",
+                                    "Thông báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                        loadDSNV();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Thêm nhân viên thất bại!\n" +
+                                    $"Mã nhân viên: {model_id}\n" +
+                                    $"Tên nhân viên: {txtTenNhanVien.Text}",
+                                    "Thông báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    }
+
+                }
+                else
+                {
+                    // Messaged
+                    MessageBox.Show("Vui lòng nhập dữ liệu hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Initialize Variables
+                int currentId = int.Parse(dgvNV.CurrentRow.Cells[0].Value.ToString());
 
+                if (checkDATA(txtTenNhanVien.Text, txtSoDienThoai.Text, txtDiaChi.Text))
+                {
+                    DialogResult dr = MessageBox.Show($"Bạn có chắc muốn xóa: [{txtTenNhanVien.Text}] không?",
+                  "Thông báo",
+                  MessageBoxButtons.YesNo,
+                  MessageBoxIcon.Warning);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        bool query = bus_nv.XoaNV(currentId);
+                        if (query)
+                        {
+
+                            MessageBox.Show($"Xóa nhân viên thành công!\n" +
+                                        $"Mã nhân viên: {currentId}\n" +
+                                        $"Tên nhân viên: {txtTenNhanVien.Text}",
+                                        "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                            loadDSNV();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Xóa nhân viên thất bại!\n" +
+                                        $"Mã nhân viên: {currentId}\n" +
+                                        $"Tên nhân viên: {txtTenNhanVien.Text}",
+                                        "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập dữ liệu hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            cboMaLoaiNhanVien.SelectedIndex = -1;
+            cboMaLoaiNhanVien.SelectedValue = -1;
+            cboMaTaiKhoan.SelectedValue = -1;
+            loadDSNV();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.No)
+            {
+                e.Cancel = true; // Hủy bỏ việc đóng form
+            }
+            else
+            {
+                e.Cancel = false; // Cho phép đóng form
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int currentId = int.Parse(dgvNV.CurrentRow.Cells[0].Value.ToString());               
+
+                if (checkDATA(txtTenNhanVien.Text, txtSoDienThoai.Text, txtDiaChi.Text))
+                {
+                    DialogResult dr = MessageBox.Show($"Bạn có chắc muốn sửa thông tin: [{txtTenNhanVien.Text}] không?",
+                       "Thông báo",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        bool query = bus_nv.UpdateNV2(new DTO_NhanVien(
+                        currentId,
+                        txtTenNhanVien.Text,
+                        txtSoDienThoai.Text,
+                        txtDiaChi.Text,
+                        int.Parse(cboMaLoaiNhanVien.SelectedValue.ToString()),
+                        int.Parse(cboMaTaiKhoan.SelectedValue.ToString())));
+
+                        if (query)
+                        {
+                            MessageBox.Show($"Sửa nhân viên thành công!\n" +
+                                        $"Mã nhân viên: {currentId}\n" +
+                                        $"Tên nhân viên: {txtTenNhanVien.Text}",
+                                        "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                            loadDSNV();
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Sửa nhân viên thất bại!\n" +
+                                        $"Mã nhân viên: {currentId}\n" +
+                                        $"Tên nhân viên: {txtTenNhanVien.Text}",
+                                        "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập dữ liệu hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
     }
 }

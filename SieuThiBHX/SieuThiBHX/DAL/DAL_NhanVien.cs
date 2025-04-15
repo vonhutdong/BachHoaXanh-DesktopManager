@@ -117,6 +117,7 @@ namespace DAL
                     NhanVien nv_update = da.Db.NhanViens.Single(nv => nv.id == id);
 
                     // Saved db
+                    da.Db.NhanViens.DeleteOnSubmit(nv_update);
                     da.Db.SubmitChanges();
                     nameNV = nv_update.TenNhanVien;
 

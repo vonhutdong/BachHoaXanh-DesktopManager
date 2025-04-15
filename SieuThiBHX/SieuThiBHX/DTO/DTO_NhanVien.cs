@@ -18,6 +18,24 @@ namespace DTO
 
 
         public DTO_NhanVien() { }
+
+        public DTO_NhanVien(string tenNV, string soDT, string diaChi, int idLNV, int idTK)
+        {
+            this.tenNV = tenNV;
+            this.SoDT = soDT;
+            this.diaChi = diaChi;
+            this.idLNV = idLNV;
+            this.idTK = idTK;
+        }
+        public DTO_NhanVien(int id, string tenNV, string soDT, string diaChi, int idLNV, int idTK)
+        {
+            this.id = id;
+            this.tenNV = tenNV;
+            SoDT = soDT;
+            this.diaChi = diaChi;
+            this.idLNV = idLNV;
+            this.idTK = idTK;
+        }
         public DTO_NhanVien(int id, string maNV, string tenNV, string soDT, string diaChi, int idLNV, int idTK)
         {
             this.id = id;
