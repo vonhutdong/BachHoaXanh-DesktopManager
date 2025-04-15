@@ -9,8 +9,8 @@ namespace DAL
     public class DatabaseAccess
     {
         private QLBHXDataContext db = new QLBHXDataContext();
-        private string serverName = ".\\SQLEXPRESS";
-        private string dbName = "SieuThiBHX";
+        private string serverName;
+        private string dbName;
         public DatabaseAccess(QLBHXDataContext db, string serverName, string dbName)
         {
             this.db = db;
