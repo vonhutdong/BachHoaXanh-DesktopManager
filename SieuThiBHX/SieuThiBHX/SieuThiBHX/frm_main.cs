@@ -283,5 +283,19 @@ namespace SieuThiBHX
                 ActForm("frmNhanVien");
             }
         }
+
+        private void traCứuNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExit("frmTraCuuNV"))
+            {
+                frmTraCuuNV f = new frmTraCuuNV();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmTraCuuNV");
+            }
+        }
     }
 }
