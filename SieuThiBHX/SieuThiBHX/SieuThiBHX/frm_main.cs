@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SieuThiBHX.NhutDong;
 using SieuThiBHX.Trong;
+using System.Data.SqlClient;
 
 namespace SieuThiBHX
 {
@@ -19,6 +20,24 @@ namespace SieuThiBHX
             InitializeComponent();
             this.IsMdiContainer = true;
         }
+        private void TestSQLConnection()
+        {
+            string connectionString = "Server=DESKTOP-UBB0F3U\\SQLEXPRESS;Database=SieuThiBHX;Integrated Security=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    MessageBox.Show("Kết nối SQL Server thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kết nối SQL Server thất bại:\n" + ex.Message, "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
         public void ActForm(string name)
         {
             foreach (Form item in MdiChildren)
@@ -44,7 +63,7 @@ namespace SieuThiBHX
         }
         private void frm_main_Load(object sender, EventArgs e)
         {
-
+            TestSQLConnection();
         }
         private void hóaĐơnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
