@@ -45,6 +45,9 @@
     <Compile Include="DTO_CaLam.cs" />
     <Compile Include="DTO_ChiNhanh.cs" />
     <Compile Include="DTO_ChiTietBangLuong.cs" />
+    <Compile Include="DTO_ChiTietHoaDon.cs" />
+    <Compile Include="DTO_HoaDon.cs" />
+    <Compile Include="DTO_KhoHang.cs" />
     <Compile Include="DTO_LichLam.cs" />
     <Compile Include="DTO_LoaiHang.cs" />
     <Compile Include="DTO_LoaiNhanVien.cs" />
