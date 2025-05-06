@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,8 @@
     <Compile Include="DTO_NhanVien.cs" />
     <Compile Include="DTO_KhuyenMai.cs" />
     <Compile Include="DTO_NhaCungCap.cs" />
+    <Compile Include="DTO_SanPham.cs" />
+    <Compile Include="DTO_SanPhamKhoHang.cs" />
     <Compile Include="DTO_TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
