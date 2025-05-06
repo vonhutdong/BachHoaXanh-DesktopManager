@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class DatabaseAccess
     {
-        private QLBHXDataContext db = new QLBHXDataContext();
-        private string serverName;
-        private string dbName;
-        public DatabaseAccess(QLBHXDataContext db, string serverName, string dbName)
-        {
-            this.db = db;
-            this.serverName = serverName;
-            this.dbName = dbName;
-        }
+        public QLBHXDataContext Db { get; private set; }
+        public string ServerName { get; private set; }
+        public string DbName { get; private set; }
+
         public DatabaseAccess()
         {
+            // Lấy từ Settings.settings (chứ không lấy từ App.config)
             Db = new QLBHXDataContext(Properties.Settings.Default.SieuThiBHXConnectionString);
         }
-        public QLBHXDataContext Db { get; set; }
-        public string ServerName { get; set; }
-        public string DbName { get; set; }
+
+        public DatabaseAccess(QLBHXDataContext db, string serverName, string dbName)
+        {
+            this.Db = db;
+            this.ServerName = serverName;
+            this.DbName = dbName;
+        }
     }
 }

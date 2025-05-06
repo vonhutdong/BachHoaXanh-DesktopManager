@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.rptBaoCaoBangLuongTheoMa1 = new SieuThiBHX.Report.rptBaoCaoBangLuongTheoMa();
-            this.rpt_BaoCaoLuongTheoMaBangLuong1 = new SieuThiBHX.rpt_BaoCaoLuongTheoMaBangLuong();
-            this.rpt_BaoCaoLuongTheoMaBangLuong2 = new SieuThiBHX.rpt_BaoCaoLuongTheoMaBangLuong();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -42,7 +39,6 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.rpt_BaoCaoLuongTheoMaBangLuong2;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
@@ -61,8 +57,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Report.rptBaoCaoBangLuongTheoMa rptBaoCaoBangLuongTheoMa1;
-        private rpt_BaoCaoLuongTheoMaBangLuong rpt_BaoCaoLuongTheoMaBangLuong1;
-        private rpt_BaoCaoLuongTheoMaBangLuong rpt_BaoCaoLuongTheoMaBangLuong2;
     }
 }

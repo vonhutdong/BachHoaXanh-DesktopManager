@@ -32,6 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.4\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +50,10 @@
     <Compile Include="DAL_CaLam.cs" />
     <Compile Include="DAL_ChiNhanh.cs" />
     <Compile Include="DAL_ChiTietBangLuong.cs" />
+    <Compile Include="DAL_HoaDon.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_LichLam.cs" />
+    <Compile Include="DAL_LoaiHang.cs" />
     <Compile Include="DAL_LoaiNhanVien.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_KhuyenMai.cs" />
@@ -64,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBHX.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
@@ -73,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

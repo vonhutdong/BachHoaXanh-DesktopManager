@@ -45,7 +45,10 @@
     <Compile Include="BUS_CaLam.cs" />
     <Compile Include="BUS_ChiNhanh.cs" />
     <Compile Include="BUS_ChiTietBangLuong.cs" />
+    <Compile Include="BUS_HoaDon.cs" />
+    <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_LichLam.cs" />
+    <Compile Include="BUS_LoaiHang.cs" />
     <Compile Include="BUS_LoaiNhanVien.cs" />
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="DataValidation.cs" />
