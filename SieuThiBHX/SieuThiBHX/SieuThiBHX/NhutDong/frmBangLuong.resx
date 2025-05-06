@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnIn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLamMoi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABhtJREFUWEe9lXlMFFccx8fGJm1qj/SPtn80tn/0r8Y2NnJ7zCzRFRF2WXZmQdhZ
+        vAAADrwBlbxySQAABhtJREFUWEe9lXlMFFccx8fGJm1qj/SPtn80tn/0r8Y2NnJ7zCzRFRF2WXZmQdhZ
         Cq2i4BEVNYqIJ9b7qkerFS2KBYpUrUe1HlSC4NV613osci1iWJSFArrMt3lvmZV9s7TaNP0ln8Dk7ft9
         vvvmvbcc113ZXPYLDk7Mb+DM7gZOhF/6iHCHSoDu+VEEsVUJl8arPk3VctJAVeR463PUzP8BNfNKUP/J
         LDT0jUNNxh7UZO3Fo4VbaMO2Wcvh3LYXf05eAGVkIpo3F9Jn14Iv0T5hLppy91OaN+Q/DaETHazXWw2c
@@ -150,10 +150,10 @@
         PsC4OT3KYlYKVr3Mzu+t/gJWeVA9oQw4bQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnLamMoi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnIn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1AAADdQB75G6FQAAAvhJREFUWEfN1+9LE3EcwPEF4n+gpps0WU8aFkTgj+m4CVbPirJtyESHPfBJUNEv
+        0AAADdABEGw9BwAAAvhJREFUWEfN1+9LE3EcwPEF4n+gpps0WU8aFkTgj+m4CVbPirJtyESHPfBJUNEv
         yvIHSWoGkfQgqUgkchM3tCAMpUTbDyVLp7hduqnczsIfUxJietonbuDYvne3u52j/MLr6ffzhu/dlzuJ
         hGURBJFHkuRvkiSBD47jId6J4Z3ttqxKdC9Ry+/3G9FBXHYDfBNDsNOmSEyE2IA/bYrEROwlICERew0Q
         HWE4Z5BptYZSq7XnOTqIC1fAbsS3+iN1ahVmpBXmF5ViOZgMnRtaOl1ZiV5rCOq1ZfCo5TFjEJfwW+Cy

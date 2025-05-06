@@ -37,14 +37,14 @@
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtGioKetThuc = new System.Windows.Forms.MaskedTextBox();
+            this.txtGioBatDau = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenCaLam = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvCaLam = new System.Windows.Forms.DataGridView();
-            this.txtGioBatDau = new System.Windows.Forms.MaskedTextBox();
-            this.txtGioKetThuc = new System.Windows.Forms.MaskedTextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -138,6 +138,28 @@
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2GroupBox3.Click += new System.EventHandler(this.guna2GroupBox3_Click);
             // 
+            // txtGioKetThuc
+            // 
+            this.txtGioKetThuc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGioKetThuc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtGioKetThuc.Location = new System.Drawing.Point(580, 149);
+            this.txtGioKetThuc.Mask = "90:00";
+            this.txtGioKetThuc.Name = "txtGioKetThuc";
+            this.txtGioKetThuc.Size = new System.Drawing.Size(62, 34);
+            this.txtGioKetThuc.TabIndex = 21;
+            this.txtGioKetThuc.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtGioBatDau
+            // 
+            this.txtGioBatDau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGioBatDau.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtGioBatDau.Location = new System.Drawing.Point(580, 105);
+            this.txtGioBatDau.Mask = "90:00";
+            this.txtGioBatDau.Name = "txtGioBatDau";
+            this.txtGioBatDau.Size = new System.Drawing.Size(62, 34);
+            this.txtGioBatDau.TabIndex = 20;
+            this.txtGioBatDau.ValidatingType = typeof(System.DateTime);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -223,28 +245,6 @@
             this.dgvCaLam.Size = new System.Drawing.Size(1260, 295);
             this.dgvCaLam.TabIndex = 0;
             this.dgvCaLam.Click += new System.EventHandler(this.dgvCaLam_Click);
-            // 
-            // txtGioBatDau
-            // 
-            this.txtGioBatDau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGioBatDau.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGioBatDau.Location = new System.Drawing.Point(580, 105);
-            this.txtGioBatDau.Mask = "90:00";
-            this.txtGioBatDau.Name = "txtGioBatDau";
-            this.txtGioBatDau.Size = new System.Drawing.Size(62, 34);
-            this.txtGioBatDau.TabIndex = 20;
-            this.txtGioBatDau.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtGioKetThuc
-            // 
-            this.txtGioKetThuc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGioKetThuc.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGioKetThuc.Location = new System.Drawing.Point(580, 149);
-            this.txtGioKetThuc.Mask = "90:00";
-            this.txtGioKetThuc.Name = "txtGioKetThuc";
-            this.txtGioKetThuc.Size = new System.Drawing.Size(62, 34);
-            this.txtGioKetThuc.TabIndex = 21;
-            this.txtGioKetThuc.ValidatingType = typeof(System.DateTime);
             // 
             // frmCaLam
             // 

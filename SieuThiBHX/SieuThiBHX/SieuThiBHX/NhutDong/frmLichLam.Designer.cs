@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLichLam));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -47,12 +47,12 @@
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dtpNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.cbNhanVien = new System.Windows.Forms.ComboBox();
-            this.cbMaCaLam = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtpNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cbNhanVien = new System.Windows.Forms.ComboBox();
+            this.cbMaCaLam = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -85,38 +85,43 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(70, 28);
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(59, 24);
+            this.btnXoa.Size = new System.Drawing.Size(59, 28);
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(58, 24);
+            this.btnSua.Size = new System.Drawing.Size(58, 28);
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLamMoi
             // 
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(91, 24);
+            this.btnLamMoi.Size = new System.Drawing.Size(91, 28);
             this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(71, 24);
+            this.btnThoat.Size = new System.Drawing.Size(71, 28);
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -157,26 +162,26 @@
             this.dgvLichLam.AllowUserToDeleteRows = false;
             this.dgvLichLam.AllowUserToResizeColumns = false;
             this.dgvLichLam.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvLichLam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLichLam.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvLichLam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLichLam.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLichLam.ColumnHeadersHeight = 52;
             this.dgvLichLam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLichLam.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLichLam.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLichLam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLichLam.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvLichLam.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -207,6 +212,7 @@
             this.dgvLichLam.ThemeStyle.RowsStyle.Height = 22;
             this.dgvLichLam.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLichLam.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvLichLam.Click += new System.EventHandler(this.dgvLichLam_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -249,16 +255,18 @@
             this.dtpNgayLam.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.dtpNgayLam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgayLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayLam.Location = new System.Drawing.Point(168, 164);
+            this.dtpNgayLam.Location = new System.Drawing.Point(168, 167);
             this.dtpNgayLam.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayLam.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayLam.Name = "dtpNgayLam";
-            this.dtpNgayLam.Size = new System.Drawing.Size(247, 36);
+            this.dtpNgayLam.Size = new System.Drawing.Size(299, 36);
             this.dtpNgayLam.TabIndex = 14;
             this.dtpNgayLam.Value = new System.DateTime(2024, 10, 23, 0, 0, 0, 0);
+            this.dtpNgayLam.ValueChanged += new System.EventHandler(this.dtpNgayLam_ValueChanged);
             // 
             // txtTimKiem
             // 
+            this.txtTimKiem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTimKiem.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.txtTimKiem.BorderRadius = 2;
             this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -275,18 +283,21 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PlaceholderText = "";
             this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(247, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(299, 28);
             this.txtTimKiem.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTimKiem.TabIndex = 17;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // cbTimKiem
             // 
+            this.cbTimKiem.BackColor = System.Drawing.Color.White;
             this.cbTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTimKiem.FormattingEnabled = true;
             this.cbTimKiem.Location = new System.Drawing.Point(168, 106);
             this.cbTimKiem.Name = "cbTimKiem";
-            this.cbTimKiem.Size = new System.Drawing.Size(247, 40);
+            this.cbTimKiem.Size = new System.Drawing.Size(299, 40);
             this.cbTimKiem.TabIndex = 2;
+            this.cbTimKiem.SelectedIndexChanged += new System.EventHandler(this.cbTimKiem_SelectedIndexChanged);
             // 
             // guna2GroupBox3
             // 
@@ -309,39 +320,6 @@
             this.guna2GroupBox3.TabIndex = 15;
             this.guna2GroupBox3.Text = "Quản lí lịch làm";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dtpNgay
-            // 
-            this.dtpNgay.Checked = true;
-            this.dtpNgay.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgay.Location = new System.Drawing.Point(228, 70);
-            this.dtpNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(200, 36);
-            this.dtpNgay.TabIndex = 3;
-            this.dtpNgay.Value = new System.DateTime(2024, 10, 23, 0, 0, 0, 0);
-            // 
-            // cbNhanVien
-            // 
-            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbNhanVien.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cbNhanVien.FormattingEnabled = true;
-            this.cbNhanVien.Location = new System.Drawing.Point(230, 131);
-            this.cbNhanVien.Name = "cbNhanVien";
-            this.cbNhanVien.Size = new System.Drawing.Size(196, 40);
-            this.cbNhanVien.TabIndex = 2;
-            // 
-            // cbMaCaLam
-            // 
-            this.cbMaCaLam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaCaLam.FormattingEnabled = true;
-            this.cbMaCaLam.Location = new System.Drawing.Point(230, 191);
-            this.cbMaCaLam.Name = "cbMaCaLam";
-            this.cbMaCaLam.Size = new System.Drawing.Size(196, 40);
-            this.cbMaCaLam.TabIndex = 2;
             // 
             // label3
             // 
@@ -376,6 +354,42 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Ngày";
             // 
+            // dtpNgay
+            // 
+            this.dtpNgay.Checked = true;
+            this.dtpNgay.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgay.Location = new System.Drawing.Point(228, 70);
+            this.dtpNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgay.Name = "dtpNgay";
+            this.dtpNgay.Size = new System.Drawing.Size(270, 36);
+            this.dtpNgay.TabIndex = 3;
+            this.dtpNgay.Value = new System.DateTime(2024, 10, 23, 0, 0, 0, 0);
+            // 
+            // cbNhanVien
+            // 
+            this.cbNhanVien.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNhanVien.ForeColor = System.Drawing.Color.White;
+            this.cbNhanVien.FormattingEnabled = true;
+            this.cbNhanVien.Location = new System.Drawing.Point(230, 131);
+            this.cbNhanVien.Name = "cbNhanVien";
+            this.cbNhanVien.Size = new System.Drawing.Size(266, 40);
+            this.cbNhanVien.TabIndex = 2;
+            // 
+            // cbMaCaLam
+            // 
+            this.cbMaCaLam.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbMaCaLam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaCaLam.ForeColor = System.Drawing.Color.White;
+            this.cbMaCaLam.FormattingEnabled = true;
+            this.cbMaCaLam.Location = new System.Drawing.Point(230, 191);
+            this.cbMaCaLam.Name = "cbMaCaLam";
+            this.cbMaCaLam.Size = new System.Drawing.Size(266, 40);
+            this.cbMaCaLam.TabIndex = 2;
+            // 
             // frmLichLam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -386,6 +400,8 @@
             this.Name = "frmLichLam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLichLam";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmLichLam_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

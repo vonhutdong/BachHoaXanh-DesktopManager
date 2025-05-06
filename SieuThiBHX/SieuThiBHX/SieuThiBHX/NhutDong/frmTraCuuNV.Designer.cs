@@ -57,7 +57,7 @@
             this.btnThoat});
             this.menuToolStrip.Location = new System.Drawing.Point(0, 0);
             this.menuToolStrip.Name = "menuToolStrip";
-            this.menuToolStrip.Size = new System.Drawing.Size(1333, 42);
+            this.menuToolStrip.Size = new System.Drawing.Size(1333, 39);
             this.menuToolStrip.TabIndex = 1;
             this.menuToolStrip.Text = "menuToolStrip";
             // 
@@ -67,8 +67,9 @@
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(154, 37);
+            this.btnLamMoi.Size = new System.Drawing.Size(135, 36);
             this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnThoat
             // 
@@ -76,8 +77,9 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(117, 37);
+            this.btnThoat.Size = new System.Drawing.Size(104, 36);
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // guna2GroupBox1
             // 
@@ -86,7 +88,7 @@
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 42);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 39);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1333, 110);
             this.guna2GroupBox1.TabIndex = 2;
@@ -147,6 +149,7 @@
             this.txtTim.Size = new System.Drawing.Size(432, 58);
             this.txtTim.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTim.TabIndex = 0;
+            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
             // 
             // cboTim
             // 
@@ -176,9 +179,9 @@
             this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 152);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 149);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(1333, 471);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(1333, 474);
             this.guna2GroupBox2.TabIndex = 3;
             this.guna2GroupBox2.Text = "Kết quả";
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -221,7 +224,7 @@
             this.dgvTim.RowHeadersWidth = 51;
             this.dgvTim.RowTemplate.Height = 50;
             this.dgvTim.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTim.Size = new System.Drawing.Size(1333, 431);
+            this.dgvTim.Size = new System.Drawing.Size(1333, 434);
             this.dgvTim.TabIndex = 0;
             this.dgvTim.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTim.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -247,7 +250,7 @@
             // 
             // frmTraCuuNV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 623);
             this.Controls.Add(this.guna2GroupBox2);
@@ -257,6 +260,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTraCuuNV";
             this.Text = "frmTraCuuNV";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTraCuuNV_FormClosing);
+            this.Load += new System.EventHandler(this.frmTraCuuNV_Load);
             this.menuToolStrip.ResumeLayout(false);
             this.menuToolStrip.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);

@@ -118,9 +118,9 @@ namespace SieuThiBHX
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckFormExit("frm_SanPham"))
+            if (!CheckFormExit("frmSanPham"))
             {
-                frm_SanPham f = new frm_SanPham();
+                frmSanPham f = new frmSanPham();
                 f.MdiParent = this;
                 f.Show();
             }
@@ -281,6 +281,20 @@ namespace SieuThiBHX
             else
             {
                 ActForm("frmNhanVien");
+            }
+        }
+
+        private void traCứuNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExit("frmTraCuuNV"))
+            {
+                frmTraCuuNV f = new frmTraCuuNV();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmTraCuuNV");
             }
         }
     }

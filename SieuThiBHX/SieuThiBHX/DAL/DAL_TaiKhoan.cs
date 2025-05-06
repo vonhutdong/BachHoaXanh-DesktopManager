@@ -59,7 +59,13 @@ namespace DAL
                        .Where(tk => tk.id == id)
                        .Select(tk => new { tk.id, tk.TenTaiKhoan });
         }
-
+        //lay danh sach tk theo id
+        public IQueryable GetAllListTKByTenTK(int id)
+        {
+            return da.Db.TaiKhoans
+                       .Where(tk => tk.id == id)
+                       .Select(tk => new { tk.id, tk.TenTaiKhoan });
+        }
         // Lấy quyền theo tài khoản
         public int GetRole(string taiKhoan, string matKhau)
         {
