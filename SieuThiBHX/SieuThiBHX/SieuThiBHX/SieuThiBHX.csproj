@@ -161,18 +161,6 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report\rptBaoCaoBangLuongTheoMa.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptBaoCaoBangLuongTheoMa.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="rpt_BaoCaoLuongTheoMaBangLuong.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_BaoCaoLuongTheoMaBangLuong.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Trong\frmChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,14 +276,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report\rptBaoCaoBangLuongTheoMa.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptBaoCaoBangLuongTheoMa.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rpt_BaoCaoLuongTheoMaBangLuong.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_BaoCaoLuongTheoMaBangLuong.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Trong\frmChiNhanh.resx">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
