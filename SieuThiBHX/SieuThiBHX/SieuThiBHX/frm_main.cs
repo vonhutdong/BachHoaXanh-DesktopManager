@@ -106,14 +106,25 @@ namespace SieuThiBHX
                 ActForm("frm_ChiTietHoaDon");
             }
         }
+        private void OpenKhoHangForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
 
+            frm_KhoHang khoHangForm = new frm_KhoHang();
+            khoHangForm.MdiParent = this;
+            khoHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            khoHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            khoHangForm.Show();
+        }
         private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_KhoHang"))
             {
-                frm_KhoHang f = new frm_KhoHang();
-                f.MdiParent = this;
-                f.Show();
+                OpenKhoHangForm();
             }
             else
             {

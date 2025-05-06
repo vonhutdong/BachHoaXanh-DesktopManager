@@ -249,7 +249,6 @@ namespace SieuThiBHX
             }
 
             var result = bus_kh.TimKiemTheoTenHoacSDT(keyword).ToList();
-            MessageBox.Show("Có " + result.Count + " khách hàng tìm được"); // kiểm tra
             dgvDSKH.DataSource = result;
         }
     }
