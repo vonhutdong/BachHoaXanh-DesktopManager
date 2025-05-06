@@ -20,6 +20,7 @@ namespace SieuThiBHX
             InitializeComponent();
             this.IsMdiContainer = true;
         }
+
         private void TestSQLConnection()
         {
             string connectionString = "Server=DESKTOP-UBB0F3U\\SQLEXPRESS;Database=SieuThiBHX;Integrated Security=True;";
@@ -63,6 +64,7 @@ namespace SieuThiBHX
         }
         private void frm_main_Load(object sender, EventArgs e)
         {
+            this.IsMdiContainer = true;
             TestSQLConnection();
         }
         private void hóaĐơnToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -106,14 +108,27 @@ namespace SieuThiBHX
                 ActForm("frm_KhoHang");
             }
         }
+        private void OpenLoaiHangForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+
+            frm_LoaiHang loaiHangForm = new frm_LoaiHang();
+            loaiHangForm.MdiParent = this;
+            loaiHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            loaiHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            loaiHangForm.Show();
+        }
 
         private void loạiHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (!CheckFormExit("frm_LoaiHang"))
             {
-                frm_LoaiHang f = new frm_LoaiHang();
-                f.MdiParent = this;
-                f.Show();
+                OpenLoaiHangForm();
             }
             else
             {

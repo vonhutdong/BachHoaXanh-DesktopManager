@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BUS
 {
@@ -14,6 +15,20 @@ namespace BUS
         public IQueryable LayDSLH()
         {
             return dal_lh.LayDSLH();
+        }
+        public void ThemLoaiHang(DTO_LoaiHang dto_lh)
+        {
+            dal_lh.ThemLoaiHang(dto_lh);
+        }
+        //xóa loại hàng
+        public void XoaLoaiHang(int id)
+        {
+            dal_lh.XoaLoaiHang(id);
+        }
+        //sửa loại hàng
+        public void SuaLoaHang(DTO_LoaiHang dto_lh)
+        {
+            dal_lh.SuaLoaiHang(dto_lh);
         }
     }
 }
