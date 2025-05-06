@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,25 +74,22 @@ namespace DAL
                 return false; // hoặc log lỗi nếu cần
             }
         }
-        public void XoaKH(int id)
+        public bool XoaKH(int id)
         {
             try
             {
-                // Tìm khách hàng theo ID
-                var data = da.Db.KhachHangs.FirstOrDefault(dt => dt.id == id);
-                if (data != null)
+                var kh = da.Db.KhachHangs.FirstOrDefault(k => k.id == id);
+                if (kh != null)
                 {
-                    da.Db.KhachHangs.DeleteOnSubmit(data);
+                    da.Db.KhachHangs.DeleteOnSubmit(kh);
                     da.Db.SubmitChanges();
+                    return true;
                 }
-                else
-                {
-                    throw new Exception("Không tìm thấy khách hàng với ID này.");
-                }
+                return false;
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Exception("Có lỗi xảy ra khi xóa khách hàng: " + ex.Message);
+                return false;
             }
         }
         public bool SuaKH(DTO_KhachHang khachHang)
@@ -115,34 +113,45 @@ namespace DAL
                 return false;
             }
         }
-        public IQueryable<DTO_KhachHang> TimKiemTheoTen(string ten)
+        private string RemoveDiacritics(string input)
         {
-            return da.Db.KhachHangs
-                .Where(kh => kh.tenKhachHang.Contains(ten))
-                .Select(kh => new DTO_KhachHang
-                (
+            if (string.IsNullOrEmpty(input)) return input;
+
+            var normalized = input.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+
+            foreach (char c in normalized)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+
+        public IQueryable<DTO_KhachHang> TimKiemTheoTenHoacSDT(string tukhoa)
+        {
+            string keyword = RemoveDiacritics(tukhoa.ToLower());
+
+            var danhSach = da.Db.KhachHangs.ToList()
+                .Where(kh =>
+                    (!string.IsNullOrEmpty(kh.tenKhachHang) &&
+                        RemoveDiacritics(kh.tenKhachHang.ToLower()).Contains(keyword))
+                    ||
+                    (!string.IsNullOrEmpty(kh.soDienThoai) &&
+                        kh.soDienThoai.Contains(tukhoa))
+                )
+                .Select(kh => new DTO_KhachHang(
                     kh.id,
                     kh.maKhachHang,
                     kh.tenKhachHang,
                     kh.soDienThoai,
-                    (float)(kh.diem ?? 0) // nếu diem là nullable trong DB
-                ));
-        }
-        public IQueryable<DTO_KhachHang> TimKiemTheoSoDienThoai(string soDienThoai)
-        {
-            return da.Db.KhachHangs
-                .Where(kh => kh.soDienThoai.Contains(soDienThoai))
-                .Select(kh => new DTO_KhachHang
-                (
-                    kh.id,
-                    kh.maKhachHang,
-                    kh.tenKhachHang,
-                    kh.soDienThoai,
-                    (float)(kh.diem ?? 0)
-                ));
-        }
+                    (float)(kh.diem ?? 0)))
+                .AsQueryable();
 
-
+            return danhSach;
+        }
 
 
     }

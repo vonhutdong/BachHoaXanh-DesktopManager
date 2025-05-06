@@ -24,21 +24,18 @@ namespace BUS
         {
             return dal_kh.ThemKH(khachHang);
         }
-        public void XoaKH(int maKH)
+        public bool XoaKH(int id)
         {
-             dal_kh.XoaKH(maKH);
+            return dal_kh.XoaKH(id);
         }
+
         public bool SuaKH(DTO_KhachHang khachHang)
         {
             return dal_kh.SuaKH(khachHang);
         }
-        public IQueryable<DTO_KhachHang> TimKiemTheoTen(string ten)
+        public IQueryable<DTO_KhachHang> TimKiemTheoTenHoacSDT(string tukhoa)
         {
-            return dal_kh.TimKiemTheoTen(ten);
-        }
-        public IQueryable<DTO_KhachHang> TimKiemTheoSoDienThoai(string soDienThoai)
-        {
-            return dal_kh.TimKiemTheoSoDienThoai(soDienThoai);
+            return dal_kh.TimKiemTheoTenHoacSDT(tukhoa);
         }
 
     }

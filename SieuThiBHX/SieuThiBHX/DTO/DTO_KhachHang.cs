@@ -23,10 +23,26 @@ namespace DTO
             this.SoDienThoai = soDienThoai;
             this.Diem = diem;
         }
+        public DTO_KhachHang(int id, string tenKH, string soDienThoai, double diem)
+        {
+            this.Id = id;
+            this.MaKH = maKH;
+            this.TenKH = tenKH;
+            this.SoDienThoai = soDienThoai;
+            this.Diem = diem;
+        }
 
         // Constructor không có ID (dùng khi thêm mới)
         public DTO_KhachHang(string maKH, string tenKH, string soDienThoai, double diem)
         {
+            this.MaKH = maKH;
+            this.TenKH = tenKH;
+            this.SoDienThoai = soDienThoai;
+            this.Diem = diem;
+        }
+        public DTO_KhachHang( string tenKH, string soDienThoai, double diem)
+        {
+            this.Id = id;
             this.MaKH = maKH;
             this.TenKH = tenKH;
             this.SoDienThoai = soDienThoai;
