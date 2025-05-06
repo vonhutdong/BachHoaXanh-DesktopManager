@@ -86,12 +86,6 @@ namespace DAL
     partial void DeleteSanPham(SanPham instance);
     #endregion
 		
-		public QLBHXDataContext() : 
-				base(global::DAL.Properties.Settings.Default.SieuThiBHXConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
-		
 		public QLBHXDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
