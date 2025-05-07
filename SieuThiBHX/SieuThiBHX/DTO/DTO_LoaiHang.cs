@@ -17,7 +17,7 @@ namespace DTO
             this.maLoaiHang = maLoaiHang;
             this.tenLoaiHang = tenLoaiHang;
         }
-
+        
         public DTO_LoaiHang(int id, string maLoaiHang, string tenLoaiHang)
         {
             this.id = id;

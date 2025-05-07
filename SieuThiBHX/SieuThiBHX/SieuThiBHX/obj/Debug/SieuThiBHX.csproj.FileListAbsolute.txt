@@ -51,3 +51,5 @@ C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\Sieu
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.csproj.Up2Date
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.exe
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.pdb
+C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.NhutDong.frmSanPham.resources
+C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.frm_rpKhoHang.resources

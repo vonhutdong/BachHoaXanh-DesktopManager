@@ -41,7 +41,7 @@
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvKhoHang = new System.Windows.Forms.DataGridView();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuToolStrip.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -58,7 +58,7 @@
             this.btnSua,
             this.btnLamMoi,
             this.btnThoat,
-            this.toolStripLabel1});
+            this.toolStripButton1});
             this.menuToolStrip.Location = new System.Drawing.Point(0, 0);
             this.menuToolStrip.Name = "menuToolStrip";
             this.menuToolStrip.Size = new System.Drawing.Size(1146, 42);
@@ -88,6 +88,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(63, 37);
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLamMoi
             // 
@@ -96,6 +97,7 @@
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(122, 37);
             this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnThoat
             // 
@@ -104,6 +106,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 37);
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label1
             // 
@@ -181,6 +184,7 @@
             this.txtSoLuong.SelectedText = "";
             this.txtSoLuong.Size = new System.Drawing.Size(255, 48);
             this.txtSoLuong.TabIndex = 7;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // guna2GroupBox2
             // 
@@ -196,22 +200,39 @@
             // 
             // dgvKhoHang
             // 
+            this.dgvKhoHang.AllowUserToAddRows = false;
+            this.dgvKhoHang.AllowUserToDeleteRows = false;
+            this.dgvKhoHang.AllowUserToResizeColumns = false;
+            this.dgvKhoHang.AllowUserToResizeRows = false;
+            this.dgvKhoHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKhoHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvKhoHang.BackgroundColor = System.Drawing.Color.White;
-            this.dgvKhoHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhoHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvKhoHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvKhoHang.ColumnHeadersHeight = 34;
+            this.dgvKhoHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvKhoHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvKhoHang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvKhoHang.Location = new System.Drawing.Point(0, 40);
+            this.dgvKhoHang.MultiSelect = false;
             this.dgvKhoHang.Name = "dgvKhoHang";
+            this.dgvKhoHang.RowHeadersVisible = false;
             this.dgvKhoHang.RowHeadersWidth = 62;
             this.dgvKhoHang.RowTemplate.Height = 28;
+            this.dgvKhoHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhoHang.Size = new System.Drawing.Size(1146, 375);
             this.dgvKhoHang.TabIndex = 0;
+            this.dgvKhoHang.Click += new System.EventHandler(this.dgvKhoHang_Click);
             // 
-            // toolStripLabel1
+            // toolStripButton1
             // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(37, 37);
-            this.toolStripLabel1.Text = "In";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(41, 37);
+            this.toolStripButton1.Text = "In";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frm_KhoHang
             // 
@@ -224,6 +245,8 @@
             this.Controls.Add(this.menuToolStrip);
             this.Name = "frm_KhoHang";
             this.Text = "frm_KhoHang";
+            this.Load += new System.EventHandler(this.frm_KhoHang_Load);
+            this.Click += new System.EventHandler(this.frm_KhoHang_Click);
             this.menuToolStrip.ResumeLayout(false);
             this.menuToolStrip.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);
@@ -250,6 +273,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuong;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.DataGridView dgvKhoHang;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

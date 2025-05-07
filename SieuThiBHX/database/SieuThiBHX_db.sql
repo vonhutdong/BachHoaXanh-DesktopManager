@@ -353,6 +353,17 @@ INSERT INTO PhieuNhap (MaPhieuNhap, NgayNhap, ThanhTien, idNhanVien) VALUES
 ('PN005', '2024-03-20T14:10:00', 1100000, 5),
 ('PN006', '2024-03-25T16:50:00', 870000, 6),
 ('PN007', '2024-03-30T18:30:00', 1340000, 1);
+INSERT INTO KhoHang (soLuong, idSanPham) VALUES
+(100, 1),  -- SP001 - Sữa tươi Vinamilk
+(150, 2),  -- SP002 - Mì tôm Hảo Hảo
+(200, 3),  -- SP003 - Coca Cola
+(80, 4),   -- SP004 - Bánh mì sandwich
+(120, 5),  -- SP005 - Gạo ST25
+(90, 1),   -- SP001 - Sữa tươi Vinamilk
+(110, 2),  -- SP002 - Mì tôm Hảo Hảo
+(160, 3),  -- SP003 - Coca Cola
+(70, 4),   -- SP004 - Bánh mì sandwich
+(140, 5);  -- SP005 - Gạo ST25
 
 
 
