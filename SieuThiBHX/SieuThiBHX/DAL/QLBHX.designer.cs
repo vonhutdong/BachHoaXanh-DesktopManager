@@ -86,6 +86,15 @@ namespace DAL
     partial void DeleteSanPham(SanPham instance);
     #endregion
 		
+<<<<<<< HEAD
+=======
+		public QLBHXDataContext() : 
+				base(global::DAL.Properties.Settings.Default.SieuThiBHXConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
+>>>>>>> branch-2
 		public QLBHXDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
@@ -4037,7 +4046,7 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _hanSuDung;
 		
-		private string _anhSanPham;
+		private System.Data.Linq.Binary _anhSanPham;
 		
 		private System.Nullable<int> _idLoaiHang;
 		
@@ -4071,7 +4080,7 @@ namespace DAL
     partial void OnngaySanXuatChanged();
     partial void OnhanSuDungChanging(System.Nullable<System.DateTime> value);
     partial void OnhanSuDungChanged();
-    partial void OnanhSanPhamChanging(string value);
+    partial void OnanhSanPhamChanging(System.Data.Linq.Binary value);
     partial void OnanhSanPhamChanged();
     partial void OnidLoaiHangChanging(System.Nullable<int> value);
     partial void OnidLoaiHangChanged();
@@ -4229,8 +4238,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anhSanPham", DbType="NVarChar(MAX)")]
-		public string anhSanPham
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anhSanPham", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary anhSanPham
 		{
 			get
 			{
