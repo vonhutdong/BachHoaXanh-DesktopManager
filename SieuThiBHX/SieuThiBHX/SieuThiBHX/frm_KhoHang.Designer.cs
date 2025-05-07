@@ -34,6 +34,7 @@
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvKhoHang = new System.Windows.Forms.DataGridView();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.menuToolStrip.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -104,6 +104,13 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(85, 37);
             this.btnThoat.Text = "Thoát";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(37, 37);
+            this.toolStripLabel1.Text = "In";
             // 
             // label1
             // 
@@ -196,22 +203,28 @@
             // 
             // dgvKhoHang
             // 
+            this.dgvKhoHang.AllowUserToAddRows = false;
+            this.dgvKhoHang.AllowUserToDeleteRows = false;
+            this.dgvKhoHang.AllowUserToResizeColumns = false;
+            this.dgvKhoHang.AllowUserToResizeRows = false;
+            this.dgvKhoHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKhoHang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvKhoHang.BackgroundColor = System.Drawing.Color.White;
-            this.dgvKhoHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhoHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvKhoHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvKhoHang.ColumnHeadersHeight = 34;
+            this.dgvKhoHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvKhoHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvKhoHang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvKhoHang.Location = new System.Drawing.Point(0, 40);
+            this.dgvKhoHang.MultiSelect = false;
             this.dgvKhoHang.Name = "dgvKhoHang";
+            this.dgvKhoHang.RowHeadersVisible = false;
             this.dgvKhoHang.RowHeadersWidth = 62;
             this.dgvKhoHang.RowTemplate.Height = 28;
+            this.dgvKhoHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhoHang.Size = new System.Drawing.Size(1146, 375);
             this.dgvKhoHang.TabIndex = 0;
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(37, 37);
-            this.toolStripLabel1.Text = "In";
             // 
             // frm_KhoHang
             // 
@@ -224,6 +237,8 @@
             this.Controls.Add(this.menuToolStrip);
             this.Name = "frm_KhoHang";
             this.Text = "frm_KhoHang";
+            this.Load += new System.EventHandler(this.frm_KhoHang_Load);
+            this.Click += new System.EventHandler(this.frm_KhoHang_Click);
             this.menuToolStrip.ResumeLayout(false);
             this.menuToolStrip.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);

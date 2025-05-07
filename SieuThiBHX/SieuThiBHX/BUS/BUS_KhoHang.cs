@@ -10,7 +10,9 @@ namespace BUS
 {
     public class BUS_KhoHang
     {
+        //dal
         DAL_KhoHang dal_kh = new DAL_KhoHang();
+        //load kho hàng
         public IQueryable LoadKhoHang()
         {
             return dal_kh.LoadDSKhoHang();
