@@ -15,7 +15,7 @@ namespace BUS
         //load kho hàng
         public IQueryable LoadKhoHang()
         {
-            return dal_kh.LoadDSKhoHang();
+            return dal_kh.LoadKhoHang();
         }
         public void SuaKhoHang(DTO_KhoHang khohang)
         {

@@ -45,7 +45,7 @@ namespace DAL
                             IdLoaiHang = (int)sp.idLoaiHang,
                             GiaBan = (double)sp.donGia,
                             SoLuong = (int)kho.soLuong,
-                            AnhSanPham = sp.anhSanPham
+                            //AnhSanPham = sp.anhSanPham
                         }).ToList();
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace DAL
                     sp.hanSuDung = sanpham.HanSuDung;
                     sp.idLoaiHang = sanpham.IdLoaiHang;
                     sp.idNhaCungCap = sanpham.IdNhaCungCap;
-                    sp.anhSanPham = sanpham.AnhSanPham;
+                    //sp.anhSanPham = sanpham.AnhSanPham;
                     da.Db.SanPhams.InsertOnSubmit(sp);
                     da.Db.SubmitChanges();
                 }
@@ -121,7 +121,7 @@ namespace DAL
                     sp.hanSuDung = sanphamdto.HanSuDung;
                     sp.idLoaiHang = sanphamdto.IdLoaiHang;
                     sp.idNhaCungCap = sanphamdto.IdNhaCungCap;
-                    sp.anhSanPham = sanphamdto.AnhSanPham;
+                    //sp.anhSanPham = sanphamdto.AnhSanPham;
                     //cập nhật lại
                     da.Db.SubmitChanges();
                 }
