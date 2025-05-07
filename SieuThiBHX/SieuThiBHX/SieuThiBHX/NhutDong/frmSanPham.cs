@@ -18,7 +18,7 @@ namespace SieuThiBHX.NhutDong
         //khoi tao
         int idNhaCungCap = 1;
         //bus nhà loại hàng
-       // BUS_LoaiHang bus_loaihang = new BUS_LoaiHang();
+       BUS_LoaiHang bus_loaihang = new BUS_LoaiHang();
         //bus sản phẩm
         BUS_SanPham bus_sanpham = new BUS_SanPham();
         //di san pham hien tai
@@ -36,14 +36,15 @@ namespace SieuThiBHX.NhutDong
             {
                 guna2GroupBox3.Text = string.Empty;
                 //mặc định combobox select dữ liệu đầu
-                //cbNhaCungCap.SelectedIndex = 0;
-                //cbMaNhomHang.SelectedIndex = 0;
+                
                 //gọi load combobox loại hàng
                 LoadCBLoaiHang();
                 //gọi load combobox nhà cung cấp
                 LoadCBNhaCungCap();
                 //gọi load danh sách sản phẩm
                 LoadDSSanPham();
+                cbNhaCungCap.SelectedIndex = 0;
+                cbMaNhomHang.SelectedIndex = 0;
                 //custom
                 dtpHanSuDung.CustomFormat = "dd/MM/yyyy";
                 dtpNgaySanXuat.CustomFormat = "dd/MM/yyyy";
@@ -100,9 +101,9 @@ namespace SieuThiBHX.NhutDong
         }
         private void LoadCBLoaiHang()
         {
-            //cbMaNhomHang.DataSource = bus_loaihang.LayDSLoaiHang();
-            //cbMaNhomHang.DisplayMember = "TenLoaiHang";
-            //cbMaNhomHang.ValueMember = "id";
+            cbMaNhomHang.DataSource = bus_loaihang.LayDSLH();
+            cbMaNhomHang.DisplayMember = "TenLoaiHang";
+            cbMaNhomHang.ValueMember = "id";
         }
         private byte[] ConvertImageToByteArray(string filePath)
         {
@@ -228,43 +229,50 @@ namespace SieuThiBHX.NhutDong
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            try
+            private void btnSua_Click(object sender, EventArgs e)
             {
+                MessageBox.Show($"{int.Parse(cbMaNhomHang.SelectedValue.ToString())}");
+
+                try
+                {
+                int idLoaiHang = Convert.ToInt32(cbMaNhomHang.SelectedValue);
+                int idNhaCungCap = Convert.ToInt32(cbNhaCungCap.SelectedValue);
+
                 if (txtMaSanPham.Text.Length > 0 &&
-              txtTenSanPham.Text.Length > 0 &&
-              txtDonViTinh.Text.Length > 0 &&
-              txtDonGia.Text.Length > 0
-              && imageData != null)
-                {
-                    //thêm loại hàng
-                    bus_sanpham.SuaSanPham(new DTO_SanPham(currentID, txtMaSanPham.Text,
-                                                             txtTenSanPham.Text,
-                                                                txtDonViTinh.Text,
-                                                                float.Parse(txtDonGia.Text),
-                                                                dtpNgaySanXuat.Value.Date,
-                                                                dtpHanSuDung.Value.Date,
-                                                                int.Parse(cbMaNhomHang.SelectedValue.ToString()),
-                                                                int.Parse(cbNhaCungCap.SelectedValue.ToString()),
-                                                                imageData
-                        ));
-                    MessageBox.Show("Sửa thành công thành công!", "Thoát", MessageBoxButtons.OK);
-                    //làm mới
-                    LamMoi();
+                  txtTenSanPham.Text.Length > 0 &&
+                  txtDonViTinh.Text.Length > 0 &&
+                  txtDonGia.Text.Length > 0
+                  && imageData != null)
+                    {
+                        //thêm loại hàng
+                        bus_sanpham.SuaSanPham(new DTO_SanPham(currentID, txtMaSanPham.Text,
+                                                                 txtTenSanPham.Text,
+                                                                    txtDonViTinh.Text,
+                                                                    float.Parse(txtDonGia.Text),
+                                                                    dtpNgaySanXuat.Value.Date,
+                                                                    dtpHanSuDung.Value.Date,
+                                                                    //idLoaiHang,
+                                                                    //idNhaCungCap,
+                                                                    Convert.ToInt32(cbMaNhomHang.SelectedValue.ToString()),
+                                                                    Convert.ToInt32(cbNhaCungCap.SelectedValue.ToString()),
+                                                                    imageData
+                            ));
+                        MessageBox.Show("Sửa thành công thành công!", "Thoát", MessageBoxButtons.OK);
+                        //làm mới
+                        LamMoi();
+                    }
+                    else
+                    {
+                        //thông báo khi chưa đầy đủ dữ liệu
+                        MessageBox.Show("Nhập đầy đủ dữ liệu!!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    //thông báo khi chưa đầy đủ dữ liệu
-                    MessageBox.Show("Nhập đầy đủ dữ liệu!!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //thông báo khi có lỗi xảy ra
+                    MessageBox.Show(ex.Message, "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
-            {
-                //thông báo khi có lỗi xảy ra
-                MessageBox.Show(ex.Message, "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -287,6 +295,7 @@ namespace SieuThiBHX.NhutDong
                                                                 int.Parse(cbNhaCungCap.SelectedValue.ToString()),
                                                                 imageData
                         ));
+
                     MessageBox.Show("Thêm thành công!", "Thoát", MessageBoxButtons.OK);
                     //làm mới
                     LamMoi();
