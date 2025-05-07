@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\dto\\dto_loaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|solutionrelative:dto\\dto_loaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\sieuthibhx\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|solutionrelative:sieuthibhx\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\dto\\dto_khohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|solutionrelative:dto\\dto_khohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\dto\\dto_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\dto\\dto_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|solutionrelative:dto\\dto_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\dto\\dto_chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\dto\\dto_chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D2B12EA-D81F-4D87-B772-EE06016D00C3}|DTO\\DTO.csproj|solutionrelative:dto\\dto_chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7757637B-FF5E-424D-ABCB-4483F6D9C591}|DAL\\DAL.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\dal\\dal_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7757637B-FF5E-424D-ABCB-4483F6D9C591}|DAL\\DAL.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\dal\\dal_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7757637B-FF5E-424D-ABCB-4483F6D9C591}|DAL\\DAL.csproj|solutionrelative:dal\\dal_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,19 +31,19 @@
       "RelativeMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|solutionrelative:sieuthibhx\\frm_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\bus\\bus_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\bus\\bus_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|solutionrelative:bus\\bus_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\bus\\bus_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\bus\\bus_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|solutionrelative:bus\\bus_khuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\bus\\bus_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\bus\\bus_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{138ACA83-4A29-4433-A1CC-8B3B71450A19}|BUS\\BUS.csproj|solutionrelative:bus\\bus_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|c:\\users\\phamt\\desktop\\git\\bachhoaxanh-desktopmanager\\sieuthibhx\\sieuthibhx\\sieuthibhx\\frm_khohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\sieuthibhx\\frm_khohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|solutionrelative:sieuthibhx\\frm_khohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -49,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\sieuthibhx\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|solutionrelative:sieuthibhx\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\sieuthibhx\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|solutionrelative:sieuthibhx\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{718FFAC2-DA83-4ACC-90E1-791890AD1985}|SieuThiBHX\\SieuThiBHX.csproj|C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\sieuthibhx\\frm_loaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -90,11 +94,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 352,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "DTO_LoaiHang.cs",
+              "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DTO\\DTO_LoaiHang.cs",
+              "RelativeDocumentMoniker": "DTO\\DTO_LoaiHang.cs",
+              "ToolTip": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DTO\\DTO_LoaiHang.cs",
+              "RelativeToolTip": "DTO\\DTO_LoaiHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T01:49:31.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DTO_ChiTietHoaDon.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DTO\\DTO_ChiTietHoaDon.cs",
               "RelativeDocumentMoniker": "DTO\\DTO_ChiTietHoaDon.cs",
@@ -102,12 +119,11 @@
               "RelativeToolTip": "DTO\\DTO_ChiTietHoaDon.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwBcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:11:59.926Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T08:11:59.926Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DAL_HoaDon.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DAL\\DAL_HoaDon.cs",
               "RelativeDocumentMoniker": "DAL\\DAL_HoaDon.cs",
@@ -115,12 +131,11 @@
               "RelativeToolTip": "DAL\\DAL_HoaDon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:05:04.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T08:05:04.352Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DTO_HoaDon.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DTO\\DTO_HoaDon.cs",
               "RelativeDocumentMoniker": "DTO\\DTO_HoaDon.cs",
@@ -128,12 +143,11 @@
               "RelativeToolTip": "DTO\\DTO_HoaDon.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:04:23.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T08:04:23.096Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BUS_NhanVien.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\BUS\\BUS_NhanVien.cs",
               "RelativeDocumentMoniker": "BUS\\BUS_NhanVien.cs",
@@ -141,12 +155,11 @@
               "RelativeToolTip": "BUS\\BUS_NhanVien.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:02:59.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T08:02:59.948Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "BUS_KhuyenMai.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\BUS\\BUS_KhuyenMai.cs",
               "RelativeDocumentMoniker": "BUS\\BUS_KhuyenMai.cs",
@@ -154,12 +167,11 @@
               "RelativeToolTip": "BUS\\BUS_KhuyenMai.cs",
               "ViewState": "AgIAAAAAAAAAAAAAACBjwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:02:49.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T08:02:49.422Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "BUS_HoaDon.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\BUS\\BUS_HoaDon.cs",
               "RelativeDocumentMoniker": "BUS\\BUS_HoaDon.cs",
@@ -167,12 +179,11 @@
               "RelativeToolTip": "BUS\\BUS_HoaDon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T08:02:36.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T08:02:36.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "frm_BanHang.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_BanHang.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_BanHang.cs",
@@ -183,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "frm_main.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_main.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_main.cs",
@@ -191,24 +202,22 @@
               "RelativeToolTip": "SieuThiBHX\\frm_main.cs",
               "ViewState": "AgIAAGgAAAAAAAAAAAAAwH4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:19:31.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T07:19:31.843Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "frm_main.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_main.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_main.cs",
               "ToolTip": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_main.cs [Design]",
               "RelativeToolTip": "SieuThiBHX\\frm_main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:19:29.781Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-06T07:19:29.781Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "DAL_KhoHang.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DAL\\DAL_KhoHang.cs",
               "RelativeDocumentMoniker": "DAL\\DAL_KhoHang.cs",
@@ -220,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DTO_KhoHang.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DTO\\DTO_KhoHang.cs",
               "RelativeDocumentMoniker": "DTO\\DTO_KhoHang.cs",
@@ -228,12 +237,11 @@
               "RelativeToolTip": "DTO\\DTO_KhoHang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:17:03.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T07:17:03.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "frm_ChiTietHoaDon.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_ChiTietHoaDon.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_ChiTietHoaDon.cs",
@@ -244,43 +252,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "frm_HoaDon.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_HoaDon.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_HoaDon.cs",
               "ToolTip": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_HoaDon.cs [Design]",
               "RelativeToolTip": "SieuThiBHX\\frm_HoaDon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:10:40.988Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-06T07:10:40.988Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "frm_LoaiHang.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_LoaiHang.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_LoaiHang.cs",
               "ToolTip": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_LoaiHang.cs [Design]",
               "RelativeToolTip": "SieuThiBHX\\frm_LoaiHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:10:36.296Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-06T07:10:36.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "frm_KhoHang.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_KhoHang.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_KhoHang.cs",
               "ToolTip": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_KhoHang.cs [Design]",
               "RelativeToolTip": "SieuThiBHX\\frm_KhoHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:10:32.979Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-06T07:10:32.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "BUS_KhachHang.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\BUS\\BUS_KhachHang.cs",
               "RelativeDocumentMoniker": "BUS\\BUS_KhachHang.cs",
@@ -292,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "DAL_KhachHang.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DAL\\DAL_KhachHang.cs",
               "RelativeDocumentMoniker": "DAL\\DAL_KhachHang.cs",
@@ -304,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "DTO_KhachHang.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\DTO\\DTO_KhachHang.cs",
               "RelativeDocumentMoniker": "DTO\\DTO_KhachHang.cs",
@@ -316,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "frm_KhachHang.cs",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_KhachHang.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_KhachHang.cs",
@@ -324,20 +329,18 @@
               "RelativeToolTip": "SieuThiBHX\\frm_KhachHang.cs",
               "ViewState": "AgIAAOAAAAAAAAAAAAD4v/sAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T03:55:59.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T03:55:59.265Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "frm_KhachHang.cs [Design]",
               "DocumentMoniker": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_KhachHang.cs",
               "RelativeDocumentMoniker": "SieuThiBHX\\frm_KhachHang.cs",
               "ToolTip": "C:\\Users\\phamt\\Desktop\\Git\\BachHoaXanh-DesktopManager\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_KhachHang.cs [Design]",
               "RelativeToolTip": "SieuThiBHX\\frm_KhachHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T03:55:11.57Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-06T03:55:11.57Z"
             }
           ]
         }
