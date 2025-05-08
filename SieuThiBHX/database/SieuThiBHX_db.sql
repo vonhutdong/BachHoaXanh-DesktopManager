@@ -354,9 +354,23 @@ INSERT INTO PhieuNhap (MaPhieuNhap, NgayNhap, ThanhTien, idNhanVien) VALUES
 ('PN006', '2024-03-25T16:50:00', 870000, 6),
 ('PN007', '2024-03-30T18:30:00', 1340000, 1);
 
+INSERT INTO ChiTietPhieuNhap (SoLuong, DonGia, idPhieuNhap, idSanPham) VALUES
+(10, 50000, 1, 1),
+(5, 100000, 1, 2),
+(8, 75000, 2, 3),
+(12, 60000, 2, 4),
+(7, 120000, 3, 5),
+(10, 90000, 3, 2),
+(15, 63000, 4, 1),
+(6, 110000, 4, 3),
+(9, 100000, 5, 2),
+(11, 80000, 5, 4),
+(13, 67000, 6, 5),
+(7, 105000, 6, 3),
+(10, 95000, 7, 1),
+(8, 85000, 7, 2);
 
-
-
+select * from SanPham
 
 -- --------ndong------------
 -- --calam--
@@ -464,5 +478,12 @@ INSERT INTO PhieuNhap (MaPhieuNhap, NgayNhap, ThanhTien, idNhanVien) VALUES
 --ALTER TABLE [SanPham] CHECK CONSTRAINT [FK_SanPham_LoaiHang]
 --GO
 
-
+select * from LoaiHang
 select * from SanPham
+
+UPDATE SanPham
+SET idLoaiHang = 3  -- hoặc giá trị bất kỳ bạn muốn thử
+WHERE id = 2;
+
+
+select * from PhieuNhap

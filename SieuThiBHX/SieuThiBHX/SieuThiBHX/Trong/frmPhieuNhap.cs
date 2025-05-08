@@ -16,5 +16,10 @@ namespace SieuThiBHX.Trong
         {
             InitializeComponent();
         }
+
+        private void frmPhieuNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
