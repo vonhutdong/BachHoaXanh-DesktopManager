@@ -52,10 +52,11 @@
             this.loạiNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traCứuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.traCứuNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.traCứuNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoBảngLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -279,6 +280,13 @@
             this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(96, 32);
             this.traCứuToolStripMenuItem.Text = "Tra cứu";
             // 
+            // traCứuNhânViênToolStripMenuItem
+            // 
+            this.traCứuNhânViênToolStripMenuItem.Name = "traCứuNhânViênToolStripMenuItem";
+            this.traCứuNhânViênToolStripMenuItem.Size = new System.Drawing.Size(273, 32);
+            this.traCứuNhânViênToolStripMenuItem.Text = "Tra cứu Nhân Viên";
+            this.traCứuNhânViênToolStripMenuItem.Click += new System.EventHandler(this.traCứuNhânViênToolStripMenuItem_Click);
+            // 
             // chứcNăngToolStripMenuItem
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -297,17 +305,19 @@
             // 
             // thốngKêToolStripMenuItem
             // 
+            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.báoCáoBảngLươngToolStripMenuItem});
             this.thốngKêToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(114, 32);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             // 
-            // traCứuNhânViênToolStripMenuItem
+            // báoCáoBảngLươngToolStripMenuItem
             // 
-            this.traCứuNhânViênToolStripMenuItem.Name = "traCứuNhânViênToolStripMenuItem";
-            this.traCứuNhânViênToolStripMenuItem.Size = new System.Drawing.Size(273, 32);
-            this.traCứuNhânViênToolStripMenuItem.Text = "Tra cứu Nhân Viên";
-            this.traCứuNhânViênToolStripMenuItem.Click += new System.EventHandler(this.traCứuNhânViênToolStripMenuItem_Click);
+            this.báoCáoBảngLươngToolStripMenuItem.Name = "báoCáoBảngLươngToolStripMenuItem";
+            this.báoCáoBảngLươngToolStripMenuItem.Size = new System.Drawing.Size(288, 32);
+            this.báoCáoBảngLươngToolStripMenuItem.Text = "Báo cáo bảng lương";
+            this.báoCáoBảngLươngToolStripMenuItem.Click += new System.EventHandler(this.báoCáoBảngLươngToolStripMenuItem_Click);
             // 
             // frm_main
             // 
@@ -359,6 +369,7 @@
         private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bánHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traCứuNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoBảngLươngToolStripMenuItem;
     }
 }
 

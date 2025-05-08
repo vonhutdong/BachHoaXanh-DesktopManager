@@ -111,6 +111,12 @@
     <Compile Include="frm_SanPham.Designer.cs">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhutDong\BaoCaoBangLuongTheoMaBangLuong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoBangLuongTheoMaBangLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NhutDong\frmBangLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SanPham.resx">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhutDong\BaoCaoBangLuongTheoMaBangLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoBangLuongTheoMaBangLuong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="NhutDong\frmBangLuong.resx">
       <DependentUpon>frmBangLuong.cs</DependentUpon>

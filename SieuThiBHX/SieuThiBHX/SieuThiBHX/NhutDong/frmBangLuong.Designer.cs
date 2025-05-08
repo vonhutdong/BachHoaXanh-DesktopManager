@@ -390,13 +390,14 @@
             this.guna2GroupBox2.Controls.Add(this.dgvBangLuong);
             this.guna2GroupBox2.Controls.Add(this.tableLayoutPanel1);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(780, 0);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(775, 0);
             this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(740, 294);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(747, 642);
             this.guna2GroupBox2.TabIndex = 31;
             this.guna2GroupBox2.Text = "Danh sách bảng lương";
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -431,7 +432,7 @@
             this.dgvBangLuong.RowHeadersVisible = false;
             this.dgvBangLuong.RowHeadersWidth = 51;
             this.dgvBangLuong.RowTemplate.Height = 24;
-            this.dgvBangLuong.Size = new System.Drawing.Size(740, 204);
+            this.dgvBangLuong.Size = new System.Drawing.Size(747, 552);
             this.dgvBangLuong.TabIndex = 1;
             this.dgvBangLuong.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBangLuong.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -463,7 +464,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.82781F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel1.Controls.Add(this.btnLamMoi, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnIn, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbLoc, 2, 0);
@@ -476,7 +477,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(740, 50);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(747, 50);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnLamMoi
@@ -492,7 +493,7 @@
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnLamMoi.Location = new System.Drawing.Point(504, 4);
+            this.btnLamMoi.Location = new System.Drawing.Point(510, 4);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(111, 42);
@@ -511,10 +512,10 @@
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnIn.ForeColor = System.Drawing.Color.White;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(621, 4);
+            this.btnIn.Location = new System.Drawing.Point(627, 4);
             this.btnIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(116, 42);
+            this.btnIn.Size = new System.Drawing.Size(117, 42);
             this.btnIn.TabIndex = 36;
             this.btnIn.Text = "In";
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
@@ -531,7 +532,7 @@
             this.cbLoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbLoc.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoc.ForeColor = System.Drawing.Color.Black;
-            this.cbLoc.Location = new System.Drawing.Point(411, 7);
+            this.cbLoc.Location = new System.Drawing.Point(417, 7);
             this.cbLoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbLoc.Name = "cbLoc";
             this.cbLoc.Size = new System.Drawing.Size(87, 39);
@@ -555,10 +556,10 @@
             this.cbLocBangLuong.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLocBangLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbLocBangLuong.ItemHeight = 30;
-            this.cbLocBangLuong.Location = new System.Drawing.Point(101, 10);
+            this.cbLocBangLuong.Location = new System.Drawing.Point(103, 10);
             this.cbLocBangLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbLocBangLuong.Name = "cbLocBangLuong";
-            this.cbLocBangLuong.Size = new System.Drawing.Size(304, 36);
+            this.cbLocBangLuong.Size = new System.Drawing.Size(308, 36);
             this.cbLocBangLuong.TabIndex = 28;
             // 
             // label7
@@ -569,7 +570,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 50);
+            this.label7.Size = new System.Drawing.Size(94, 50);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nhân viên:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -578,12 +579,13 @@
             // 
             this.guna2GroupBox3.Controls.Add(this.dgvChiTietBangLuong);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.guna2GroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(783, 295);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(775, 295);
             this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(737, 347);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(747, 347);
             this.guna2GroupBox3.TabIndex = 32;
             this.guna2GroupBox3.Text = "Chi tiết bản lương";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -617,7 +619,7 @@
             this.dgvChiTietBangLuong.RowHeadersVisible = false;
             this.dgvChiTietBangLuong.RowHeadersWidth = 51;
             this.dgvChiTietBangLuong.RowTemplate.Height = 24;
-            this.dgvChiTietBangLuong.Size = new System.Drawing.Size(737, 307);
+            this.dgvChiTietBangLuong.Size = new System.Drawing.Size(747, 307);
             this.dgvChiTietBangLuong.TabIndex = 0;
             this.dgvChiTietBangLuong.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvChiTietBangLuong.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -653,6 +655,7 @@
             this.Name = "frmBangLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBangLuong";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBangLuong_Load);
             this.guna2GroupBox4.ResumeLayout(false);
             this.guna2GroupBox4.PerformLayout();

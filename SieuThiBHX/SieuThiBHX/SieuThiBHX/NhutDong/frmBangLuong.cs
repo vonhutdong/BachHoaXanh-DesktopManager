@@ -301,8 +301,8 @@ namespace SieuThiBHX.NhutDong
         {
             if (currentIDBangLuong != 0)
             {
-                //frmBaoCaoBangLuong frm = new frmBaoCaoBangLuong(currentIDBangLuong);
-                //frm.ShowDialog();
+                frmBaoCaoBangLuong frm = new frmBaoCaoBangLuong(currentIDBangLuong);
+                frm.ShowDialog();
             }
             else
             {

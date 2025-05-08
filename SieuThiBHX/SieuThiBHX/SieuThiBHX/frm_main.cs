@@ -297,5 +297,10 @@ namespace SieuThiBHX
                 ActForm("frmTraCuuNV");
             }
         }
+
+        private void báoCáoBảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
