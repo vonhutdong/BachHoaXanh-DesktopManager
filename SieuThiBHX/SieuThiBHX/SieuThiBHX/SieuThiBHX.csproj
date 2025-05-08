@@ -43,9 +43,11 @@
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
@@ -104,6 +106,12 @@
     </Compile>
     <Compile Include="frm_main.Designer.cs">
       <DependentUpon>frm_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_rpKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_rpKhoHang.Designer.cs">
+      <DependentUpon>frm_rpKhoHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_SanPham.cs">
       <SubType>Form</SubType>
@@ -168,6 +176,12 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rpKhoHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpKhoHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Trong\frmChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +239,9 @@
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_rpKhoHang.resx">
+      <DependentUpon>frm_rpKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_SanPham.resx">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +278,7 @@
     <EmbeddedResource Include="obj\Debug\SieuThiBHX.frmLichLam.resources" />
     <EmbeddedResource Include="obj\Debug\SieuThiBHX.frmNhaCungCap.resources" />
     <EmbeddedResource Include="obj\Debug\SieuThiBHX.frmNhanVien.resources" />
+    <EmbeddedResource Include="obj\Debug\SieuThiBHX.frm_BanHang.resources" />
     <EmbeddedResource Include="obj\Debug\SieuThiBHX.frm_ChiTietHoaDon.resources" />
     <EmbeddedResource Include="obj\Debug\SieuThiBHX.frm_HoaDon.resources" />
     <EmbeddedResource Include="obj\Debug\SieuThiBHX.frm_KhachHang.resources" />
@@ -286,6 +304,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rpKhoHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpKhoHang.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trong\frmChiNhanh.resx">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,11 +334,14 @@
     <None Include=".vs\SieuThiBHX\FileContentIndex\bc9e6af6-2ceb-4ded-94e3-30b4c8aacc1d.vsidx" />
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\tasks.vs.json" />
+    <None Include="bin\Debug\DAL.dll.config" />
+    <None Include="bin\Debug\SieuThiBHX.exe.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\SieuThiBHX.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\SieuThiBHX.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\SieuThiBHX.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\SieuThiBHX.csproj.Up2Date" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -333,11 +358,38 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\SieuThiBHX\v17\" />
-    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\BUS.dll" />
+    <Content Include="bin\Debug\BUS.pdb" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Design.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Web.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="bin\Debug\DAL.dll" />
+    <Content Include="bin\Debug\DAL.pdb" />
+    <Content Include="bin\Debug\DTO.dll" />
+    <Content Include="bin\Debug\DTO.pdb" />
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+    <Content Include="bin\Debug\SieuThiBHX.exe" />
+    <Content Include="bin\Debug\SieuThiBHX.pdb" />
+    <Content Include="bin\Debug\stdole.dll" />
     <Content Include="img\bin.ico" />
     <Content Include="img\bin.png" />
     <Content Include="img\daiBHX.jpg" />
@@ -358,6 +410,8 @@
     <Content Include="img\reset.ico" />
     <Content Include="img\reset.png" />
     <Content Include="obj\Debug\SieuThiBHX.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SieuThiBHX.exe" />
+    <Content Include="obj\Debug\SieuThiBHX.pdb" />
     <Content Include="Resources\bin.png" />
     <Content Include="Resources\logout.png" />
     <Content Include="Resources\loop.png" />
@@ -368,6 +422,10 @@
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{138aca83-4a29-4433-a1cc-8b3b71450a19}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{7757637b-ff5e-424d-abcb-4483f6d9c591}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{0d2b12ea-d81f-4d87-b772-ee06016d00c3}</Project>

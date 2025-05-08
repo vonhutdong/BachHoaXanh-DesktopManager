@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SieuThiBHX.NhutDong;
 using SieuThiBHX.Trong;
+using System.Data.SqlClient;
 
 namespace SieuThiBHX
 {
@@ -19,6 +20,25 @@ namespace SieuThiBHX
             InitializeComponent();
             this.IsMdiContainer = true;
         }
+
+        private void TestSQLConnection()
+        {
+            string connectionString = "Server=DESKTOP-UBB0F3U\\SQLEXPRESS;Database=SieuThiBHX;Integrated Security=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    MessageBox.Show("Kết nối SQL Server thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kết nối SQL Server thất bại:\n" + ex.Message, "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
         public void ActForm(string name)
         {
             foreach (Form item in MdiChildren)
@@ -44,15 +64,28 @@ namespace SieuThiBHX
         }
         private void frm_main_Load(object sender, EventArgs e)
         {
+            this.IsMdiContainer = true;
+            TestSQLConnection();
+        }
+        private void OpenHoaDonForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
 
+            frm_HoaDon hoaDonForm = new frm_HoaDon();
+            hoaDonForm.MdiParent = this;
+            hoaDonForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            hoaDonForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            hoaDonForm.Show();
         }
         private void hóaĐơnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_HoaDon"))
             {
-                frm_HoaDon f = new frm_HoaDon();
-                f.MdiParent = this;
-                f.Show();
+                OpenHoaDonForm();
             }
             else
             {
@@ -73,42 +106,77 @@ namespace SieuThiBHX
                 ActForm("frm_ChiTietHoaDon");
             }
         }
+        private void OpenKhoHangForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
 
+            frm_KhoHang khoHangForm = new frm_KhoHang();
+            khoHangForm.MdiParent = this;
+            khoHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            khoHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            khoHangForm.Show();
+        }
         private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_KhoHang"))
             {
-                frm_KhoHang f = new frm_KhoHang();
-                f.MdiParent = this;
-                f.Show();
+                OpenKhoHangForm();
             }
             else
             {
                 ActForm("frm_KhoHang");
             }
         }
+        private void OpenLoaiHangForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+
+            frm_LoaiHang loaiHangForm = new frm_LoaiHang();
+            loaiHangForm.MdiParent = this;
+            loaiHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            loaiHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            loaiHangForm.Show();
+        }
 
         private void loạiHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (!CheckFormExit("frm_LoaiHang"))
             {
-                frm_LoaiHang f = new frm_LoaiHang();
-                f.MdiParent = this;
-                f.Show();
+                OpenLoaiHangForm();
             }
             else
             {
                 ActForm("frm_LoaiHang");
             }
         }
+        private void OpenKhachHangForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
 
+            frm_KhachHang khachHangForm = new frm_KhachHang();
+            khachHangForm.MdiParent = this;
+            khachHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            khachHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            khachHangForm.Show();
+        }
         private void KhachHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_KhachHang"))
             {
-                frm_KhachHang f = new frm_KhachHang();
-                f.MdiParent = this;
-                f.Show();
+                OpenKhachHangForm();
             }
             else
             {

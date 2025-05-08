@@ -95,6 +95,7 @@
             this.dgvHD.RowHeadersWidth = 82;
             this.dgvHD.RowTemplate.Height = 50;
             this.dgvHD.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHD.Size = new System.Drawing.Size(1204, 533);
             this.dgvHD.Size = new System.Drawing.Size(1070, 418);
             this.dgvHD.TabIndex = 0;
             this.dgvHD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -122,10 +123,13 @@
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.Controls.Add(this.dgvHD);
-            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Peru;
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox2.Location = new System.Drawing.Point(3, 250);
+            this.guna2GroupBox2.Name = "guna2GroupBox2";
+            this.guna2GroupBox2.Size = new System.Drawing.Size(1204, 573);
             this.guna2GroupBox2.Location = new System.Drawing.Point(3, 200);
             this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
@@ -139,6 +143,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(85, 37);
             this.btnThoat.Size = new System.Drawing.Size(72, 31);
             this.btnThoat.Text = "Thoát";
             // 
@@ -147,6 +152,7 @@
             this.btnLamMoi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(122, 37);
             this.btnLamMoi.Size = new System.Drawing.Size(103, 31);
             this.btnLamMoi.Text = "Làm mới";
             // 
@@ -155,6 +161,7 @@
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(63, 37);
             this.btnSua.Size = new System.Drawing.Size(52, 31);
             this.btnSua.Text = "Sửa";
             // 
@@ -163,6 +170,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(66, 37);
             this.btnXoa.Size = new System.Drawing.Size(56, 31);
             this.btnXoa.Text = "Xóa";
             // 
@@ -171,6 +179,7 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(86, 37);
             this.btnThem.Size = new System.Drawing.Size(71, 31);
             this.btnThem.Text = "Thêm";
             // 
@@ -181,23 +190,28 @@
             this.tableContainer.Controls.Add(this.guna2GroupBox2, 0, 1);
             this.tableContainer.Controls.Add(this.guna2GroupBox1, 0, 0);
             this.tableContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableContainer.Location = new System.Drawing.Point(0, 42);
             this.tableContainer.Location = new System.Drawing.Point(0, 34);
             this.tableContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableContainer.Name = "tableContainer";
             this.tableContainer.RowCount = 2;
             this.tableContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableContainer.Size = new System.Drawing.Size(1210, 826);
             this.tableContainer.Size = new System.Drawing.Size(1076, 660);
             this.tableContainer.TabIndex = 4;
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.Controls.Add(this.tableFields);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Peru;
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox1.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1204, 241);
             this.guna2GroupBox1.Location = new System.Drawing.Point(3, 2);
             this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
@@ -225,6 +239,7 @@
             this.tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableFields.Size = new System.Drawing.Size(1204, 201);
             this.tableFields.Size = new System.Drawing.Size(1070, 154);
             this.tableFields.TabIndex = 0;
             // 
@@ -240,6 +255,9 @@
             this.cboMaNV.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaNV.ForeColor = System.Drawing.Color.Black;
             this.cboMaNV.ItemHeight = 30;
+            this.cboMaNV.Location = new System.Drawing.Point(605, 137);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(596, 36);
             this.cboMaNV.Location = new System.Drawing.Point(538, 104);
             this.cboMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMaNV.Name = "cboMaNV";
@@ -259,6 +277,9 @@
             this.cboMaKM.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaKM.ForeColor = System.Drawing.Color.Black;
             this.cboMaKM.ItemHeight = 30;
+            this.cboMaKM.Location = new System.Drawing.Point(605, 70);
+            this.cboMaKM.Name = "cboMaKM";
+            this.cboMaKM.Size = new System.Drawing.Size(596, 36);
             this.cboMaKM.Location = new System.Drawing.Point(538, 53);
             this.cboMaKM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMaKM.Name = "cboMaKM";
@@ -273,6 +294,9 @@
             this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 3);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(596, 61);
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(3, 2);
             this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
@@ -288,6 +312,9 @@
             this.guna2HtmlLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 70);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(596, 61);
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(3, 53);
             this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
@@ -303,6 +330,9 @@
             this.guna2HtmlLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 137);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(596, 61);
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(3, 104);
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
@@ -323,6 +353,9 @@
             this.cboMaKH.Font = new System.Drawing.Font("Times New Roman", 15.75F);
             this.cboMaKH.ForeColor = System.Drawing.Color.Black;
             this.cboMaKH.ItemHeight = 30;
+            this.cboMaKH.Location = new System.Drawing.Point(605, 3);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(596, 36);
             this.cboMaKH.Location = new System.Drawing.Point(538, 2);
             this.cboMaKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMaKH.Name = "cboMaKH";
@@ -342,12 +375,20 @@
             this.btnThoat});
             this.menuToolStrip.Location = new System.Drawing.Point(0, 0);
             this.menuToolStrip.Name = "menuToolStrip";
+            this.menuToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.menuToolStrip.Size = new System.Drawing.Size(1210, 42);
             this.menuToolStrip.Size = new System.Drawing.Size(1076, 34);
             this.menuToolStrip.TabIndex = 3;
             this.menuToolStrip.Text = "menuToolStrip";
             // 
             // frm_HoaDon
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(1210, 868);
+            this.Controls.Add(this.tableContainer);
+            this.Controls.Add(this.menuToolStrip);
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
