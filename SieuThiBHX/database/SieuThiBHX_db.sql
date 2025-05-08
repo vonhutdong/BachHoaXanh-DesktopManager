@@ -1,6 +1,8 @@
 create database SieuThiBHX
 go
 use SieuThiBHX
+
+
 go
 set dateformat dmy;
 go
@@ -477,9 +479,49 @@ select * from SanPham
 --GO
 --ALTER TABLE [SanPham] CHECK CONSTRAINT [FK_SanPham_LoaiHang]
 --GO
+go
+create proc [dbo].[abc]
+as
+GO
+/****** Object:  StoredProcedure [dbo].[sp_BaoCaoBangLuong]    Script Date: 11/22/2024 7:29:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 
-select * from LoaiHang
-select * from SanPham
+create PROCEDURE [dbo].[sp_BaoCaoBangLuong1]
+    @idBangLuong INT = 1
+AS
+BEGIN
+    -- Tắt thông báo lỗi tạm thời nếu có
+    SET NOCOUNT ON;
+
+    -- Lấy báo cáo bảng lương
+    SELECT 
+        nv.TenNhanVien,  -- Tên nhân viên từ bảng nhân viên
+        ctl.NgayLam AS NgayLam,  -- Ngày làm việc
+        ctl.SoGioCongThucTe AS GioCong,  -- Số giờ công thực tế
+        bl.TongGioCong,  -- Tổng giờ công từ bảng lương
+        bl.Luong,  -- Lương từ bảng lương
+		Month(NgayLam) as Thang,
+		DAY(NgayLam) as Ngay
+    FROM BangLuong bl
+    INNER JOIN ChiTietBangLuong ctl ON bl.id = ctl.idBangLuong
+    INNER JOIN NhanVien nv ON bl.idNhanVien = nv.id
+    WHERE 
+        ctl.idBangLuong = @idBangLuong; -- Không lấy dữ liệu chi tiết bị xóa
+END;
+GO
+
+go
+
+
+exec sp_BaoCaoBangLuong1 
+
+select * from NhanVien
+select * from BangLuong
+
+
 
 UPDATE SanPham
 SET idLoaiHang = 3  -- hoặc giá trị bất kỳ bạn muốn thử
