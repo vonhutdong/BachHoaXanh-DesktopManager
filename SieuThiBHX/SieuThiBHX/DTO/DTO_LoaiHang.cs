@@ -24,7 +24,7 @@ namespace DTO
             this.maLoaiHang = maLoaiHang;
             this.tenLoaiHang = tenLoaiHang;
         }
-
+        public DTO_LoaiHang() { }
         public int Id { get => id; set => id = value; }
         public string MaLoaiHang { get => maLoaiHang; set => maLoaiHang = value; }
         public string TenLoaiHang { get => tenLoaiHang; set => tenLoaiHang = value; }
