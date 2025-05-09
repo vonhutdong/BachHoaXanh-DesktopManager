@@ -353,127 +353,124 @@ INSERT INTO PhieuNhap (MaPhieuNhap, NgayNhap, ThanhTien, idNhanVien) VALUES
 ('PN005', '2024-03-20T14:10:00', 1100000, 5),
 ('PN006', '2024-03-25T16:50:00', 870000, 6),
 ('PN007', '2024-03-30T18:30:00', 1340000, 1);
-INSERT INTO KhoHang (soLuong, idSanPham) VALUES
-(100, 1),  -- SP001 - Sữa tươi Vinamilk
-(150, 2),  -- SP002 - Mì tôm Hảo Hảo
-(200, 3),  -- SP003 - Coca Cola
-(80, 4),   -- SP004 - Bánh mì sandwich
-(120, 5),  -- SP005 - Gạo ST25
-(90, 1),   -- SP001 - Sữa tươi Vinamilk
-(110, 2),  -- SP002 - Mì tôm Hảo Hảo
-(160, 3),  -- SP003 - Coca Cola
-(70, 4),   -- SP004 - Bánh mì sandwich
-(140, 5);  -- SP005 - Gạo ST25
+INSERT INTO KhoHang (soLuong, idSanPham, idChiTietPhieuNhap) VALUES
+(100, 1, 1),   -- SP001 - Sữa tươi Vinamilk, từ ChiTietPhieuNhap ID 1
+(150, 2, 2),   -- SP002 - Mì tôm Hảo Hảo, ID 2
+(200, 3, 3),   -- SP003 - Coca Cola, ID 3
+(80, 4, 4),    -- SP004 - Bánh mì sandwich, ID 4
+(120, 5, 5),   -- SP005 - Gạo ST25, ID 5
+(90, 1, 6),    -- SP001 - thêm lần nữa
+(110, 2, 7),   -- SP002
+(160, 3, 8),   -- SP003
+(70, 4, 9),    -- SP004
+(140, 5, 10);  -- SP005
 
 
+ALTER TABLE KhachHang
+ADD DiaChi NVARCHAR(200);
+
+INSERT INTO  KhachHang (maKhachHang, tenKhachHang, soDienThoai, diem, diaChi) VALUES
+('KH007', N'Nguyễn Thị Hương', '0971111111', 150, N'1 Lê Lợi, Q.1'),
+('KH008', N'Lê Văn Hùng', '0982222222', 120, N'2 Trần Hưng Đạo, Q.5'),
+('KH009', N'Phạm Thị Minh', '0993333333', 200, N'3 Nguyễn Trãi, Q.3'),
+('KH010', N'Trần Anh Tú', '0904444444', 80, N'4 Điện Biên Phủ, Q.Bình Thạnh'),
+('KH011', N'Hoàng Thị Loan', '0915555555', 300, N'5 Nguyễn Văn Cừ, Q.10'),
+('KH012', N'Võ Thành Tâm', '0926666666', 90, N'6 Cách Mạng Tháng 8, Q.3'),
+('KH013', N'Huỳnh Văn Dũng', '0937777777', 60, N'7 Phan Đăng Lưu, Q.Phú Nhuận'),
+('KH014', N'Ngô Thị Lệ', '0948888888', 220, N'8 Lạc Long Quân, Q.11'),
+('KH015', N'Đặng Minh Đức', '0959999999', 130, N'9 Trường Chinh, Q.Tân Bình'),
+('KH016', N'Bùi Thanh Hà', '0960000001', 170, N'10 Quang Trung, Q.Gò Vấp'),
+('KH017', N'Tống Quang Huy', '0970000002', 200, N'11 Thống Nhất, Q.12'),
+('KH018', N'Phan Thị Mai', '0980000003', 140, N'12 Hoàng Hoa Thám, Q.Tân Phú'),
+('KH019', N'Nguyễn Văn Long', '0990000004', 160, N'13 Hòa Bình, Q.11'),
+('KH020', N'Lâm Thị Yến', '0900000005', 190, N'14 Tô Hiến Thành, Q.10'),
+('KH021', N'Trương Văn Cường', '0910000006', 110, N'15 Lý Thường Kiệt, Q.10'),
+('KH022', N'Thái Minh Quân', '0920000007', 230, N'16 Âu Cơ, Q.Tân Phú'),
+('KH023', N'Trần Thị Dung', '0930000008', 175, N'17 Nguyễn Oanh, Q.Gò Vấp'),
+('KH024', N'Hồ Ngọc Hân', '0940000009', 80, N'18 Dương Bá Trạc, Q.8'),
+('KH025', N'Tăng Thanh Tùng', '0950000010', 260, N'19 Hậu Giang, Q.6'),
+('KH026', N'Đỗ Hoài Nam', '0960000011', 105, N'20 Nguyễn Thị Minh Khai, Q.1');
+
+INSERT INTO ChiTietPhieuNhap (SoLuong, DonGia, idPhieuNhap, idSanPham) VALUES
+(50, 25000, 1, 1),   -- SP001
+(30, 4000, 1, 2),    -- SP002
+(70, 10000, 2, 3),   -- SP003
+(20, 30000, 2, 4),   -- SP004
+(60, 150000, 3, 5),  -- SP005
+(40, 25000, 3, 1),
+(25, 4000, 4, 2),
+(55, 10000, 4, 3),
+(15, 30000, 5, 4),
+(35, 150000, 5, 5);
+
+INSERT INTO SanPham (maSanPham, tenSanPham, donViTinh, donGia, ngaySanXuat, hanSuDung, anhSanPham, idLoaiHang, idNhaCungCap) VALUES
+('SP006', N'Nước ép cam', N'Chai 500ml', 15000, '2024-05-01', '2025-05-01', NULL, 1, 1),
+('SP007', N'Bột giặt Omo', N'Túi 2kg', 60000, '2024-04-15', '2025-04-15', NULL, 2, 2),
+('SP008', N'Trái cây sấy', N'Gói 200g', 45000, '2024-03-20', '2025-03-20', NULL, 3, 3),
+('SP009', N'Bánh gạo', N'Hộp 500g', 40000, '2024-05-05', '2025-05-05', NULL, 1, 2),
+('SP010', N'Sữa chua uống', N'Lốc 4 chai', 30000, '2024-04-10', '2024-10-10', NULL, 4, 4),
+('SP011', N'Mì Ý Barilla', N'Hộp 500g', 50000, '2024-04-01', '2025-04-01', NULL, 5, 5),
+('SP012', N'Cá ngừ hộp', N'Hộp 150g', 35000, '2024-03-01', '2026-03-01', NULL, 3, 1),
+('SP013', N'Nước mắm Nam Ngư', N'Chai 750ml', 25000, '2024-01-01', '2025-01-01', NULL, 1, 2),
+('SP014', N'Dầu ăn Tường An', N'Chai 1L', 40000, '2024-02-15', '2025-02-15', NULL, 2, 3),
+('SP015', N'Bánh quy Cosy', N'Hộp 250g', 45000, '2024-03-25', '2025-03-25', NULL, 3, 4),
+('SP016', N'Nước suối Aquafina', N'Chai 1.5L', 10000, '2024-05-01', '2025-05-01', NULL, 1, 5),
+('SP017', N'Trà sữa TH True Milk', N'Hộp 300ml', 18000, '2024-04-18', '2025-04-18', NULL, 4, 1),
+('SP018', N'Cà phê G7', N'Hộp 20 gói', 38000, '2024-03-05', '2026-03-05', NULL, 5, 2),
+('SP019', N'Sốt cà Heinz', N'Chai 500g', 30000, '2024-02-10', '2025-02-10', NULL, 2, 3),
+('SP020', N'Bánh Pía Sóc Trăng', N'Gói 4 cái', 28000, '2024-04-01', '2024-10-01', NULL, 3, 4),
+('SP021', N'Gạo thơm Jasmine', N'Túi 5kg', 120000, '2024-01-10', '2025-01-10', NULL, 1, 5),
+('SP022', N'Rong biển ăn liền', N'Gói 10g', 10000, '2024-04-20', '2025-04-20', NULL, 3, 1),
+('SP023', N'Thịt hộp Vissan', N'Hộp 200g', 45000, '2024-02-28', '2026-02-28', NULL, 4, 2),
+('SP024', N'Cháo ăn liền', N'Gói 70g', 15000, '2024-05-02', '2025-05-02', NULL, 5, 3),
+('SP025', N'Thịt gà đông lạnh', N'Túi 1kg', 90000, '2024-03-12', '2025-03-12', NULL, 2, 4);
+
+INSERT INTO KhoHang (soLuong, idSanPham, idChiTietPhieuNhap) VALUES
+(100, 6, 1),   -- SP006 - Nước ép cam
+(80, 7, 2),    -- SP007 - Bột giặt Omo
+(120, 8, 3),   -- SP008 - Trái cây sấy
+(90, 9, 4),    -- SP009 - Bánh gạo
+(130, 10, 5),  -- SP010 - Sữa chua uống
+(75, 11, 6),   -- SP011 - Mì Ý Barilla
+(60, 12, 7),   -- SP012 - Cá ngừ hộp
+(140, 13, 8),  -- SP013 - Nước mắm Nam Ngư
+(110, 14, 9),  -- SP014 - Dầu ăn Tường An
+(95, 15, 10),  -- SP015 - Bánh quy Cosy
+(150, 16, 1),  -- SP016 - Nước suối Aquafina
+(85, 17, 2),   -- SP017 - Trà sữa TH True Milk
+(100, 18, 3),  -- SP018 - Cà phê G7
+(70, 19, 4),   -- SP019 - Sốt cà Heinz
+(90, 20, 5),   -- SP020 - Bánh Pía Sóc Trăng
+(110, 21, 6),  -- SP021 - Gạo thơm Jasmine
+(130, 22, 7),  -- SP022 - Rong biển ăn liền
+(60, 23, 8),   -- SP023 - Thịt hộp Vissan
+(75, 24, 9),   -- SP024 - Cháo ăn liền
+(100, 25, 10); -- SP025 - Thịt gà đông lạnh
 
 
-
--- --------ndong------------
--- --calam--
---ALTER TABLE [LichLam]  WITH CHECK ADD  CONSTRAINT [FK_LichLam_CaLam] FOREIGN KEY([idCaLam])
---REFERENCES [CaLam] ([id])
---GO
---ALTER TABLE [LichLam] CHECK CONSTRAINT [FK_LichLam_CaLam]
---GO
---ALTER TABLE [LichLam]  WITH CHECK ADD  CONSTRAINT [FK_LichLam_NhanVien] FOREIGN KEY([idNhanVien])
---REFERENCES [NhanVien] ([id])
---GO
---ALTER TABLE [LichLam] CHECK CONSTRAINT [FK_LichLam_NhanVien]
---GO
------nhanvien---
---ALTER TABLE [NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_LoaiNhanVien] FOREIGN KEY([idLoaiNhanVien])
---REFERENCES [LoaiNhanVien] ([id])
---GO
---ALTER TABLE [NhanVien] CHECK CONSTRAINT [FK_NhanVien_LoaiNhanVien]
---GO
---ALTER TABLE [NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_TaiKhoan] FOREIGN KEY([idTaiKhoan])
---REFERENCES [TaiKhoan] ([id])
---GO
---ALTER TABLE [NhanVien] CHECK CONSTRAINT [FK_NhanVien_TaiKhoan]
---GO
------bangluong----
---ALTER TABLE [BangLuong]  WITH CHECK ADD  CONSTRAINT [FK_BangLuong_NhanVien] FOREIGN KEY([idNhanVien])
---REFERENCES [NhanVien] ([id])
---GO
---ALTER TABLE [BangLuong] CHECK CONSTRAINT [FK_BangLuong_NhanVien]
---GO
---ALTER TABLE [ChiTietBangLuong]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietBangLuong_BangLuong] FOREIGN KEY([idBangLuong])
---REFERENCES [BangLuong] ([id])
---GO
---ALTER TABLE [ChiTietBangLuong] CHECK CONSTRAINT [FK_ChiTietBangLuong_BangLuong]
---GO
-
--------trong----
-------------------------FK ChiTietPhieuNhap-------------------------
---ALTER TABLE ChiTietPhieuNhap  WITH CHECK ADD  CONSTRAINT [FK_ChiTietPhieuNhap_PhieuNhap] FOREIGN KEY([idPhieuNhap])
---REFERENCES PhieuNhap ([id])
---GO
---ALTER TABLE ChiTietPhieuNhap CHECK CONSTRAINT [FK_ChiTietPhieuNhap_PhieuNhap]
---GO
---ALTER TABLE ChiTietPhieuNhap  WITH CHECK ADD  CONSTRAINT [FK_ChiTietPhieuNhap_SanPham] FOREIGN KEY([idSanPham])
---REFERENCES SanPham ([id])
---GO
---ALTER TABLE ChiTietPhieuNhap CHECK CONSTRAINT [FK_ChiTietPhieuNhap_SanPham]
---GO
-
-------------------------FK PhieuNHap-------------------------
---ALTER TABLE PhieuNhap  WITH CHECK ADD  CONSTRAINT [FK_PhieuNhap_NhanVien] FOREIGN KEY([idNhanVien])
---REFERENCES NhanVien ([id])
---GO
---ALTER TABLE PhieuNhap CHECK CONSTRAINT [FK_PhieuNhap_NhanVien]
---GO
+-----------------------------------------------------------------------------------------
 
 
+ALTER TABLE KhoHang
+ADD idChiTietPhieuNhap INT;
 
-----------------------------SET FK------------------------
---alter table HoaDon with check add constraint [FK_HoaDon_KhachHang] foreign key ([idKhachHang])
---references [KhachHang]([id])
---go
---alter table HoaDon check constraint [FK_HoaDon_KhachHang]
---go
+ALTER TABLE KhoHang
+ADD CONSTRAINT FK_KhoHang_ChiTietPhieuNhap
+FOREIGN KEY (idChiTietPhieuNhap) REFERENCES ChiTietPhieuNhap(id);
 
---ALTER TABLE HoaDon  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_KhuyenMai] FOREIGN KEY([idKhuyenMai])
---REFERENCES [KhuyenMai] ([id])
---GO
---ALTER TABLE HoaDon CHECK CONSTRAINT [FK_HoaDon_KhuyenMai]
---GO
+CREATE PROCEDURE sp_ThongKeSanPhamTonKho
+AS
+BEGIN
+    SELECT 
+        sp.maSanPham,
+        sp.tenSanPham,
+        kh.soLuong,
+        pn.NgayNhap
+    FROM KhoHang kh
+    INNER JOIN SanPham sp ON kh.idSanPham = sp.id
+    INNER JOIN ChiTietPhieuNhap ct ON kh.idChiTietPhieuNhap = ct.id
+    INNER JOIN PhieuNhap pn ON ct.idPhieuNhap = pn.id
+    WHERE kh.soLuong > 0
+    ORDER BY pn.NgayNhap DESC;
+END;
 
---ALTER TABLE HoaDon  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_NhanVien] FOREIGN KEY([idNhanVien])
---REFERENCES [NhanVien] ([id])
---GO
---ALTER TABLE [HoaDon] CHECK CONSTRAINT [FK_HoaDon_NhanVien]
---GO
-
-
-
---ALTER TABLE ChiTietHoaDon  WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_HoaDon] FOREIGN KEY([idHoaDon])
---REFERENCES [HoaDon]([id])
---GO
---ALTER TABLE ChiTietHoaDon CHECK CONSTRAINT [FK_ChiTietHoaDon_HoaDon]
---GO
---ALTER TABLE ChiTietHoaDon WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_SanPham] FOREIGN KEY([idSanPham])
---REFERENCES [SanPham] ([id])
---GO
---ALTER TABLE [ChiTietHoaDon] CHECK CONSTRAINT [FK_ChiTietHoaDon_SanPham]
---GO
-
---ALTER TABLE KhoHang  WITH CHECK ADD  CONSTRAINT [FK_KhoHang_SanPham] FOREIGN KEY([idSanPham])
---REFERENCES [SanPham] ([id])
---GO
---ALTER TABLE [KhoHang] CHECK CONSTRAINT [FK_KhoHang_SanPham]
---GO
-
---ALTER TABLE [SanPham]  WITH CHECK ADD  CONSTRAINT [FK_SanPham_NhaCungCap] FOREIGN KEY([idNhaCungCap])
---REFERENCES [NhaCungCap] ([id])
---GO
---ALTER TABLE [SanPham] CHECK CONSTRAINT [FK_SanPham_NhaCungCap]
---GO
---ALTER TABLE [SanPham]  WITH CHECK ADD  CONSTRAINT [FK_SanPham_LoaiHang] FOREIGN KEY([idLoaiHang])
---REFERENCES [LoaiHang] ([id])
---GO
---ALTER TABLE [SanPham] CHECK CONSTRAINT [FK_SanPham_LoaiHang]
---GO
-
-
-select * from SanPham

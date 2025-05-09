@@ -18,7 +18,7 @@ namespace SieuThiBHX
         public frm_main()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
+
         }
 
         private void TestSQLConnection()

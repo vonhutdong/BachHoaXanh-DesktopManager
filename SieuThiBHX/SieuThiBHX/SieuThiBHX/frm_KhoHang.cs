@@ -18,6 +18,7 @@ namespace SieuThiBHX
         public frm_KhoHang()
         {
             InitializeComponent();
+
         }
         BUS_SanPham bus_sp = new BUS_SanPham();
         BUS_KhoHang bus_kh = new BUS_KhoHang();
@@ -30,12 +31,12 @@ namespace SieuThiBHX
         }
         private void LoadCBTenSanPham()
         {
-
-            //đỗ dữ liệu cho cb san pham
+            // đổ dữ liệu cho combobox sản phẩm
             cbTenSP.DataSource = bus_sp.LoadDSSanPham();
-            cbTenSP.ValueMember = "id";
-            cbTenSP.DisplayMember = "TenSanPham";
+            cbTenSP.ValueMember = "id";               
+            cbTenSP.DisplayMember = "TenSanPham";     
         }
+
         private void LoadKhoHang()
         {
             dgvKhoHang.DataSource = bus_kh.LoadKhoHang();
@@ -47,6 +48,19 @@ namespace SieuThiBHX
             // Ẩn cột ID và idSanPham
             dgvKhoHang.Columns["id"].Visible = false;
             dgvKhoHang.Columns["idSanPham"].Visible = false;
+
+            dgvKhoHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKhoHang.ColumnHeadersHeight = 30; // hoặc cao hơn
+
+            // Thiết lập lại style để dữ liệu hiện rõ
+            dgvKhoHang.DefaultCellStyle.BackColor = Color.White;
+            dgvKhoHang.DefaultCellStyle.ForeColor = Color.Black;
+            dgvKhoHang.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgvKhoHang.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvKhoHang.EnableHeadersVisualStyles = false;
+            dgvKhoHang.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
+            dgvKhoHang.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void frm_KhoHang_Click(object sender, EventArgs e)
@@ -61,6 +75,7 @@ namespace SieuThiBHX
 
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
+
         }
 
         private void dgvKhoHang_Click(object sender, EventArgs e)
@@ -119,11 +134,23 @@ namespace SieuThiBHX
                 this.Close();
             }
         }
+        private void OpenRpKhoHangForm()
+        {
+            frm_rpKhoHang frm = new frm_rpKhoHang();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            this.Controls.Clear();            // Xóa control cũ nếu muốn
+            this.Controls.Add(frm);           // Nhúng form vào panel chính hoặc form
+            frm.BringToFront();
+            frm.Show();
+        }
+
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frm_rpKhoHang frm = new frm_rpKhoHang();
-            frm.ShowDialog();
+            OpenRpKhoHangForm();
         }
     }
 }

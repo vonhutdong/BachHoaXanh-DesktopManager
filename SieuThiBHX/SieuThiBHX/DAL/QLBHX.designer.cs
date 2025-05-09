@@ -1532,6 +1532,8 @@ namespace DAL
 		
 		private System.Nullable<int> _idSanPham;
 		
+		private EntitySet<KhoHang> _KhoHangs;
+		
 		private EntityRef<PhieuNhap> _PhieuNhap;
 		
 		private EntityRef<SanPham> _SanPham;
@@ -1554,6 +1556,7 @@ namespace DAL
 		
 		public ChiTietPhieuNhap()
 		{
+			this._KhoHangs = new EntitySet<KhoHang>(new Action<KhoHang>(this.attach_KhoHangs), new Action<KhoHang>(this.detach_KhoHangs));
 			this._PhieuNhap = default(EntityRef<PhieuNhap>);
 			this._SanPham = default(EntityRef<SanPham>);
 			OnCreated();
@@ -1667,6 +1670,19 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuNhap_KhoHang", Storage="_KhoHangs", ThisKey="id", OtherKey="idChiTietPhieuNhap")]
+		public EntitySet<KhoHang> KhoHangs
+		{
+			get
+			{
+				return this._KhoHangs;
+			}
+			set
+			{
+				this._KhoHangs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PhieuNhap_ChiTietPhieuNhap", Storage="_PhieuNhap", ThisKey="idPhieuNhap", OtherKey="id", IsForeignKey=true)]
 		public PhieuNhap PhieuNhap
 		{
@@ -1753,6 +1769,18 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_KhoHangs(KhoHang entity)
+		{
+			this.SendPropertyChanging();
+			entity.ChiTietPhieuNhap = this;
+		}
+		
+		private void detach_KhoHangs(KhoHang entity)
+		{
+			this.SendPropertyChanging();
+			entity.ChiTietPhieuNhap = null;
 		}
 	}
 	
@@ -2177,6 +2205,8 @@ namespace DAL
 		
 		private System.Nullable<double> _diem;
 		
+		private string _DiaChi;
+		
 		private EntitySet<HoaDon> _HoaDons;
 		
     #region Extensibility Method Definitions
@@ -2193,6 +2223,8 @@ namespace DAL
     partial void OnsoDienThoaiChanged();
     partial void OndiemChanging(System.Nullable<double> value);
     partial void OndiemChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
     #endregion
 		
 		public KhachHang()
@@ -2301,6 +2333,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(200)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDon", Storage="_HoaDons", ThisKey="id", OtherKey="idKhachHang")]
 		public EntitySet<HoaDon> HoaDons
 		{
@@ -2359,6 +2411,10 @@ namespace DAL
 		
 		private System.Nullable<int> _idSanPham;
 		
+		private System.Nullable<int> _idChiTietPhieuNhap;
+		
+		private EntityRef<ChiTietPhieuNhap> _ChiTietPhieuNhap;
+		
 		private EntityRef<SanPham> _SanPham;
 		
     #region Extensibility Method Definitions
@@ -2371,10 +2427,13 @@ namespace DAL
     partial void OnsoLuongChanged();
     partial void OnidSanPhamChanging(System.Nullable<int> value);
     partial void OnidSanPhamChanged();
+    partial void OnidChiTietPhieuNhapChanging(System.Nullable<int> value);
+    partial void OnidChiTietPhieuNhapChanged();
     #endregion
 		
 		public KhoHang()
 		{
+			this._ChiTietPhieuNhap = default(EntityRef<ChiTietPhieuNhap>);
 			this._SanPham = default(EntityRef<SanPham>);
 			OnCreated();
 		}
@@ -2439,6 +2498,64 @@ namespace DAL
 					this._idSanPham = value;
 					this.SendPropertyChanged("idSanPham");
 					this.OnidSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idChiTietPhieuNhap", DbType="Int")]
+		public System.Nullable<int> idChiTietPhieuNhap
+		{
+			get
+			{
+				return this._idChiTietPhieuNhap;
+			}
+			set
+			{
+				if ((this._idChiTietPhieuNhap != value))
+				{
+					if (this._ChiTietPhieuNhap.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidChiTietPhieuNhapChanging(value);
+					this.SendPropertyChanging();
+					this._idChiTietPhieuNhap = value;
+					this.SendPropertyChanged("idChiTietPhieuNhap");
+					this.OnidChiTietPhieuNhapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChiTietPhieuNhap_KhoHang", Storage="_ChiTietPhieuNhap", ThisKey="idChiTietPhieuNhap", OtherKey="id", IsForeignKey=true)]
+		public ChiTietPhieuNhap ChiTietPhieuNhap
+		{
+			get
+			{
+				return this._ChiTietPhieuNhap.Entity;
+			}
+			set
+			{
+				ChiTietPhieuNhap previousValue = this._ChiTietPhieuNhap.Entity;
+				if (((previousValue != value) 
+							|| (this._ChiTietPhieuNhap.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ChiTietPhieuNhap.Entity = null;
+						previousValue.KhoHangs.Remove(this);
+					}
+					this._ChiTietPhieuNhap.Entity = value;
+					if ((value != null))
+					{
+						value.KhoHangs.Add(this);
+						this._idChiTietPhieuNhap = value.id;
+					}
+					else
+					{
+						this._idChiTietPhieuNhap = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ChiTietPhieuNhap");
 				}
 			}
 		}
@@ -4037,7 +4154,7 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _hanSuDung;
 		
-		private string _anhSanPham;
+		private System.Data.Linq.Binary _anhSanPham;
 		
 		private System.Nullable<int> _idLoaiHang;
 		
@@ -4071,7 +4188,7 @@ namespace DAL
     partial void OnngaySanXuatChanged();
     partial void OnhanSuDungChanging(System.Nullable<System.DateTime> value);
     partial void OnhanSuDungChanged();
-    partial void OnanhSanPhamChanging(string value);
+    partial void OnanhSanPhamChanging(System.Data.Linq.Binary value);
     partial void OnanhSanPhamChanged();
     partial void OnidLoaiHangChanging(System.Nullable<int> value);
     partial void OnidLoaiHangChanged();
@@ -4229,8 +4346,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anhSanPham", DbType="NVarChar(MAX)")]
-		public string anhSanPham
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anhSanPham", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary anhSanPham
 		{
 			get
 			{

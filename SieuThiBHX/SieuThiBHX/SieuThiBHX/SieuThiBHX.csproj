@@ -181,6 +181,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rpKhoHang.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Trong\frmChiNhanh.cs">
       <SubType>Form</SubType>
@@ -307,6 +308,7 @@
     <EmbeddedResource Include="rpKhoHang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpKhoHang.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Trong\frmChiNhanh.resx">
       <DependentUpon>frmChiNhanh.cs</DependentUpon>

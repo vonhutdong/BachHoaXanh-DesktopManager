@@ -19,7 +19,8 @@ namespace DTO
         private int idNhaCungCap;
         private byte[] anhSanPham;
 
-        public DTO_SanPham(string maSanPham, string tenSanPham, string donViTinh, float donGia, DateTime ngaySanXuat, DateTime hanSuDung, int idLoaiHang, int idNhaCungCap, byte[] anhSanPham)
+        public DTO_SanPham(string maSanPham, string tenSanPham, string donViTinh, float donGia, 
+            DateTime ngaySanXuat, DateTime hanSuDung, int idLoaiHang, int idNhaCungCap, byte[] anhSanPham)
         {
             this.maSanPham = maSanPham;
             this.tenSanPham = tenSanPham;
@@ -31,7 +32,8 @@ namespace DTO
             this.idNhaCungCap = idNhaCungCap;
             this.anhSanPham = anhSanPham;
         }
-        public DTO_SanPham(int id, string maSanPham, string tenSanPham, string donViTinh, float donGia, DateTime ngaySanXuat, DateTime hanSuDung, int idLoaiHang, int idNhaCungCap, byte[] anhSanPham)
+        public DTO_SanPham(int id, string maSanPham, string tenSanPham, string donViTinh, 
+            float donGia, DateTime ngaySanXuat, DateTime hanSuDung, int idLoaiHang, int idNhaCungCap, byte[] anhSanPham)
         {
             this.id = id;
             this.maSanPham = maSanPham;

@@ -27,30 +27,6 @@ namespace DAL
                          };
             return result;
         }
-        public DataTable GetKhoHangDataTable()
-        {
-            var query = from kh in da.Db.KhoHangs
-                        join sp in da.Db.SanPhams on kh.idSanPham equals sp.id
-                        group kh by new { kh.idSanPham, sp.tenSanPham } into g
-                        select new
-                        {
-                            IdSanPham = g.Key.idSanPham,
-                            TenSanPham = g.Key.tenSanPham,
-                            SoLuong = g.Sum(x => x.soLuong)
-                        };
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("IdSanPham", typeof(int));
-            dt.Columns.Add("TenSanPham", typeof(string));
-            dt.Columns.Add("SoLuong", typeof(int));
-
-            foreach (var item in query)
-            {
-                dt.Rows.Add(item.IdSanPham, item.TenSanPham, item.SoLuong);
-            }
-
-            return dt;
-        }
 
 
         //sửa kho
@@ -79,5 +55,35 @@ namespace DAL
                 throw new Exception("Lỗi khi sửa kho hàng: " + ex.Message);
             }
         }
+        public DataTable LoadReportData()
+        {
+            var query = from kh in da.Db.KhoHangs
+                        join sp in da.Db.SanPhams on kh.idSanPham equals sp.id
+                        join ct in da.Db.ChiTietPhieuNhaps on kh.idChiTietPhieuNhap equals ct.id
+                        join pn in da.Db.PhieuNhaps on ct.idPhieuNhap equals pn.id
+                        where kh.soLuong > 0
+                        select new
+                        {
+                            MaSanPham = sp.maSanPham,
+                            TenSanPham = sp.tenSanPham,
+                            SoLuong = kh.soLuong,
+                            NgayNhap = pn.NgayNhap.Value.Date
+                        };
+
+            // Tạo DataTable thủ công
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MaSanPham", typeof(string));
+            dt.Columns.Add("TenSanPham", typeof(string));
+            dt.Columns.Add("SoLuong", typeof(int));
+            dt.Columns.Add("NgayNhap", typeof(DateTime));
+
+            foreach (var item in query.ToList())
+            {
+                dt.Rows.Add(item.MaSanPham, item.TenSanPham, item.SoLuong, item.NgayNhap);
+            }
+
+            return dt;
+        }
+
     }
 }
