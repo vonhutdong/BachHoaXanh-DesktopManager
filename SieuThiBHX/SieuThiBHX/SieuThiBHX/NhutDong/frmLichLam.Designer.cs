@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLichLam));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,6 +54,7 @@
             this.dtpNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.cbMaCaLam = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -74,7 +76,7 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1200, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1350, 34);
             this.toolStrip1.TabIndex = 21;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -83,7 +85,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(70, 28);
+            this.btnThem.Size = new System.Drawing.Size(80, 29);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -92,7 +94,7 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(59, 28);
+            this.btnXoa.Size = new System.Drawing.Size(67, 29);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -101,7 +103,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(58, 28);
+            this.btnSua.Size = new System.Drawing.Size(66, 29);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -110,7 +112,7 @@
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(91, 28);
+            this.btnLamMoi.Size = new System.Drawing.Size(105, 29);
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
@@ -119,7 +121,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(71, 28);
+            this.btnThoat.Size = new System.Drawing.Size(81, 29);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -127,16 +129,17 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.Controls.Add(this.guna2GroupBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 34);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 596);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1350, 745);
             this.tableLayoutPanel1.TabIndex = 22;
             // 
             // guna2GroupBox1
@@ -148,10 +151,10 @@
             this.guna2GroupBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(5, 302);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(6, 377);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1190, 290);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1338, 363);
             this.guna2GroupBox1.TabIndex = 15;
             this.guna2GroupBox1.Text = "Danh sách lịch làm";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -186,10 +189,11 @@
             this.dgvLichLam.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvLichLam.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLichLam.Location = new System.Drawing.Point(0, 40);
+            this.dgvLichLam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvLichLam.Name = "dgvLichLam";
             this.dgvLichLam.RowHeadersVisible = false;
             this.dgvLichLam.RowHeadersWidth = 51;
-            this.dgvLichLam.Size = new System.Drawing.Size(1190, 250);
+            this.dgvLichLam.Size = new System.Drawing.Size(1338, 323);
             this.dgvLichLam.TabIndex = 0;
             this.dgvLichLam.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLichLam.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -222,12 +226,13 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2GroupBox2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2GroupBox3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1194, 292);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1344, 364);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
             // guna2GroupBox2
@@ -241,10 +246,10 @@
             this.guna2GroupBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(602, 4);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(678, 5);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(587, 284);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(660, 354);
             this.guna2GroupBox2.TabIndex = 16;
             this.guna2GroupBox2.Text = "Tìm kiếm lịch làm";
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -255,11 +260,12 @@
             this.dtpNgayLam.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.dtpNgayLam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgayLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayLam.Location = new System.Drawing.Point(168, 167);
+            this.dtpNgayLam.Location = new System.Drawing.Point(189, 209);
+            this.dtpNgayLam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpNgayLam.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayLam.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayLam.Name = "dtpNgayLam";
-            this.dtpNgayLam.Size = new System.Drawing.Size(299, 36);
+            this.dtpNgayLam.Size = new System.Drawing.Size(336, 45);
             this.dtpNgayLam.TabIndex = 14;
             this.dtpNgayLam.Value = new System.DateTime(2024, 10, 23, 0, 0, 0, 0);
             this.dtpNgayLam.ValueChanged += new System.EventHandler(this.dtpNgayLam_ValueChanged);
@@ -278,12 +284,12 @@
             this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(168, 167);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiem.Location = new System.Drawing.Point(189, 209);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PlaceholderText = "";
             this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(299, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(336, 35);
             this.txtTimKiem.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTimKiem.TabIndex = 17;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
@@ -293,9 +299,10 @@
             this.cbTimKiem.BackColor = System.Drawing.Color.White;
             this.cbTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTimKiem.FormattingEnabled = true;
-            this.cbTimKiem.Location = new System.Drawing.Point(168, 106);
+            this.cbTimKiem.Location = new System.Drawing.Point(189, 132);
+            this.cbTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTimKiem.Name = "cbTimKiem";
-            this.cbTimKiem.Size = new System.Drawing.Size(299, 40);
+            this.cbTimKiem.Size = new System.Drawing.Size(336, 48);
             this.cbTimKiem.TabIndex = 2;
             this.cbTimKiem.SelectedIndexChanged += new System.EventHandler(this.cbTimKiem_SelectedIndexChanged);
             // 
@@ -313,10 +320,10 @@
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(5, 4);
-            this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(6, 5);
+            this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(587, 284);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(660, 354);
             this.guna2GroupBox3.TabIndex = 15;
             this.guna2GroupBox3.Text = "Quản lí lịch làm";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -326,9 +333,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(85, 201);
+            this.label3.Location = new System.Drawing.Point(96, 251);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 24);
+            this.label3.Size = new System.Drawing.Size(137, 29);
             this.label3.TabIndex = 18;
             this.label3.Text = "Tên ca làm";
             // 
@@ -337,9 +344,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(94, 143);
+            this.label2.Location = new System.Drawing.Point(106, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 24);
+            this.label2.Size = new System.Drawing.Size(128, 29);
             this.label2.TabIndex = 17;
             this.label2.Text = "Nhân viên";
             // 
@@ -348,9 +355,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(140, 85);
+            this.label1.Location = new System.Drawing.Point(158, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
+            this.label1.Size = new System.Drawing.Size(71, 29);
             this.label1.TabIndex = 16;
             this.label1.Text = "Ngày";
             // 
@@ -360,11 +367,12 @@
             this.dtpNgay.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgay.Location = new System.Drawing.Point(228, 70);
+            this.dtpNgay.Location = new System.Drawing.Point(256, 88);
+            this.dtpNgay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(270, 36);
+            this.dtpNgay.Size = new System.Drawing.Size(304, 45);
             this.dtpNgay.TabIndex = 3;
             this.dtpNgay.Value = new System.DateTime(2024, 10, 23, 0, 0, 0, 0);
             // 
@@ -374,9 +382,10 @@
             this.cbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNhanVien.ForeColor = System.Drawing.Color.White;
             this.cbNhanVien.FormattingEnabled = true;
-            this.cbNhanVien.Location = new System.Drawing.Point(230, 131);
+            this.cbNhanVien.Location = new System.Drawing.Point(259, 164);
+            this.cbNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbNhanVien.Name = "cbNhanVien";
-            this.cbNhanVien.Size = new System.Drawing.Size(266, 40);
+            this.cbNhanVien.Size = new System.Drawing.Size(299, 48);
             this.cbNhanVien.TabIndex = 2;
             // 
             // cbMaCaLam
@@ -385,18 +394,26 @@
             this.cbMaCaLam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaCaLam.ForeColor = System.Drawing.Color.White;
             this.cbMaCaLam.FormattingEnabled = true;
-            this.cbMaCaLam.Location = new System.Drawing.Point(230, 191);
+            this.cbMaCaLam.Location = new System.Drawing.Point(259, 239);
+            this.cbMaCaLam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMaCaLam.Name = "cbMaCaLam";
-            this.cbMaCaLam.Size = new System.Drawing.Size(266, 40);
+            this.cbMaCaLam.Size = new System.Drawing.Size(299, 48);
             this.cbMaCaLam.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(100, 25);
             // 
             // frmLichLam
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.ClientSize = new System.Drawing.Size(1350, 779);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLichLam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLichLam";
@@ -439,5 +456,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

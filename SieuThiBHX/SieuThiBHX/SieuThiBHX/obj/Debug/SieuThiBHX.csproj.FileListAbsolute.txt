@@ -53,3 +53,5 @@ C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\Sieu
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.pdb
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.NhutDong.frmSanPham.resources
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.frm_rpKhoHang.resources
+C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\bin\Debug\rpKhoHang.rpt
+C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\bin\Debug\rpKhoHang.cs

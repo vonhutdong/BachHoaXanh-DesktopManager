@@ -69,6 +69,7 @@
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="idPhieuNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="idSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ChiTietPhieuNhap_KhoHang" Member="KhoHangs" ThisKey="id" OtherKey="idChiTietPhieuNhap" Type="KhoHang" />
       <Association Name="PhieuNhap_ChiTietPhieuNhap" Member="PhieuNhap" ThisKey="idPhieuNhap" OtherKey="id" Type="PhieuNhap" IsForeignKey="true" />
       <Association Name="SanPham_ChiTietPhieuNhap" Member="SanPham" ThisKey="idSanPham" OtherKey="id" Type="SanPham" IsForeignKey="true" />
     </Type>
@@ -97,6 +98,7 @@
       <Column Name="tenKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="soDienThoai" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="diem" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="id" OtherKey="idKhachHang" Type="HoaDon" />
     </Type>
   </Table>
@@ -105,6 +107,8 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="idSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idChiTietPhieuNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ChiTietPhieuNhap_KhoHang" Member="ChiTietPhieuNhap" ThisKey="idChiTietPhieuNhap" OtherKey="id" Type="ChiTietPhieuNhap" IsForeignKey="true" />
       <Association Name="SanPham_KhoHang" Member="SanPham" ThisKey="idSanPham" OtherKey="id" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
@@ -192,7 +196,7 @@
       <Column Name="donGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ngaySanXuat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="hanSuDung" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="anhSanPham" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="anhSanPham" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="idLoaiHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="idNhaCungCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="SanPham_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="id" OtherKey="idSanPham" Type="ChiTietHoaDon" />

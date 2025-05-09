@@ -34,6 +34,7 @@
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvKhoHang = new System.Windows.Forms.DataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuToolStrip.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -108,16 +108,26 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(41, 37);
+            this.toolStripButton1.Text = "In";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(257, 78);
+            this.label1.Location = new System.Drawing.Point(213, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 26);
+            this.label1.Size = new System.Drawing.Size(209, 36);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tên sản phẩm";
             // 
@@ -128,11 +138,11 @@
             this.guna2GroupBox1.Controls.Add(this.txtSoLuong);
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 42);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(1146, 243);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1146, 296);
             this.guna2GroupBox1.TabIndex = 7;
             this.guna2GroupBox1.Text = "Thông tin";
             // 
@@ -141,11 +151,11 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(257, 137);
+            this.label2.Location = new System.Drawing.Point(248, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 26);
+            this.label2.Size = new System.Drawing.Size(137, 36);
             this.label2.TabIndex = 10;
             this.label2.Text = "Số lượng";
             // 
@@ -157,12 +167,12 @@
             this.cbTenSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTenSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbTenSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTenSP.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbTenSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTenSP.Font = new System.Drawing.Font("Times New Roman", 16F);
+            this.cbTenSP.ForeColor = System.Drawing.Color.Black;
             this.cbTenSP.ItemHeight = 30;
-            this.cbTenSP.Location = new System.Drawing.Point(434, 68);
+            this.cbTenSP.Location = new System.Drawing.Point(428, 101);
             this.cbTenSP.Name = "cbTenSP";
-            this.cbTenSP.Size = new System.Drawing.Size(255, 36);
+            this.cbTenSP.Size = new System.Drawing.Size(393, 36);
             this.cbTenSP.TabIndex = 9;
             // 
             // txtSoLuong
@@ -175,14 +185,15 @@
             this.txtSoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSoLuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSoLuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSoLuong.Font = new System.Drawing.Font("Times New Roman", 16F);
+            this.txtSoLuong.ForeColor = System.Drawing.Color.Black;
             this.txtSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Location = new System.Drawing.Point(434, 126);
+            this.txtSoLuong.Location = new System.Drawing.Point(428, 182);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.PlaceholderText = "";
             this.txtSoLuong.SelectedText = "";
-            this.txtSoLuong.Size = new System.Drawing.Size(255, 48);
+            this.txtSoLuong.Size = new System.Drawing.Size(393, 48);
             this.txtSoLuong.TabIndex = 7;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
@@ -190,11 +201,11 @@
             // 
             this.guna2GroupBox2.Controls.Add(this.dgvKhoHang);
             this.guna2GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 285);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 338);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(1146, 415);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(1146, 362);
             this.guna2GroupBox2.TabIndex = 8;
             this.guna2GroupBox2.Text = "Danh sách kho hàng";
             // 
@@ -220,19 +231,9 @@
             this.dgvKhoHang.RowHeadersWidth = 62;
             this.dgvKhoHang.RowTemplate.Height = 28;
             this.dgvKhoHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhoHang.Size = new System.Drawing.Size(1146, 375);
+            this.dgvKhoHang.Size = new System.Drawing.Size(1146, 322);
             this.dgvKhoHang.TabIndex = 0;
             this.dgvKhoHang.Click += new System.EventHandler(this.dgvKhoHang_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(41, 37);
-            this.toolStripButton1.Text = "In";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frm_KhoHang
             // 

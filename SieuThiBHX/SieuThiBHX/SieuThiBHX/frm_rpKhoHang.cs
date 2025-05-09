@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 using DAL;
+using CrystalDecisions.CrystalReports.Engine;
+using System.IO;
+
 
 namespace SieuThiBHX
 {
@@ -17,15 +21,22 @@ namespace SieuThiBHX
         {
             InitializeComponent();
         }
-
+        BUS_KhoHang bus_kh = new BUS_KhoHang();
+        
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            DAL_KhoHang dal = new DAL_KhoHang();
-            DataTable dt = dal.GetKhoHangDataTable();
+            // B1: Load dữ liệu mới từ DB
+            // Load data mới nhất
+            DataTable dt = bus_kh.LoadReportData();
 
-            rpKhoHang rpt = new rpKhoHang(); // tên .rpt file
+            // Tạo mới report từ class (được build sẵn)
+            rpKhoHang rpt = new rpKhoHang();
             rpt.SetDataSource(dt);
+
+            // Gán vào viewer
             crystalReportViewer1.ReportSource = rpt;
+            crystalReportViewer1.RefreshReport();
+
         }
     }
 }

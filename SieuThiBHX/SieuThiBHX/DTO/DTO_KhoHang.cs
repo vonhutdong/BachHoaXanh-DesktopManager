@@ -11,6 +11,7 @@ namespace DTO
         private int id;
         private int idSanPham;
         private int soLuong;
+        private int idChiTietPhieuNhap;
 
         public DTO_KhoHang(int id, int idSanPham, int soLuong)
         {
@@ -22,5 +23,6 @@ namespace DTO
         public int Id { get => id; set => id = value; }
         public int IdSanPham { get => idSanPham; set => idSanPham = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
+        public int IdChiTietPhieuNhap { get => idChiTietPhieuNhap; set => idChiTietPhieuNhap = value; }
     }
 }
