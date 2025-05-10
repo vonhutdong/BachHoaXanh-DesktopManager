@@ -17,16 +17,28 @@ namespace DTO
             this.maLoaiHang = maLoaiHang;
             this.tenLoaiHang = tenLoaiHang;
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> branch-2
         public DTO_LoaiHang(int id, string maLoaiHang, string tenLoaiHang)
         {
             this.id = id;
             this.maLoaiHang = maLoaiHang;
             this.tenLoaiHang = tenLoaiHang;
         }
+<<<<<<< HEAD
         public DTO_LoaiHang() { }
+=======
+
+>>>>>>> branch-2
         public int Id { get => id; set => id = value; }
         public string MaLoaiHang { get => maLoaiHang; set => maLoaiHang = value; }
         public string TenLoaiHang { get => tenLoaiHang; set => tenLoaiHang = value; }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch-2

@@ -48,10 +48,11 @@ namespace DAL
         {
             try
             {
+                var query2 = da.Db.ChiTietBangLuongs.OrderByDescending(x => x.id).FirstOrDefault();
                 ChiTietBangLuong chi = new ChiTietBangLuong
                 {
+                    MaChiTietBangLuong = query2 != null && query2.id < 10 ? "CTBL00" + (query2.id + 1) : "CTBL0" + (query2?.id + 1),
                     idBangLuong = ctbl.IdBangLuong,
-                    //idNhanVien = ctbl.IdNhanVien,
                     idLichLam = ctbl.IdLichLam,
                     SoGioCongThucTe = ctbl.SoGioCongThucTe,
                     NgayLam = ctbl.NgayLam

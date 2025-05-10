@@ -31,4 +31,8 @@ namespace BUS
             dal_lh.SuaLoaiHang(dto_lh);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch-2

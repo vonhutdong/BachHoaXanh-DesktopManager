@@ -9,12 +9,13 @@ namespace DTO
     public class DTO_ChiTietBangLuong
     {
         private int id;
+        private string maChiTietBangLuong;
         private float soGioCongThucTe;
         private int idBangLuong;
         private int idLichLam;
         private DateTime ngayLam;
 
-        public DTO_ChiTietBangLuong( float soGioCongThucTe, int idBangLuong, int idLichLam, DateTime ngayLam)
+        public DTO_ChiTietBangLuong(float soGioCongThucTe, int idBangLuong, int idLichLam, DateTime ngayLam)
         {
             this.soGioCongThucTe = soGioCongThucTe;
             this.idBangLuong = idBangLuong;
@@ -36,5 +37,6 @@ namespace DTO
         public int IdBangLuong { get => idBangLuong; set => idBangLuong = value; }
         public int IdLichLam { get => idLichLam; set => idLichLam = value; }
         public DateTime NgayLam { get => ngayLam; set => ngayLam = value; }
+        public string MaChiTietBangLuong { get => maChiTietBangLuong; set => maChiTietBangLuong = value; }
     }
 }

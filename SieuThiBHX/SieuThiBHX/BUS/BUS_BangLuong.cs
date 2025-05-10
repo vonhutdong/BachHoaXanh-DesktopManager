@@ -19,6 +19,10 @@ namespace BUS
         {
             return dal_bangluong.LayDSBangLuong(idNhanVien);
         }
+        public IQueryable LayBangLuongTheoThang(int idNhanVien, int thang, int nam)
+        {
+            return dal_bangluong.LayBangLuongTheoThang(idNhanVien,thang,nam);
+        }
         public IQueryable DSNhanVien()
         {
             return dal_bangluong.DSNhanVien();

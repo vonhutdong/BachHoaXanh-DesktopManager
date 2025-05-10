@@ -52,16 +52,21 @@
     <Compile Include="DTO_CaLam.cs" />
     <Compile Include="DTO_ChiNhanh.cs" />
     <Compile Include="DTO_ChiTietBangLuong.cs" />
+<<<<<<< HEAD
     <Compile Include="DTO_ChiTietHoaDon.cs" />
     <Compile Include="DTO_HoaDon.cs" />
     <Compile Include="DTO_KhachHang.cs" />
     <Compile Include="DTO_KhoHang.cs" />
+=======
+    <Compile Include="DTO_ChiTietPhieuNhap.cs" />
+>>>>>>> branch-2
     <Compile Include="DTO_LichLam.cs" />
     <Compile Include="DTO_LoaiHang.cs" />
     <Compile Include="DTO_LoaiNhanVien.cs" />
     <Compile Include="DTO_NhanVien.cs" />
     <Compile Include="DTO_KhuyenMai.cs" />
     <Compile Include="DTO_NhaCungCap.cs" />
+    <Compile Include="DTO_PhieuNhap.cs" />
     <Compile Include="DTO_SanPham.cs" />
     <Compile Include="DTO_SanPhamKhoHang.cs" />
     <Compile Include="DTO_TaiKhoan.cs" />

@@ -18,6 +18,7 @@ namespace SieuThiBHX.NhutDong
         BUS_ChiTietBangLuong bus_chitietbangluong = new BUS_ChiTietBangLuong();
         //id bang lương đang chọn
         int currentIDBangLuong = 0;
+        int currentIDNhanVien = 0;
         //check them
         bool checkbtn;
         public frmBangLuong()
@@ -73,6 +74,7 @@ namespace SieuThiBHX.NhutDong
                 btnHuy.Enabled = false;
                 //cb lich lam
                 LoadCBLichLam();
+                
             }
             catch (Exception ex)
             {
@@ -187,6 +189,7 @@ namespace SieuThiBHX.NhutDong
                     LoadDSChiTietBangLuong(currentIDBangLuong);
                     txtMaPhieuNhap.Text = dgvBangLuong.Rows[dong].Cells["MaBangLuong"].Value.ToString();
                     cbNhanVien.SelectedValue = int.Parse(dgvBangLuong.Rows[dong].Cells["idNhanVien"].Value.ToString());
+                    currentIDNhanVien = int.Parse(dgvBangLuong.Rows[dong].Cells["idNhanVien"].Value.ToString());
                 }
             }
             catch (Exception ex)
@@ -229,8 +232,9 @@ namespace SieuThiBHX.NhutDong
                 {
                     if (txtMaPhieuNhap.Text.Length > 0)
                     {
-                        bus_bangluong.ThemBangLuong(new DTO_BangLuong(txtMaPhieuNhap.Text, dtNgayNhap.Value, 0, 0, int.Parse(cbNhanVien.SelectedValue.ToString())));
+                        bus_bangluong.ThemBangLuong(new DTO_BangLuong(dtNgayNhap.Value, 0, 0, int.Parse(cbNhanVien.SelectedValue.ToString())));
                         MessageBox.Show("Thêm thành công!!");
+                        MessageBox.Show(cbNhanVien.SelectedValue.ToString());
                         LamMoi();
                     }
                     else
@@ -301,13 +305,50 @@ namespace SieuThiBHX.NhutDong
         {
             if (currentIDBangLuong != 0)
             {
-                //frmBaoCaoBangLuong frm = new frmBaoCaoBangLuong(currentIDBangLuong);
-                //frm.ShowDialog();
+                frmBaoCaoBangLuong frm = new frmBaoCaoBangLuong(currentIDBangLuong);
+                frm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Vui chọn bảng lương!!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        //lay danh sách bảng lương có điều kiện
+        private void LoadDSBangLuong(int idNhanVien)
+        {
+            //lay danh sách bảng lương ko có điều kiện
+            dgvBangLuong.DataSource = bus_bangluong.LayDSBangLuong(idNhanVien);
+            //dổi tên cột
+            dgvBangLuong.Columns["TongGioCong"].HeaderText = "Tổng giờ công";
+            dgvBangLuong.Columns["Luong"].HeaderText = "Lương";
+            dgvBangLuong.Columns["ThangNam"].HeaderText = "Tháng/Năm";
+            dgvBangLuong.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
+            //format
+            dgvBangLuong.Columns["ThangNam"].DefaultCellStyle.Format = "MM/yyyy";
+            //ẩn cột
+            dgvBangLuong.Columns["id"].Visible = false;
+            dgvBangLuong.Columns["idNhanVien"].Visible = false;
+            dgvBangLuong.Columns["MaBangLuong"].Visible = false;
+
+        }
+        private void cbLocBangLuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLoc.Checked)
+            {
+                //load danh sách bảng lương có điều kiện
+                LoadDSBangLuong(int.Parse(cbLocBangLuong.SelectedValue.ToString()));
+            }
+        }
+        
+        private void LoadDSChiTietBangLuongTheoThang(int idNhanVien, int thang, int nam)
+        {
+            
+        }
+        private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

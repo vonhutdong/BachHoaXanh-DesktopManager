@@ -128,22 +128,6 @@ namespace SieuThiBHX.Trong
             }
         }
 
-        private void dgvChiNhanh_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            //lấy dòng đang click
-            int dong = dgvChiNhanh.CurrentRow.Index;
-            //điền thông tin lên textbox
-            txtMaChiNhanh.Text = dgvChiNhanh.Rows[dong].Cells["MaChiNhanh"].Value.ToString();
-            txtTenChiNhanh.Text = dgvChiNhanh.Rows[dong].Cells["TenChiNhanh"].Value.ToString();
-            txtDiaChi.Text = dgvChiNhanh.Rows[dong].Cells["DiaChi"].Value.ToString();
-            txtSoDienThoai.Text = dgvChiNhanh.Rows[dong].Cells["SoDienThoai"].Value.ToString();
-            //gán id cho currnentID
-            currentID = int.Parse(dgvChiNhanh.Rows[dong].Cells["id"].Value.ToString());
-
-            btnThem.Enabled = false;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-        }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -195,6 +179,23 @@ namespace SieuThiBHX.Trong
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvChiNhanh_Click(object sender, EventArgs e)
+        {
+            //lấy dòng đang click
+            int dong = dgvChiNhanh.CurrentRow.Index;
+            //điền thông tin lên textbox
+            txtMaChiNhanh.Text = dgvChiNhanh.Rows[dong].Cells["MaChiNhanh"].Value.ToString();
+            txtTenChiNhanh.Text = dgvChiNhanh.Rows[dong].Cells["TenChiNhanh"].Value.ToString();
+            txtDiaChi.Text = dgvChiNhanh.Rows[dong].Cells["DiaChi"].Value.ToString();
+            txtSoDienThoai.Text = dgvChiNhanh.Rows[dong].Cells["SoDienThoai"].Value.ToString();
+            //gán id cho currnentID
+            currentID = int.Parse(dgvChiNhanh.Rows[dong].Cells["id"].Value.ToString());
+
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
     }
 }

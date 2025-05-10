@@ -1,0 +1,155 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DTO;
+
+namespace DAL
+{
+    public class DAL_PhieuNhapAll
+    {
+        // Fields
+        private DatabaseAccess da = new DatabaseAccess();
+        public DatabaseAccess Da { get => da; set => da = value; }
+
+        // Lấy danh sách phiếu nhập
+        public IQueryable LayDSPhieuNhap()
+        {
+            IQueryable temp = from pn in da.Db.PhieuNhaps
+                              select new
+                              {
+                                  id = pn.id,
+                                  MaPhieuNhap = pn.MaPhieuNhap,
+                                  NgayNhap = pn.NgayNhap,
+                                  ThanhTien = pn.ThanhTien,
+                                  MaNhanVien = pn.idNhanVien
+                              };
+            return temp;
+        }
+
+        public IQueryable LayDSNhanVien()
+        {
+            IQueryable queryable = from nv in da.Db.NhanViens
+                                   select new
+                                   {
+                                       nv.id,
+                                       nv.MaNhanVien,
+                                       nv.TenNhanVien,
+                                       nv.SoDienThoai,
+                                       nv.DiaChi,
+                                       nv.idLoaiNhanVien,
+                                       nv.idTaiKhoan
+                                   };
+            return queryable;
+        }
+
+        // Thêm phiếu nhập
+        public bool ThemPhieuNhap(DTO_PhieuNhap pn)
+        {
+            try
+            {
+                if (pn != null)
+                {
+                    var query2 = da.Db.PhieuNhaps.OrderByDescending(l => l.id).FirstOrDefault();
+
+                    string maPhieuNhap = query2 != null && query2.id < 10
+                        ? "PN00" + (query2.id + 1)
+                        : "PN0" + (query2 != null ? (query2.id + 1) : 1);
+
+                    var newPhieuNhap = new PhieuNhap
+                    {
+                        MaPhieuNhap = maPhieuNhap,
+                        NgayNhap = pn.NgayNhap,
+                        ThanhTien = 0, // Tạm thời 0, sẽ cập nhật sau
+                        idNhanVien = pn.IdNhanVien
+                    };
+
+                    da.Db.PhieuNhaps.InsertOnSubmit(newPhieuNhap);
+                    da.Db.SubmitChanges();
+
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Dữ liệu phiếu nhập không hợp lệ (null).");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm phiếu nhập: " + ex.Message);
+            }
+        }
+
+        // Sửa phiếu nhập
+        public bool SuaPhieuNhap(DTO_PhieuNhap pn)
+        {
+            try
+            {
+                var pnn = da.Db.PhieuNhaps.FirstOrDefault(dt => dt.id == pn.Id);
+                if (pnn != null)
+                {
+                    pnn.NgayNhap = pn.NgayNhap;
+                    pnn.idNhanVien = pn.IdNhanVien;
+                    // Không sửa thành tiền trực tiếp!
+                    da.Db.SubmitChanges();
+
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Không tìm thấy phiếu nhập để sửa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi sửa phiếu nhập: " + ex.Message);
+            }
+        }
+
+        // Xóa phiếu nhập
+        public void XoaPhieuNhap(int id)
+        {
+            try
+            {
+                var data = da.Db.PhieuNhaps.FirstOrDefault(dt => dt.id == id);
+                if (data == null)
+                {
+                    throw new Exception("Không tìm thấy phiếu nhập để xóa.");
+                }
+
+                da.Db.PhieuNhaps.DeleteOnSubmit(data);
+                da.Db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa phiếu nhập: " + ex.Message);
+            }
+        }
+
+        // ✅ Hàm cập nhật lại thành tiền từ chi tiết phiếu nhập
+        public void CapNhatThanhTien(int idPhieuNhap)
+        {
+            try
+            {
+                var phieuNhap = da.Db.PhieuNhaps.FirstOrDefault(p => p.id == idPhieuNhap);
+                if (phieuNhap != null)
+                {
+                    var thanhTien = da.Db.ChiTietPhieuNhaps
+                        .Where(c => c.idPhieuNhap == idPhieuNhap)
+                        .Sum(c => (double?)(c.SoLuong * c.DonGia)); // Trả về double?
+
+                    phieuNhap.ThanhTien = thanhTien ?? 0; // Gán 0 nếu null
+
+                    da.Db.SubmitChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật thành tiền: " + ex.Message);
+            }
+        }
+
+
+    }
+}

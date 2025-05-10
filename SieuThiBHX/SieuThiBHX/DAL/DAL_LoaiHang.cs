@@ -11,6 +11,7 @@ namespace DAL
     {
         private DatabaseAccess da = new DatabaseAccess();
 
+<<<<<<< HEAD
         public IQueryable<DTO_LoaiHang> LayDSLH()
         {
             return da.Db.LoaiHangs.Select(lh => new DTO_LoaiHang
@@ -19,6 +20,11 @@ namespace DAL
                 MaLoaiHang = lh.maLoaiHang,
                 TenLoaiHang = lh.tenLoaiHang
             });
+=======
+        public IQueryable LayDSLH()
+        {
+            return da.Db.LoaiHangs.Select(lh => new { lh.id, lh.maLoaiHang, lh.tenLoaiHang });
+>>>>>>> branch-2
         }
         public void ThemLoaiHang(DTO_LoaiHang loaihangdto)
         {
@@ -108,4 +114,8 @@ namespace DAL
 
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch-2

@@ -51,14 +51,19 @@
     <Compile Include="BUS_CaLam.cs" />
     <Compile Include="BUS_ChiNhanh.cs" />
     <Compile Include="BUS_ChiTietBangLuong.cs" />
+<<<<<<< HEAD
     <Compile Include="BUS_ChiTietHoaDon.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_KhoHang.cs" />
+=======
+    <Compile Include="BUS_ChiTietPhieuNhap.cs" />
+>>>>>>> branch-2
     <Compile Include="BUS_LichLam.cs" />
     <Compile Include="BUS_LoaiHang.cs" />
     <Compile Include="BUS_LoaiNhanVien.cs" />
     <Compile Include="BUS_NhanVien.cs" />
+    <Compile Include="BUS_PhieuNhapAll.cs" />
     <Compile Include="BUS_SanPham.cs" />
     <Compile Include="DataValidation.cs" />
     <Compile Include="BUS_KhuyenMai.cs" />
