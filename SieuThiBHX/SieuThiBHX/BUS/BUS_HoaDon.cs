@@ -27,5 +27,10 @@ namespace BUS
         {
             return dal_hd.UpdateHD(dto_hd);
         }
+        public IQueryable TimKiemHD(string tuKhoa)
+        {
+            return dal_hd.TimKiemHD(tuKhoa);
+        }
+
     }
 }

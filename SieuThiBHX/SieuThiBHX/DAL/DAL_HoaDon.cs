@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,52 @@ namespace DAL
                 return false;
             }
         }
+
+        private string RemoveDiacritics(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+
+            var normalized = input.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+
+            foreach (char c in normalized)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+        public IQueryable TimKiemHD(string tuKhoa)
+        {
+            tuKhoa = tuKhoa.ToLower();
+
+            var danhSach = da.Db.HoaDons
+                .Where(hd =>
+                    hd.maHD.ToLower().Contains(tuKhoa) ||
+                    hd.KhachHang.tenKhachHang.ToLower().Contains(tuKhoa)
+                )
+                .Select(hd => new
+                {
+                    hd.id,
+                    hd.maHD,
+                    hd.ngayLapHD,
+                    hd.gioLapHD,
+                    hd.tongTien,
+                    hd.thanhTien,
+                    hd.idKhuyenMai,
+                    hd.idKhachHang,
+                    hd.idNhanVien,
+                    TenKhachHang = hd.KhachHang.tenKhachHang,
+                    TenKhuyenMai = hd.KhuyenMai.TenKhuyenMai,
+                    TenNhanVien = hd.NhanVien.TenNhanVien
+                })
+                .AsQueryable();
+
+            return danhSach;
+        }
+
+
 
 
     }
