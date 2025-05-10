@@ -37,7 +37,8 @@ namespace SieuThiBHX
             dgvNCC.Columns["SDT"].HeaderText = "Số điện thoại";
             dgvNCC.Columns["DiaChi"].HeaderText = "Địa chỉ";
 
-            
+            dgvNCC.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNCC.ColumnHeadersHeight = 40; // hoặc cao hơn
 
             // Thiết lập lại style để dữ liệu hiện rõ
             dgvNCC.DefaultCellStyle.BackColor = Color.White;

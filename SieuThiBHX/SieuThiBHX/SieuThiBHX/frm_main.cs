@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DTO;
+using SieuThiBHX.NhutDong;
+using SieuThiBHX.Trong;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SieuThiBHX.NhutDong;
-using SieuThiBHX.Trong;
 
 namespace SieuThiBHX
 {
@@ -18,6 +19,25 @@ namespace SieuThiBHX
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+        }
+        private string tk = string.Empty;
+        private int q = 0;
+        private Form frmOld = null;
+        public static DTO_NhanVien nhanVien = null;
+
+        public DTO_NhanVien NhanVien { get => nhanVien; set => nhanVien = value; }
+
+        public frm_main(string taiKhoan, int quyen, DTO_NhanVien nhanVien)
+        {
+            this.tk = taiKhoan;
+            this.NhanVien = nhanVien;
+            this.q = quyen;
+            InitializeComponent();
+        }
+
+        public static DTO_NhanVien getNhanVien()
+        {
+            return nhanVien;
         }
         public void ActForm(string name)
         {
@@ -44,7 +64,37 @@ namespace SieuThiBHX
         }
         private void frm_main_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(NhanVien.TenNV);
+            // Check taikhoan da dc gui qua frmMain chua?
+            if (tk != string.Empty)
+            {
+                this.Text = $"Màn hình chính - Xin chào {tk}!";
+            }
+            else
+            {
+                this.Text = $"Màn hình chính";
+            }
 
+            // Others
+
+            nhânViênToolStripMenuItem.Enabled = false;
+            nhânViênToolStripMenuItem.Visible = false;
+            //hóaĐơnToolStripMenuItem.Enabled = false;
+            //hóaĐơnToolStripMenuItem.Visible = false;
+            chiTiếtHóaĐơnToolStripMenuItem.Enabled = false;
+            chiTiếtHóaĐơnToolStripMenuItem.Visible = false;
+
+            // Role
+            if (q == 0)
+            {
+                quảnLýToolStripMenuItem.Visible = true;
+                quảnLýToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                quảnLýToolStripMenuItem.Visible = false;
+                quảnLýToolStripMenuItem.Enabled = false;
+            }
         }
         private void hóaĐơnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -298,9 +348,23 @@ namespace SieuThiBHX
             }
         }
 
-        private void báoCáoBảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thốngKêPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if (!CheckFormExit("frm_ThongKeTheoMaPhieuNhap"))
+            {
+                frm_ThongKeTheoMaPhieuNhap f = new frm_ThongKeTheoMaPhieuNhap();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frm_ThongKeTheoMaPhieuNhap");
+            }
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
