@@ -147,7 +147,7 @@
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel6);
             this.guna2GroupBox3.Controls.Add(this.txtMaSanPham);
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel5);
-            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2GroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,7 +213,7 @@
             // imgSanPham
             // 
             this.imgSanPham.ImageRotate = 0F;
-            this.imgSanPham.Location = new System.Drawing.Point(587, 214);
+            this.imgSanPham.Location = new System.Drawing.Point(781, 223);
             this.imgSanPham.Name = "imgSanPham";
             this.imgSanPham.Size = new System.Drawing.Size(228, 155);
             this.imgSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -271,10 +271,10 @@
             this.btnChonAnh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChonAnh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChonAnh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChonAnh.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnChonAnh.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChonAnh.ForeColor = System.Drawing.Color.White;
-            this.btnChonAnh.Location = new System.Drawing.Point(844, 247);
+            this.btnChonAnh.Location = new System.Drawing.Point(610, 262);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(147, 45);
             this.btnChonAnh.TabIndex = 7;
@@ -431,7 +431,7 @@
             // 
             this.guna2GroupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guna2GroupBox1.Controls.Add(this.dgvSanPham);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GroupBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

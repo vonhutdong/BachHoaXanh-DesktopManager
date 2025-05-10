@@ -513,19 +513,36 @@ BEGIN
 END;
 GO
 
+
+CREATE PROCEDURE [dbo].[sp_BaoCaoTongLuongTheoThang]
+    @Thang INT = 10
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        YEAR(ctl.NgayLam) AS Nam,
+        MONTH(ctl.NgayLam) AS Thang,
+        SUM(bl.Luong) AS TongLuong
+    FROM BangLuong bl
+    INNER JOIN ChiTietBangLuong ctl ON bl.id = ctl.idBangLuong
+    INNER JOIN NhanVien nv ON bl.idNhanVien = nv.id
+    WHERE MONTH(ctl.NgayLam) = @Thang
+    GROUP BY YEAR(ctl.NgayLam), MONTH(ctl.NgayLam)
+    ORDER BY Nam, Thang;
+END;
+GO
+
+
 go
 
+exec sp_BaoCaoTongLuongTheoThang  11
 
-exec sp_BaoCaoBangLuong1 
-
-select * from NhanVien
 select * from BangLuong
-
-
-
-UPDATE SanPham
-SET idLoaiHang = 3  -- hoặc giá trị bất kỳ bạn muốn thử
-WHERE id = 2;
-
-
+ 
+select * from ChiTietBangLuong
 select * from PhieuNhap
+select * from ChiTietPhieuNhap
+
+
+delete from BangLuong where id = 8
