@@ -22,7 +22,6 @@ namespace SieuThiBHX.Trong
         BUS_TaiKhoan bus_TaiKhoan = new BUS_TaiKhoan();
         BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         DTO_NhanVien nvLogin;
-
         private void frm_Login_Load(object sender, EventArgs e)
         {
             txtTaiKhoan.Focus();
@@ -60,7 +59,6 @@ namespace SieuThiBHX.Trong
                 MessageBox.Show("Tên tài khoản hoặc mật khẩu không đúng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }
