@@ -22,7 +22,7 @@ namespace DAL
                    select new
                    {
                        hd.id,
-                       hd.maHD,
+                       MaHD = hd.maHD,
                        hd.ngayLapHD,
                        hd.gioLapHD,
                        hd.tongTien,
@@ -124,8 +124,93 @@ namespace DAL
             return danhSach;
         }
 
+        public int GetMaxIdHD()
+        {
+            var query = da.Db.HoaDons.OrderByDescending(hd => hd.id).FirstOrDefault();
+            return (int)query.id;
+        }
+
+        public void UpdateTotalCash2(int idHd, int toTalCash)
+        {
+            var hd_update = da.Db.HoaDons.SingleOrDefault(hd => hd.id == idHd);
+            hd_update.tongTien = toTalCash;
+            if (hd_update.idKhuyenMai == 1)
+            {
+                hd_update.thanhTien = toTalCash;
+            }
+            else
+            {
+                var khuyenmai = da.Db.KhuyenMais.SingleOrDefault(d => d.id == hd_update.idKhuyenMai);
+                hd_update.thanhTien = toTalCash - (toTalCash * (float)(khuyenmai.GiaTri / 100));
+            }
+
+            var query = da.Db.KhuyenMais.SingleOrDefault(km => km.id == hd_update.idKhuyenMai);
+            hd_update.thanhTien = toTalCash - ((query.GiaTri / 100) * toTalCash);
+
+            // Saved
+            da.Db.SubmitChanges();
+        }
+        //tìm idhoadon bang MaHoaDon
+        public string TimMaHoaDon(int id)
+        {
+            var query = (from hd in da.Db.HoaDons
+                         where hd.id == id
+                         select new
+                         {
+                             hd.id,
+                             hd.maHD,
+
+                         }).FirstOrDefault();
+            string maHoaDon = "";
+            if (query == null)
+            {
+                maHoaDon = "";
+            }
+            else
+            {
+                maHoaDon = query.maHD;
+            }
 
 
+            return maHoaDon;
+        }
+        public void AddHD2(DTO_HoaDon hoaDon)
+        {
+            try
+            {
+                // Kiểm tra hóa đơn đã tồn tại chưa
+                var query = (from hd in da.Db.HoaDons
+                             where hd.id == hoaDon.Id
+                             select hd).FirstOrDefault();
+
+                if (query == null)
+                {
+                    // Lấy hóa đơn có id lớn nhất
+                    var query2 = da.Db.HoaDons.OrderByDescending(hd => hd.id).FirstOrDefault();
+                    int nextId = query2 != null ? query2.id + 1 : 1;
+
+                    // Thêm hóa đơn mới
+                    da.Db.HoaDons.InsertOnSubmit(new HoaDon
+                    {
+                        maHD = nextId < 10 ? $"HD00{nextId}" : $"HD0{nextId}",
+                        ngayLapHD = DateTime.Now,
+                        gioLapHD = DateTime.Now,
+                        tongTien = 0,
+                        thanhTien = 0,
+                        idKhachHang = hoaDon.IdKhachHang,
+                        idKhuyenMai = hoaDon.IdKhuyenMai,
+                        idNhanVien = hoaDon.IdNhanVien
+                    });
+
+                    da.Db.SubmitChanges();
+                }
+            }
+            catch
+            {
+                // Tùy bạn xử lý logging nội bộ nếu cần
+                throw;
+            }
+        }
 
     }
 }

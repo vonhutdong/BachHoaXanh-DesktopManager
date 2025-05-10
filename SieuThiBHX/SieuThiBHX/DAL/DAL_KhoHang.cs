@@ -84,6 +84,20 @@ namespace DAL
 
             return dt;
         }
+        public void CapNhatSoLuong(int id, int soluong)
+        {
+            try
+            {
+                var khohang = da.Db.KhoHangs.FirstOrDefault(kh => kh.idSanPham == id);
+                khohang.soLuong -= soluong;
+                da.Db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
     }
 }

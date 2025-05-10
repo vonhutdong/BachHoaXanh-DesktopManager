@@ -31,6 +31,21 @@ namespace BUS
         {
             return dal_hd.TimKiemHD(tuKhoa);
         }
-
+        public int GetMaxIdHD()
+        {
+            return dal_hd.GetMaxIdHD();
+        }
+        public void UpdateTotalCash2(int idHd, int toTalCash)
+        {
+            dal_hd.UpdateTotalCash2(idHd, toTalCash);
+        }
+        public string TimMaHoaDon(int id)
+        {
+            return dal_hd.TimMaHoaDon(id);
+        }
+        public void AddHD2(DTO_HoaDon hoaDon)
+        {
+            dal_hd.AddHD2(hoaDon);
+        }
     }
 }

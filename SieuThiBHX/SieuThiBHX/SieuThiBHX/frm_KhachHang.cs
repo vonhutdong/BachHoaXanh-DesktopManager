@@ -256,5 +256,15 @@ namespace SieuThiBHX
         {
 
         }
+
+        private void txtTimKiemKH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

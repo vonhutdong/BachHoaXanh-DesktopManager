@@ -51,6 +51,7 @@
     <Compile Include="BUS_CaLam.cs" />
     <Compile Include="BUS_ChiNhanh.cs" />
     <Compile Include="BUS_ChiTietBangLuong.cs" />
+    <Compile Include="BUS_ChiTietHoaDon.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_KhoHang.cs" />

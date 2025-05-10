@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_KhachHang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuToolStrip = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -43,8 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.btnTim = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnTim = new System.Windows.Forms.Button();
             this.txtTimKiemKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaKH = new Guna.UI2.WinForms.Guna2TextBox();
@@ -152,6 +152,8 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtDiaChi.BackColor = System.Drawing.Color.Black;
+            this.txtDiaChi.BorderColor = System.Drawing.Color.Black;
             this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiaChi.DefaultText = "";
             this.txtDiaChi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -160,6 +162,7 @@
             this.txtDiaChi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDiaChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.Location = new System.Drawing.Point(138, 272);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -184,6 +187,8 @@
             // txtSDT
             // 
             this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtSDT.BackColor = System.Drawing.Color.Black;
+            this.txtSDT.BorderColor = System.Drawing.Color.Black;
             this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSDT.DefaultText = "";
             this.txtSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -192,6 +197,7 @@
             this.txtSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.ForeColor = System.Drawing.Color.Black;
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.Location = new System.Drawing.Point(250, 192);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -217,6 +223,8 @@
             // txtDiem
             // 
             this.txtDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtDiem.BackColor = System.Drawing.Color.Black;
+            this.txtDiem.BorderColor = System.Drawing.Color.Black;
             this.txtDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiem.DefaultText = "";
             this.txtDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -225,6 +233,7 @@
             this.txtDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiem.ForeColor = System.Drawing.Color.Black;
             this.txtDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiem.Location = new System.Drawing.Point(705, 192);
             this.txtDiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -233,6 +242,7 @@
             this.txtDiem.SelectedText = "";
             this.txtDiem.Size = new System.Drawing.Size(244, 40);
             this.txtDiem.TabIndex = 19;
+            this.txtDiem.TextChanged += new System.EventHandler(this.txtDiem_TextChanged);
             this.txtDiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiem_KeyPress);
             // 
             // guna2GroupBox3
@@ -251,18 +261,6 @@
             this.guna2GroupBox3.TabIndex = 15;
             this.guna2GroupBox3.Text = "Tìm kiếm";
             // 
-            // btnTim
-            // 
-            this.btnTim.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTim.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnTim.Location = new System.Drawing.Point(260, 235);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(122, 48);
-            this.btnTim.TabIndex = 8;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -276,9 +274,24 @@
             this.label4.Text = "Nhập thông tin khách hàng";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // btnTim
+            // 
+            this.btnTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnTim.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(239, 190);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(170, 68);
+            this.btnTim.TabIndex = 8;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // txtTimKiemKH
             // 
-            this.txtTimKiemKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimKiemKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtTimKiemKH.BackColor = System.Drawing.Color.Black;
+            this.txtTimKiemKH.BorderColor = System.Drawing.Color.Black;
             this.txtTimKiemKH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTimKiemKH.DefaultText = "";
             this.txtTimKiemKH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -287,18 +300,22 @@
             this.txtTimKiemKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTimKiemKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiemKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiemKH.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiemKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiemKH.Location = new System.Drawing.Point(151, 143);
+            this.txtTimKiemKH.Location = new System.Drawing.Point(155, 125);
             this.txtTimKiemKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiemKH.Name = "txtTimKiemKH";
             this.txtTimKiemKH.PlaceholderText = "";
             this.txtTimKiemKH.SelectedText = "";
-            this.txtTimKiemKH.Size = new System.Drawing.Size(312, 60);
+            this.txtTimKiemKH.Size = new System.Drawing.Size(312, 57);
             this.txtTimKiemKH.TabIndex = 5;
+            this.txtTimKiemKH.TextChanged += new System.EventHandler(this.txtTimKiemKH_TextChanged);
             // 
             // txtTenKH
             // 
             this.txtTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtTenKH.BackColor = System.Drawing.Color.Black;
+            this.txtTenKH.BorderColor = System.Drawing.Color.Black;
             this.txtTenKH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenKH.DefaultText = "";
             this.txtTenKH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -307,6 +324,7 @@
             this.txtTenKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.ForeColor = System.Drawing.Color.Black;
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKH.Location = new System.Drawing.Point(250, 121);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -319,6 +337,8 @@
             // txtMaKH
             // 
             this.txtMaKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaKH.BackColor = System.Drawing.Color.Black;
+            this.txtMaKH.BorderColor = System.Drawing.Color.Black;
             this.txtMaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaKH.DefaultText = "";
             this.txtMaKH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -327,8 +347,9 @@
             this.txtMaKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaKH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaKH.ForeColor = System.Drawing.Color.Black;
             this.txtMaKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaKH.Location = new System.Drawing.Point(250, 71);
+            this.txtMaKH.Location = new System.Drawing.Point(250, 56);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.PlaceholderText = "";
@@ -366,7 +387,7 @@
             this.lblMaKH.AutoSize = true;
             this.lblMaKH.BackColor = System.Drawing.Color.Transparent;
             this.lblMaKH.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaKH.Location = new System.Drawing.Point(20, 79);
+            this.lblMaKH.Location = new System.Drawing.Point(20, 64);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(201, 32);
             this.lblMaKH.TabIndex = 14;
@@ -393,8 +414,8 @@
             this.dgvDSKH.AllowUserToDeleteRows = false;
             this.dgvDSKH.AllowUserToResizeColumns = false;
             this.dgvDSKH.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvDSKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgvDSKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSKH.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDSKH.BackgroundColor = System.Drawing.Color.White;

@@ -262,5 +262,32 @@ namespace SieuThiBHX
                 LoadData(); // nếu không nhập gì thì load lại toàn bộ
             }
         }
+        private void OpenChiTietHDForm()
+        {
+            frm_ChiTietHoaDon frm = new frm_ChiTietHoaDon();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            this.Controls.Clear();            // Xóa control cũ nếu muốn
+            this.Controls.Add(frm);           // Nhúng form vào panel chính hoặc form
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (dgvHD.CurrentRow != null)
+            {
+                string maHD = dgvHD.CurrentRow.Cells["maHD"].Value.ToString();
+                
+                OpenChiTietHDForm();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hóa đơn để xem chi tiết!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
