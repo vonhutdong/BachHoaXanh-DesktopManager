@@ -26,5 +26,9 @@ namespace BUS
         {
             return dal_kh.LoadReportData();
         }
+        public void CapNhatSoLuong(int id, int soluong)
+        {
+            dal_kh.CapNhatSoLuong(id, soluong);
+        }
     }
 }

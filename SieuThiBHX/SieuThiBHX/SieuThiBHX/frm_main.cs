@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using SieuThiBHX.NhutDong;
 using SieuThiBHX.Trong;
 using System.Data.SqlClient;
+using DTO;
+using DAL;
 
 namespace SieuThiBHX
 {
     public partial class frm_main : Form
     {
+        public static DTO_NhanVien nhanVien = null;
         public frm_main()
         {
             InitializeComponent();
@@ -92,14 +95,25 @@ namespace SieuThiBHX
                 ActForm("frm_HoaDon");
             }
         }
+        private void OpenCTHoaDonForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
 
+            frm_ChiTietHoaDon hoaDonForm = new frm_ChiTietHoaDon();
+            hoaDonForm.MdiParent = this;
+            hoaDonForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            hoaDonForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            hoaDonForm.Show();
+        }
         private void chiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_ChiTietHoaDon"))
             {
-                frm_ChiTietHoaDon f = new frm_ChiTietHoaDon();
-                f.MdiParent = this;
-                f.Show();
+                OpenCTHoaDonForm();
             }
             else
             {
@@ -364,6 +378,24 @@ namespace SieuThiBHX
             {
                 ActForm("frmTraCuuNV");
             }
+        }
+        private void OpenBanHangForm()
+        {
+            // Đóng các MDI child cũ nếu có
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+
+            frm_BanHang khoHangForm = new frm_BanHang();
+            khoHangForm.MdiParent = this;
+            khoHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            khoHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
+            khoHangForm.Show();
+        }
+        private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenBanHangForm();
         }
     }
 }

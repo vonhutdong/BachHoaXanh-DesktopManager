@@ -213,7 +213,7 @@ SET IDENTITY_INSERT dbo.TaiKhoan ON;
 SET IDENTITY_INSERT dbo.TaiKhoan OFF;
 
 
-SET IDENTITY_INSERT TaiKhoan ON;
+SET IDENTITY_INSERT select * from TaiKhoan ON;
 
 INSERT INTO TaiKhoan (id, MaTaiKhoan, TenTaiKhoan, MatKhau, Quyen)
 VALUES 
@@ -334,7 +334,17 @@ VALUES
 ('HD007', '2024-03-07', '14:00', 600000, 510000, 1, 1, 2),
 ('HD008', '2024-03-08', '15:00', 900000, 810000, 2, 2, 3),
 ('HD009', '2024-03-09', '16:00', 700000, 595000, 3, 3, 1),
-('HD010', '2024-03-10', '17:00', 1000000, 850000, 1, 4, 2);
+('HD010', '2024-03-10', '17:00', 1000000, 850000, 1, 4, 2),
+('HD006', '01/05/2025', '08:00:00', 300000, 285000, 1, 1, 1),
+('HD007', '01/05/2025', '09:15:00', 250000, 240000, 2, 2, 2),
+('HD008', '02/05/2025', '10:30:00', 180000, 175000, 3, 3, 3),
+('HD009', '02/05/2025', '11:45:00', 220000, 200000, 1, 4, 1),
+('HD010', '03/05/2025', '13:00:00', 150000, 145000, 2, 5, 2),
+('HD011', '03/05/2025', '14:15:00', 280000, 270000, 3, 6, 3),
+('HD012', '04/05/2025', '15:30:00', 320000, 300000, 1, 1, 1),
+('HD013', '04/05/2025', '16:45:00', 400000, 380000, 2, 2, 2),
+('HD014', '05/05/2025', '17:00:00', 350000, 330000, 3, 3, 3),
+('HD015', '05/05/2025', '18:15:00', 290000, 275000, 1, 4, 1);
 
 INSERT INTO SanPham (maSanPham, tenSanPham, donViTinh, donGia, ngaySanXuat, hanSuDung, anhSanPham, idLoaiHang, idNhaCungCap)
 VALUES
@@ -474,3 +484,47 @@ BEGIN
     ORDER BY pn.NgayNhap DESC;
 END;
 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[sp_GetHdByMaHd](@maHoaDon VARCHAR(30) = 'HD001')
+AS
+BEGIN
+	WITH InvoiceDetails AS (
+		SELECT
+			ROW_NUMBER() OVER (ORDER BY hd.id) AS STT,
+			hd.id AS Id,
+			hd.maHD AS MaHoaDon,
+			sp.TenSanPham AS TenSanPham,
+			cthd.SoLuong AS SoLuong,
+			sp.DonGia AS DonGia,
+			(cthd.SoLuong * sp.DonGia) AS ThanhTien,
+			hd.TongTien AS TongTienHoaDon,
+			ROUND(((km.GiaTri) / 100) * hd.TongTien, 0) as TienKhuyenMai,
+			hd.TongTien - ROUND(((km.GiaTri) / 100) * hd.TongTien, 0) as TienPhaiTra,
+			hd.NgayLapHD AS NgayLapHD,
+			kh.TenKhachHang AS TenKhachHang,
+			km.TenKhuyenMai AS TenKhuyenMai,
+			nv.TenNhanVien AS TenNhanVien	
+		FROM HoaDon AS hd
+			JOIN ChiTietHoaDon AS cthd ON hd.id = cthd.idHoaDon
+			JOIN SanPham AS sp ON cthd.idSanPham = sp.id
+			JOIN KhoHang AS kho ON sp.id = kho.idSanPham
+			JOIN NhanVien AS nv ON hd.idNhanVien = nv.id
+			JOIN KhachHang AS kh ON hd.idKhachHang = kh.id
+			JOIN KhuyenMai AS km ON hd.idKhuyenMai = km.id
+		WHERE hd.maHD = @maHoaDon
+	)
+	SELECT *,
+		MAX(STT) OVER () AS MaxSTT
+	FROM InvoiceDetails a;
+END;
+GO
+
+SELECT hd.maHD, sp.TenSanPham, cthd.SoLuong, sp.DonGia
+FROM HoaDon hd
+JOIN ChiTietHoaDon cthd ON hd.id = cthd.idHoaDon
+JOIN SanPham sp ON cthd.idSanPham = sp.id
+WHERE hd.maHD = 'HD034'

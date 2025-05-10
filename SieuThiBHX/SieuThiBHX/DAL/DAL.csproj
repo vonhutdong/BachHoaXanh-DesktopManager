@@ -56,6 +56,7 @@
     <Compile Include="DAL_CaLam.cs" />
     <Compile Include="DAL_ChiNhanh.cs" />
     <Compile Include="DAL_ChiTietBangLuong.cs" />
+    <Compile Include="DAL_ChiTietHoaDon.cs" />
     <Compile Include="DAL_HoaDon.cs" />
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_KhoHang.cs" />

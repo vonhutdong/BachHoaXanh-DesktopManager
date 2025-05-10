@@ -13,6 +13,8 @@ namespace DTO
         private int idHoaDon;
         private int idSanPham;
 
+
+
         public DTO_ChiTietHoaDon(int id, int soLuong, int idHoaDon, int idSanPham)
         {
             this.Id = id;
@@ -38,6 +40,8 @@ namespace DTO
         public int Id { get => id; set => id = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public int IdHoaDon { get => idHoaDon; set => idHoaDon = value; }
-        public int IdSanPham { get => idSanPham; set => idSanPham = value; }
+        public int IdSanPham { get => idSanPham; set => idSanPham = value; }    
+
+       
     }
 }
