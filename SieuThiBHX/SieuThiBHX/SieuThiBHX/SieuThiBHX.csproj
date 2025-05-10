@@ -304,8 +304,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>GetHdByMaHd.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Item.resx">
-      <DependentUpon>Item.cs</DependentUpon>
+	  <EmbeddedResource Include="Item.resx">
+		  <DependentUpon>Item.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="NhutDong\BaoCaoBangLuongTheoMaBangLuong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BaoCaoBangLuongTheoMaBangLuong.cs</LastGenOutput>

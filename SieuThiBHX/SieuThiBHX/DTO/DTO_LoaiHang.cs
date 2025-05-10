@@ -31,4 +31,4 @@ namespace DTO
         public string TenLoaiHang { get => tenLoaiHang; set => tenLoaiHang = value; }
     }
 }
-}
+

@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SieuThiBHX",
+    "\\SieuThiBHX\\SieuThiBHX",
+    "\\SieuThiBHX\\SieuThiBHX\\DAL",
+    "\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX"
   ],
+  "SelectedNode": "\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\frm_BanHang.cs",
   "PreviewInSolutionExplorer": false
 }

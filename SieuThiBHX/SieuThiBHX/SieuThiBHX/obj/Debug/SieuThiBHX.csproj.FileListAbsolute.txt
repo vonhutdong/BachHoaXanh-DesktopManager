@@ -58,3 +58,5 @@ C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\Sieu
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.Item.resources
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.frm_InHD.resources
 C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.frm_ApDungMaKhuyenMai.resources
+C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.Trong.frm_Login.resources
+C:\Users\phamt\Desktop\Git\BachHoaXanh-DesktopManager\SieuThiBHX\SieuThiBHX\SieuThiBHX\obj\Debug\SieuThiBHX.Trong.frm_ThongKeTheoMaPhieuNhap.resources

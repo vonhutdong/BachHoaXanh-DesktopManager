@@ -30,22 +30,22 @@ namespace SieuThiBHX
         private string tk = string.Empty;
         private int q = 0;
         private Form frmOld = null;
-        public static DTO_NhanVien nhanVien = null;
+        //public static DTO_NhanVien nhanVien = null;
 
-        public DTO_NhanVien NhanVien { get => nhanVien; set => nhanVien = value; }
+        //public DTO_NhanVien NhanVien { get => nhanVien; set => nhanVien = value; }
 
         public frm_main(string taiKhoan, int quyen, DTO_NhanVien nhanVien)
         {
             this.tk = taiKhoan;
-            this.NhanVien = nhanVien;
+            //this.NhanVien = nhanVien;
             this.q = quyen;
             InitializeComponent();
         }
 
-        public static DTO_NhanVien getNhanVien()
-        {
-            return nhanVien;
-        }
+        //public static DTO_NhanVien getNhanVien()
+        //{
+        //    return nhanVien;
+        //}
 
         private void TestSQLConnection()
         {
@@ -123,8 +123,6 @@ namespace SieuThiBHX
             nhânViênToolStripMenuItem.Visible = false;
             //hóaĐơnToolStripMenuItem.Enabled = false;
             //hóaĐơnToolStripMenuItem.Visible = false;
-            chiTiếtHóaĐơnToolStripMenuItem.Enabled = false;
-            chiTiếtHóaĐơnToolStripMenuItem.Visible = false;
 
             // Role
             if (q == 0)
@@ -143,9 +141,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_HoaDon"))
             {
                 OpenHoaDonForm();
-                frm_HoaDon f = new frm_HoaDon();
-                //f.MdiParent = this;
-                f.Show();
+               
             }
             else
             {
@@ -199,9 +195,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_KhoHang"))
             {
                 OpenKhoHangForm();
-                frm_KhoHang f = new frm_KhoHang();
-                //f.MdiParent = this;
-                f.Show();
+                
             }
             else
             {
@@ -229,9 +223,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_LoaiHang"))
             {
                 OpenLoaiHangForm();
-                frm_LoaiHang f = new frm_LoaiHang();
-                //f.MdiParent = this;
-                f.Show();
+                
             }
             else
             {
@@ -465,6 +457,7 @@ namespace SieuThiBHX
         private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenBanHangForm();
+        }
 
         private void thốngKêPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {

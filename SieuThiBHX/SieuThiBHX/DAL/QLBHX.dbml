@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SieuThiBHX" Class="QLBHXDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HUYNHTRONG\MAYA0;Initial Catalog=SieuThiBHX;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="SieuThiBHXConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=SieuThiBHX;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="SieuThiBHXConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BangLuong" Member="BangLuongs">
     <Type Name="BangLuong">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -10,6 +10,16 @@
       <Column Name="idNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="BangLuong_ChiTietBangLuong" Member="ChiTietBangLuongs" ThisKey="id" OtherKey="idBangLuong" Type="ChiTietBangLuong" />
       <Association Name="NhanVien_BangLuong" Member="NhanVien" ThisKey="idNhanVien" OtherKey="id" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaTaiKhoan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TenTaiKhoan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Quyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TaiKhoan_NhanVien" Member="NhanViens" ThisKey="id" OtherKey="idTaiKhoan" Type="NhanVien" />
     </Type>
   </Table>
   <Table Name="dbo.CaLam" Member="CaLams">
@@ -195,16 +205,6 @@
       <Association Name="SanPham_KhoHang" Member="KhoHangs" ThisKey="id" OtherKey="idSanPham" Type="KhoHang" />
       <Association Name="LoaiHang_SanPham" Member="LoaiHang" ThisKey="idLoaiHang" OtherKey="id" Type="LoaiHang" IsForeignKey="true" />
       <Association Name="NhaCungCap_SanPham" Member="NhaCungCap" ThisKey="idNhaCungCap" OtherKey="id" Type="NhaCungCap" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
-    <Type Name="TaiKhoan">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaTaiKhoan" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="TenTaiKhoan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Quyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TaiKhoan_NhanVien" Member="NhanViens" ThisKey="id" OtherKey="idTaiKhoan" Type="NhanVien" />
     </Type>
   </Table>
 </Database>

@@ -26,6 +26,17 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HUYNHTRONG\\MAYA0;Initial Catalog=SieuThiBHX;Integrated Security=True;" +
+            "Encrypt=False;TrustServerCertificate=True")]
+        public string SieuThiBHXConnectionString2 {
+            get {
+                return ((string)(this["SieuThiBHXConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=SieuThiBHX;Integrated Security=True;Trus" +
             "tServerCertificate=True;")]
         public string SieuThiBHXConnectionString {
@@ -37,22 +48,11 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HUYNHTRONG\\MAYA0;Initial Catalog=SieuThiBHX;Integrated Security=True;" +
-            "Encrypt=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=SieuThiBHX;Integrated Security=True;Encr" +
+            "ypt=True;TrustServerCertificate=True")]
         public string SieuThiBHXConnectionString1 {
             get {
                 return ((string)(this["SieuThiBHXConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HUYNHTRONG\\MAYA0;Initial Catalog=SieuThiBHX;Integrated Security=True;" +
-            "Encrypt=False;TrustServerCertificate=True")]
-        public string SieuThiBHXConnectionString2 {
-            get {
-                return ((string)(this["SieuThiBHXConnectionString2"]));
             }
         }
     }

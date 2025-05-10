@@ -98,10 +98,10 @@
             // 
             // thoátToolStripMenuItem
             // 
-            this.thoátToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(236, 40);
-            this.thoátToolStripMenuItem.Text = "Thoát";
+            //this.thoátToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
+            //this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            //this.thoátToolStripMenuItem.Size = new System.Drawing.Size(236, 40);
+            //this.thoátToolStripMenuItem.Text = "Thoát";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
@@ -151,14 +151,14 @@
             this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
             this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click_1);
-            // 
-            // chiTiếtHóaĐơnToolStripMenuItem
-            // 
-            this.chiTiếtHóaĐơnToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.chiTiếtHóaĐơnToolStripMenuItem.Name = "chiTiếtHóaĐơnToolStripMenuItem";
-            this.chiTiếtHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.chiTiếtHóaĐơnToolStripMenuItem.Text = "Chi tiết hóa đơn";
-            this.chiTiếtHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtHóaĐơnToolStripMenuItem_Click);
+            //// 
+            //// chiTiếtHóaĐơnToolStripMenuItem
+            //// 
+            //this.chiTiếtHóaĐơnToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
+            //this.chiTiếtHóaĐơnToolStripMenuItem.Name = "chiTiếtHóaĐơnToolStripMenuItem";
+            //this.chiTiếtHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            //this.chiTiếtHóaĐơnToolStripMenuItem.Text = "Chi tiết hóa đơn";
+            //this.chiTiếtHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtHóaĐơnToolStripMenuItem_Click);
             // 
             // khoHàngToolStripMenuItem
             // 
