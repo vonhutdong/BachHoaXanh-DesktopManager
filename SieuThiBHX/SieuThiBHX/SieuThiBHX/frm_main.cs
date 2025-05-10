@@ -297,5 +297,19 @@ namespace SieuThiBHX
                 ActForm("frmTraCuuNV");
             }
         }
+
+        private void thốngKêPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExit("frm_ThongKeTheoMaPhieuNhap"))
+            {
+                frm_ThongKeTheoMaPhieuNhap f = new frm_ThongKeTheoMaPhieuNhap();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frm_ThongKeTheoMaPhieuNhap");
+            }
+        }
     }
 }

@@ -117,80 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="InThongKeTheoMaPhieuNhap1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="menuToolStrip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnLamMoi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="btnThoat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVFhH7ZfPa9NQAMd3GN4FmSJjTd3w5nYU7xuiJ0HH
-        NgqmSzPYZbfelhIYnhIHgusDRXC3yaBi1+TgVc+yq+Jf4EZkzctLmbpF3rpo982vl24TBb/wuaXf76dt
-        EpKBxbd0SLX8rYrt7JeafjC1wYKJF15QJFSc1Z0fRdLelup0ZiBvlJbfUm0/QPqVkep0CTdSU9pyvuE4
-        EsqMi8isumyE7F3EncTgWBa3N1h0FLi21r6LO4nBARFuZP8S07iTGCwX4eb6PyQg68aV+Zp5R9f1wZPL
-        x8FyEXIJLBufyzUzKNeM5rSuXzi5/gcEuuMhMRJYLkKvwPAT54tE6KMCobN8mDP2nA3HC8RIYLkIoYBU
-        dz9cf+Ze+lUWk6gASGC5CFygQHa/j651xnAQEx0HCSwXoStA34cj85r5YK5qsuhIOrJmvupbQKrvve75
-        li+xXAhtxetbYITQT6HAw2VjVNaM9bJmbkbA0WNmquZBWXus9C3QvQrc+6FEUnC4Z1w9OgDLRQgFCsSl
-        WRKp4zxYLgLeiPjfIRHaKBK6ySk8bd+KE4iMn5VADL9vxdrKYeI4D5aLkEeAXyFy1aBHJ1xcsFyEPAKZ
-        wXIR/gv89QLn/lCaKpD7sbzhHOJAFmkCuV9M1Bb7iANZRARO82pWsTtTaoN6OJJGxfLFTzKRVJr0smqx
-        JcX23pVs5wAHEcVm97DjzKK8YVfTZGTLo4sNOoSfO5f0yqj2131+vixYnUk87jT5CepBti4iQV37AAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="guna2GroupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tableFields.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="guna2HtmlLabel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtTim.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cboTim.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="guna2GroupBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvTim.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

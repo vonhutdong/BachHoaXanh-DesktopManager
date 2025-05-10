@@ -241,16 +241,16 @@ VALUES
 -- NhaCungCap
 INSERT INTO NhaCungCap (MaNhaCungCap, TenNhaCungCap, SoDienThoai, DiaChi) 
 VALUES 
-(N'NCC01', N'LG', N'0123456789', N'23/7 Võ Văn Ngân'),
-(N'NCC02', N'LeNoVo', N'0123456789', N'7/11 Hoàng Diệu 2'),
-(N'NCC03', N'SamSung', N'0123456789', N'50/7 Trần Phú'),
-(N'NCC04', N'Dell', N'0123456789', N'16 Đặng Văn Bi'),
-(N'NCC05', N'CellsPhone', N'0123456789', N'16/3 Võ Nguyên Giáp'),
-(N'NCC06', N'Family Mart', N'0123456789', N'25/16 đường số 25'),
-(N'NCC07', N'GS25', N'0123456789', N'29/16 Hiệp Bình'),
-(N'NCC08', N'Xiaomi', N'0123456789', N'12/3 D2'),
-(N'NCC09', N'Vissan', N'0123456789', N'27 Đường 16'),
-(N'NCC10', N'Sạch', N'0123456789', N'2 Đường 21');
+(N'NCC001', N'LG', N'0123456789', N'23/7 Võ Văn Ngân'),
+(N'NCC002', N'LeNoVo', N'0123456789', N'7/11 Hoàng Diệu 2'),
+(N'NCC003', N'SamSung', N'0123456789', N'50/7 Trần Phú'),
+(N'NCC004', N'Dell', N'0123456789', N'16 Đặng Văn Bi'),
+(N'NCC005', N'CellsPhone', N'0123456789', N'16/3 Võ Nguyên Giáp'),
+(N'NCC006', N'Family Mart', N'0123456789', N'25/16 đường số 25'),
+(N'NCC007', N'GS25', N'0123456789', N'29/16 Hiệp Bình'),
+(N'NCC008', N'Xiaomi', N'0123456789', N'12/3 D2'),
+(N'NCC009', N'Vissan', N'0123456789', N'27 Đường 16'),
+(N'NCC010', N'Sạch', N'0123456789', N'2 Đường 21');
 
 -- KhuyenMai
 INSERT INTO KhuyenMai (MaKhuyenMai, TenKhuyenMai, GiaTri) VALUES
@@ -353,6 +353,15 @@ INSERT INTO PhieuNhap (MaPhieuNhap, NgayNhap, ThanhTien, idNhanVien) VALUES
 ('PN005', '2024-03-20T14:10:00', 1100000, 5),
 ('PN006', '2024-03-25T16:50:00', 870000, 6),
 ('PN007', '2024-03-30T18:30:00', 1340000, 1);
+
+--ChiTietPhieuNhap
+INSERT INTO ChiTietPhieuNhap (SoLuong, DonGia, idPhieuNhap, idSanPham) VALUES 
+(10, 150000.00, 1, 1),
+(5, 275000.00, 1, 2),
+(20, 99000.00, 2, 3),
+(15, 120000.00, 2, 1),
+(8, 450000.00, 3, 4),
+(12, 199000.00, 3, 5);
 
 
 
@@ -465,4 +474,34 @@ INSERT INTO PhieuNhap (MaPhieuNhap, NgayNhap, ThanhTien, idNhanVien) VALUES
 --GO
 
 
-select * from SanPham
+CREATE PROCEDURE GetPhieuNhapAndDetails
+    @MaPhieuNhap VARCHAR(30)
+AS
+BEGIN
+    -- Lấy thông tin phiếu nhập
+    SELECT 
+        pn.MaPhieuNhap,
+        pn.NgayNhap,
+        pn.ThanhTien,
+        pn.idNhanVien
+    FROM 
+        PhieuNhap pn
+    WHERE 
+        pn.MaPhieuNhap = @MaPhieuNhap;
+
+    -- Lấy thông tin chi tiết phiếu nhập
+    SELECT 
+        ctn.id AS ChiTietID,
+        ctn.SoLuong,
+        ctn.DonGia,
+        ctn.idPhieuNhap,
+        ctn.idSanPham,
+        sp.TenSanPham -- giả sử có trường TenSanPham trong bảng SanPham
+    FROM 
+        ChiTietPhieuNhap ctn
+    JOIN 
+        SanPham sp ON ctn.idSanPham = sp.id
+    WHERE 
+        ctn.idPhieuNhap = (SELECT id FROM PhieuNhap WHERE MaPhieuNhap = @MaPhieuNhap);
+END
+EXEC GetPhieuNhapAndDetails @MaPhieuNhap = 'PN002';

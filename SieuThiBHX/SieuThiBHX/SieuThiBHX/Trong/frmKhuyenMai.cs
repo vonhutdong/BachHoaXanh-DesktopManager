@@ -239,6 +239,8 @@ namespace SieuThiBHX.Trong
         {
             this.Close();
         }
+
+        
     }
 }
 
