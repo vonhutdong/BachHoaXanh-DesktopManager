@@ -218,9 +218,11 @@ namespace SieuThiBHX.Trong
             this.Close();
         }
 
-        private void frmPhieuNhap_Load(object sender, EventArgs e)
-        {
+        
 
+        private void frmPhieuNhap_Load_1(object sender, EventArgs e)
+        {
+            LoadDataPhieuNhap();
         }
     }
 }

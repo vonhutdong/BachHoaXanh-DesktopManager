@@ -59,7 +59,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(95, 36);
+            this.btnThem.Size = new System.Drawing.Size(111, 36);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -68,7 +68,7 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 36);
+            this.btnXoa.Size = new System.Drawing.Size(90, 36);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -77,7 +77,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(79, 36);
+            this.btnSua.Size = new System.Drawing.Size(89, 36);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -86,7 +86,7 @@
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(120, 36);
+            this.btnLamMoi.Size = new System.Drawing.Size(142, 36);
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
@@ -95,7 +95,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(96, 36);
+            this.btnThoat.Size = new System.Drawing.Size(111, 36);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -300,7 +300,7 @@
             // 
             // frmPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 663);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -311,7 +311,7 @@
             this.Name = "frmPhieuNhap";
             this.Text = "frmPhieuNhap";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPhieuNhap_FormClosing);
-            this.Load += new System.EventHandler(this.frmPhieuNhap_Load);
+            this.Load += new System.EventHandler(this.frmPhieuNhap_Load_1);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

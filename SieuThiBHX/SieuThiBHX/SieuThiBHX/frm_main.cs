@@ -18,7 +18,7 @@ namespace SieuThiBHX
         public frm_main()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
+            //this.IsMdiContainer = true;
         }
         private string tk = string.Empty;
         private int q = 0;
@@ -101,7 +101,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_HoaDon"))
             {
                 frm_HoaDon f = new frm_HoaDon();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -115,7 +115,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_ChiTietHoaDon"))
             {
                 frm_ChiTietHoaDon f = new frm_ChiTietHoaDon();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -129,7 +129,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_KhoHang"))
             {
                 frm_KhoHang f = new frm_KhoHang();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -143,7 +143,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_LoaiHang"))
             {
                 frm_LoaiHang f = new frm_LoaiHang();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -157,7 +157,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_KhachHang"))
             {
                 frm_KhachHang f = new frm_KhachHang();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -171,7 +171,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmSanPham"))
             {
                 frmSanPham f = new frmSanPham();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -185,7 +185,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmChiNhanh"))
             {
                 frmChiNhanh f = new frmChiNhanh();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -199,7 +199,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmChiTietPhieuNhap"))
             {
                 frmChiTietPhieuNhap f = new frmChiTietPhieuNhap();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -213,7 +213,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmKhuyenMai"))
             {
                 frmKhuyenMai f = new frmKhuyenMai();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -227,7 +227,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmNhaCungCap"))
             {
                 frmNhaCungCap f = new frmNhaCungCap();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -241,7 +241,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmPhieuNhap"))
             {
                 frmPhieuNhap f = new frmPhieuNhap();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -255,7 +255,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmTaiKhoan"))
             {
                 frmTaiKhoan f = new frmTaiKhoan();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -269,7 +269,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmBangLuong"))
             {
                 frmBangLuong f = new frmBangLuong();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -283,7 +283,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmCaLam"))
             {
                 frmCaLam f = new frmCaLam();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -297,7 +297,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmLichLam"))
             {
                 frmLichLam f = new frmLichLam();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -311,7 +311,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmLoaiNhanVien"))
             {
                 frmLoaiNhanVien f = new frmLoaiNhanVien();
-                f.MdiParent = this;
+               // f.MdiParent = this;
                 f.Show();
             }
             else
@@ -325,7 +325,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmNhanVien"))
             {
                 frmNhanVien f = new frmNhanVien();
-                f.MdiParent = this;
+               // f.MdiParent = this;
                 f.Show();
             }
             else
@@ -339,7 +339,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frmTraCuuNV"))
             {
                 frmTraCuuNV f = new frmTraCuuNV();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
@@ -353,7 +353,7 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_ThongKeTheoMaPhieuNhap"))
             {
                 frm_ThongKeTheoMaPhieuNhap f = new frm_ThongKeTheoMaPhieuNhap();
-                f.MdiParent = this;
+                //f.MdiParent = this;
                 f.Show();
             }
             else
