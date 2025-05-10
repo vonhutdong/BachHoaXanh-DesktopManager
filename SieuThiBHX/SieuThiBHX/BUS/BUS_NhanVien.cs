@@ -58,5 +58,9 @@ namespace BUS
         {
             return dal_nv.GetListNV2();
         }
+        public DTO_NhanVien getNhanVien(int idTaiKhoan)
+        {
+            return dal_nv.getNhanVien(idTaiKhoan);
+        }
     }
 }
