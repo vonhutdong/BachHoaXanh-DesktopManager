@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -225,11 +226,41 @@ namespace SieuThiBHX
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             Reset();
+            LoadData();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private string RemoveDiacritics(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+
+            var normalized = input.Normalize(NormalizationForm.FormD);
+            var sb = new StringBuilder();
+
+            foreach (char c in normalized)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+        private void btnTimHD_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimHD.Text.Trim();
+
+            if (!string.IsNullOrEmpty(tuKhoa))
+            {
+                dgvHD.DataSource = bus_hd.TimKiemHD(tuKhoa);
+            }
+            else
+            {
+                LoadData(); // nếu không nhập gì thì load lại toàn bộ
+            }
         }
     }
 }
