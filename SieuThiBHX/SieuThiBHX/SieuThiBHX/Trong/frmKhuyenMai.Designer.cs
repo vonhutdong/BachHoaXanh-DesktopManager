@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhuyenMai));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.btnSua = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -36,14 +39,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.tableFields = new System.Windows.Forms.TableLayoutPanel();
-            this.txtTenKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGiaTri = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gbCTPN = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtTenKhuyenMai = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.gbCTPN = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gbDSKM = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dgvKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.dgvKhuyenMai = new Guna.UI2.WinForms.Guna2DataGridView();
             this.toolStrip1.SuspendLayout();
             this.tableFields.SuspendLayout();
             this.gbCTPN.SuspendLayout();
@@ -132,30 +135,6 @@
             this.tableFields.Size = new System.Drawing.Size(1200, 100);
             this.tableFields.TabIndex = 1;
             // 
-            // txtTenKhuyenMai
-            // 
-            this.txtTenKhuyenMai.BorderColor = System.Drawing.Color.DarkSeaGreen;
-            this.txtTenKhuyenMai.BorderRadius = 2;
-            this.txtTenKhuyenMai.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenKhuyenMai.DefaultText = "";
-            this.txtTenKhuyenMai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenKhuyenMai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenKhuyenMai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenKhuyenMai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenKhuyenMai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTenKhuyenMai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKhuyenMai.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
-            this.txtTenKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKhuyenMai.Location = new System.Drawing.Point(601, 4);
-            this.txtTenKhuyenMai.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
-            this.txtTenKhuyenMai.PlaceholderText = "";
-            this.txtTenKhuyenMai.SelectedText = "";
-            this.txtTenKhuyenMai.Size = new System.Drawing.Size(595, 40);
-            this.txtTenKhuyenMai.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtTenKhuyenMai.TabIndex = 0;
-            // 
             // txtGiaTri
             // 
             this.txtGiaTri.BorderColor = System.Drawing.Color.DarkSeaGreen;
@@ -180,20 +159,43 @@
             this.txtGiaTri.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtGiaTri.TabIndex = 1;
             // 
-            // gbCTPN
+            // txtTenKhuyenMai
             // 
-            this.gbCTPN.Controls.Add(this.tableFields);
-            this.gbCTPN.CustomBorderColor = System.Drawing.Color.DarkSeaGreen;
-            this.gbCTPN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbCTPN.FillColor = System.Drawing.SystemColors.Window;
-            this.gbCTPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gbCTPN.ForeColor = System.Drawing.Color.White;
-            this.gbCTPN.Location = new System.Drawing.Point(0, 39);
-            this.gbCTPN.Name = "gbCTPN";
-            this.gbCTPN.Size = new System.Drawing.Size(1200, 143);
-            this.gbCTPN.TabIndex = 11;
-            this.gbCTPN.Text = "Quản lý khuyến mãi";
-            this.gbCTPN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTenKhuyenMai.BorderColor = System.Drawing.Color.DarkSeaGreen;
+            this.txtTenKhuyenMai.BorderRadius = 2;
+            this.txtTenKhuyenMai.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenKhuyenMai.DefaultText = "";
+            this.txtTenKhuyenMai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenKhuyenMai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenKhuyenMai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenKhuyenMai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenKhuyenMai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTenKhuyenMai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenKhuyenMai.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.txtTenKhuyenMai.ForeColor = System.Drawing.Color.Black;
+            this.txtTenKhuyenMai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenKhuyenMai.Location = new System.Drawing.Point(601, 4);
+            this.txtTenKhuyenMai.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
+            this.txtTenKhuyenMai.PlaceholderText = "";
+            this.txtTenKhuyenMai.SelectedText = "";
+            this.txtTenKhuyenMai.Size = new System.Drawing.Size(595, 40);
+            this.txtTenKhuyenMai.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtTenKhuyenMai.TabIndex = 0;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.AutoSize = false;
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(3, 3);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(591, 42);
+            this.guna2HtmlLabel6.TabIndex = 11;
+            this.guna2HtmlLabel6.Text = "Tên khuyến mãi";
+            this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel11
             // 
@@ -209,19 +211,20 @@
             this.guna2HtmlLabel11.Text = "Giá trị";
             this.guna2HtmlLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2HtmlLabel6
+            // gbCTPN
             // 
-            this.guna2HtmlLabel6.AutoSize = false;
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(3, 3);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(591, 42);
-            this.guna2HtmlLabel6.TabIndex = 11;
-            this.guna2HtmlLabel6.Text = "Tên khuyến mãi";
-            this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gbCTPN.Controls.Add(this.tableFields);
+            this.gbCTPN.CustomBorderColor = System.Drawing.Color.DarkSeaGreen;
+            this.gbCTPN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbCTPN.FillColor = System.Drawing.SystemColors.Window;
+            this.gbCTPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.gbCTPN.ForeColor = System.Drawing.Color.White;
+            this.gbCTPN.Location = new System.Drawing.Point(0, 39);
+            this.gbCTPN.Name = "gbCTPN";
+            this.gbCTPN.Size = new System.Drawing.Size(1200, 143);
+            this.gbCTPN.TabIndex = 11;
+            this.gbCTPN.Text = "Quản lý khuyến mãi";
+            this.gbCTPN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel1
             // 
@@ -253,13 +256,54 @@
             // 
             // dgvKhuyenMai
             // 
-            this.dgvKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvKhuyenMai.ColumnHeadersHeight = 4;
+            this.dgvKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKhuyenMai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvKhuyenMai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvKhuyenMai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvKhuyenMai.Location = new System.Drawing.Point(0, 40);
             this.dgvKhuyenMai.Name = "dgvKhuyenMai";
+            this.dgvKhuyenMai.RowHeadersVisible = false;
             this.dgvKhuyenMai.Size = new System.Drawing.Size(1194, 395);
             this.dgvKhuyenMai.TabIndex = 0;
+            this.dgvKhuyenMai.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvKhuyenMai.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvKhuyenMai.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvKhuyenMai.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvKhuyenMai.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvKhuyenMai.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvKhuyenMai.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvKhuyenMai.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dgvKhuyenMai.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvKhuyenMai.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvKhuyenMai.ThemeStyle.ReadOnly = false;
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvKhuyenMai.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvKhuyenMai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhuyenMai_CellContentClick);
             // 
             // frmKhuyenMai
@@ -304,6 +348,6 @@
         private Guna.UI2.WinForms.Guna2GroupBox gbCTPN;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2GroupBox gbDSKM;
-        private System.Windows.Forms.DataGridView dgvKhuyenMai;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvKhuyenMai;
     }
 }

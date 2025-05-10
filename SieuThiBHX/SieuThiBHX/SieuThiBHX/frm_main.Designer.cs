@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +54,7 @@
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thốngKêPhiếuNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,8 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 1, 0, 1);
             this.menuStrip1.Size = new System.Drawing.Size(1308, 38);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(872, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,11 +82,11 @@
             // 
             this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đăngXuấtToolStripMenuItem,
-            this.thoátToolStripMenuItem,
             this.thôngTinToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
             this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(136, 36);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
             // đăngXuấtToolStripMenuItem
@@ -100,12 +102,16 @@
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(236, 40);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
             this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(236, 40);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.thôngTinToolStripMenuItem.Text = "Thông tin";
             // 
             // quảnLýToolStripMenuItem
@@ -131,6 +137,7 @@
             this.quảnLýToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(118, 36);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.quảnLýToolStripMenuItem.Text = "Quản lý";
             // 
             // hóaĐơnToolStripMenuItem
@@ -141,11 +148,24 @@
             this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
             this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click_1);
             // 
+            this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
+            this.hóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click_1);
+            // 
+            // chiTiếtHóaĐơnToolStripMenuItem
+            // 
+            this.chiTiếtHóaĐơnToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.chiTiếtHóaĐơnToolStripMenuItem.Name = "chiTiếtHóaĐơnToolStripMenuItem";
+            this.chiTiếtHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.chiTiếtHóaĐơnToolStripMenuItem.Text = "Chi tiết hóa đơn";
+            this.chiTiếtHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtHóaĐơnToolStripMenuItem_Click);
+            // 
             // khoHàngToolStripMenuItem
             // 
             this.khoHàngToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.khoHàngToolStripMenuItem.Name = "khoHàngToolStripMenuItem";
             this.khoHàngToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.khoHàngToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.khoHàngToolStripMenuItem.Text = "Kho hàng";
             this.khoHàngToolStripMenuItem.Click += new System.EventHandler(this.khoHàngToolStripMenuItem_Click);
             // 
@@ -154,6 +174,7 @@
             this.loạiHàngToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.loạiHàngToolStripMenuItem.Name = "loạiHàngToolStripMenuItem";
             this.loạiHàngToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.loạiHàngToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.loạiHàngToolStripMenuItem.Text = "Loại hàng";
             this.loạiHàngToolStripMenuItem.Click += new System.EventHandler(this.loạiHàngToolStripMenuItem_Click);
             // 
@@ -162,6 +183,7 @@
             this.KhachHangToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.KhachHangToolStripMenuItem.Name = "KhachHangToolStripMenuItem";
             this.KhachHangToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.KhachHangToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.KhachHangToolStripMenuItem.Text = "Khách hàng";
             this.KhachHangToolStripMenuItem.Click += new System.EventHandler(this.KhachHangToolStripMenuItem_Click);
             // 
@@ -170,6 +192,7 @@
             this.sảnPhẩmToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
             this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
             this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click);
             // 
@@ -178,6 +201,7 @@
             this.chiNhánhToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.chiNhánhToolStripMenuItem.Name = "chiNhánhToolStripMenuItem";
             this.chiNhánhToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.chiNhánhToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.chiNhánhToolStripMenuItem.Text = "Chi Nhánh";
             this.chiNhánhToolStripMenuItem.Click += new System.EventHandler(this.chiNhánhToolStripMenuItem_Click);
             // 
@@ -186,6 +210,7 @@
             this.chiTiếtPhiếuNhậpToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.chiTiếtPhiếuNhậpToolStripMenuItem.Name = "chiTiếtPhiếuNhậpToolStripMenuItem";
             this.chiTiếtPhiếuNhậpToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.chiTiếtPhiếuNhậpToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.chiTiếtPhiếuNhậpToolStripMenuItem.Text = "Chi tiết phiếu nhập";
             this.chiTiếtPhiếuNhậpToolStripMenuItem.Click += new System.EventHandler(this.chiTiếtPhiếuNhậpToolStripMenuItem_Click);
             // 
@@ -194,6 +219,7 @@
             this.khuyếnMãiToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
             this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến mãi";
             this.khuyếnMãiToolStripMenuItem.Click += new System.EventHandler(this.khuyếnMãiToolStripMenuItem_Click);
             // 
@@ -202,6 +228,7 @@
             this.nhàCungCấpToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.nhàCungCấpToolStripMenuItem.Name = "nhàCungCấpToolStripMenuItem";
             this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.nhàCungCấpToolStripMenuItem.Text = "Nhà cung cấp";
             this.nhàCungCấpToolStripMenuItem.Click += new System.EventHandler(this.nhàCungCấpToolStripMenuItem_Click);
             // 
@@ -210,6 +237,7 @@
             this.phiếuNhậpToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.phiếuNhậpToolStripMenuItem.Name = "phiếuNhậpToolStripMenuItem";
             this.phiếuNhậpToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.phiếuNhậpToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.phiếuNhậpToolStripMenuItem.Text = "Phiếu nhập";
             this.phiếuNhậpToolStripMenuItem.Click += new System.EventHandler(this.phiếuNhậpToolStripMenuItem_Click);
             // 
@@ -218,6 +246,7 @@
             this.tàiKhoảnToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
             this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
             // 
@@ -226,6 +255,7 @@
             this.bảngLươngToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.bảngLươngToolStripMenuItem.Name = "bảngLươngToolStripMenuItem";
             this.bảngLươngToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.bảngLươngToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.bảngLươngToolStripMenuItem.Text = "Bảng lương";
             this.bảngLươngToolStripMenuItem.Click += new System.EventHandler(this.bảngLươngToolStripMenuItem_Click);
             // 
@@ -234,6 +264,7 @@
             this.caLàmToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.caLàmToolStripMenuItem.Name = "caLàmToolStripMenuItem";
             this.caLàmToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.caLàmToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.caLàmToolStripMenuItem.Text = "Ca làm";
             this.caLàmToolStripMenuItem.Click += new System.EventHandler(this.caLàmToolStripMenuItem_Click);
             // 
@@ -242,6 +273,7 @@
             this.lịchLàmToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.lịchLàmToolStripMenuItem.Name = "lịchLàmToolStripMenuItem";
             this.lịchLàmToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.lịchLàmToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.lịchLàmToolStripMenuItem.Text = "Lịch làm";
             this.lịchLàmToolStripMenuItem.Click += new System.EventHandler(this.lịchLàmToolStripMenuItem_Click);
             // 
@@ -250,6 +282,7 @@
             this.loạiNhânViênToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.loạiNhânViênToolStripMenuItem.Name = "loạiNhânViênToolStripMenuItem";
             this.loạiNhânViênToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.loạiNhânViênToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.loạiNhânViênToolStripMenuItem.Text = "Loại nhân viên";
             this.loạiNhânViênToolStripMenuItem.Click += new System.EventHandler(this.loạiNhânViênToolStripMenuItem_Click);
             // 
@@ -258,6 +291,7 @@
             this.nhânViênToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
             this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(334, 40);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
@@ -268,12 +302,14 @@
             this.traCứuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.traCứuToolStripMenuItem.Name = "traCứuToolStripMenuItem";
             this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(115, 36);
+            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(78, 25);
             this.traCứuToolStripMenuItem.Text = "Tra cứu";
             // 
             // traCứuNhânViênToolStripMenuItem
             // 
             this.traCứuNhânViênToolStripMenuItem.Name = "traCứuNhânViênToolStripMenuItem";
             this.traCứuNhânViênToolStripMenuItem.Size = new System.Drawing.Size(329, 40);
+            this.traCứuNhânViênToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.traCứuNhânViênToolStripMenuItem.Text = "Tra cứu Nhân Viên";
             this.traCứuNhânViênToolStripMenuItem.Click += new System.EventHandler(this.traCứuNhânViênToolStripMenuItem_Click);
             // 
@@ -284,6 +320,7 @@
             this.chứcNăngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(159, 36);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(108, 25);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng ";
             // 
             // bánHàngToolStripMenuItem
@@ -291,11 +328,14 @@
             this.bánHàngToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.bánHàngToolStripMenuItem.Name = "bánHàngToolStripMenuItem";
             this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.bánHàngToolStripMenuItem.Text = "Bán hàng";
             this.bánHàngToolStripMenuItem.Click += new System.EventHandler(this.bánHàngToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 
+            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thốngKêPhiếuNhậpToolStripMenuItem});
             this.thốngKêToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(136, 36);
@@ -307,10 +347,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(1308, 865);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
+            this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            // 
+            // thốngKêPhiếuNhậpToolStripMenuItem
+            // 
+            this.thốngKêPhiếuNhậpToolStripMenuItem.Name = "thốngKêPhiếuNhậpToolStripMenuItem";
+            this.thốngKêPhiếuNhậpToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.thốngKêPhiếuNhậpToolStripMenuItem.Text = "Thống kê phiếu nhập";
+            this.thốngKêPhiếuNhậpToolStripMenuItem.Click += new System.EventHandler(this.thốngKêPhiếuNhậpToolStripMenuItem_Click);
+            // 
+            // frm_main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.ClientSize = new System.Drawing.Size(872, 562);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_main";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -327,7 +383,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traCứuToolStripMenuItem;
@@ -351,6 +406,7 @@
         private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bánHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traCứuNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thốngKêPhiếuNhậpToolStripMenuItem;
     }
 }
 

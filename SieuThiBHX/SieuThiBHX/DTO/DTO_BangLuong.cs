@@ -23,6 +23,14 @@ namespace DTO
             _luong = luong;
             this.idNhanVien = idNhanVien;
         }
+        public DTO_BangLuong( DateTime thangNam, float tongGioCong, float luong, int idNhanVien)
+        {
+            this.maBangLuong = maBangLuong;
+            this.thangNam = thangNam;
+            this.tongGioCong = tongGioCong;
+            _luong = luong;
+            this.idNhanVien = idNhanVien;
+        }
         public DTO_BangLuong() { }
         public DTO_BangLuong(int id, string maBangLuong, DateTime thangNam, float tongGioCong, float luong, int idNhanVien)
         {

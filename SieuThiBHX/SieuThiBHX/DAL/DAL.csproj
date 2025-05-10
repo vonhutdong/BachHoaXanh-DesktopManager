@@ -60,12 +60,14 @@
     <Compile Include="DAL_HoaDon.cs" />
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_KhoHang.cs" />
+    <Compile Include="DAL_ChiTietPhieuNhap.cs" />
     <Compile Include="DAL_LichLam.cs" />
     <Compile Include="DAL_LoaiHang.cs" />
     <Compile Include="DAL_LoaiNhanVien.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_KhuyenMai.cs" />
     <Compile Include="DAL_NhaCungCap.cs" />
+    <Compile Include="DAL_PhieuNhapAll.cs" />
     <Compile Include="DAL_SanPham.cs" />
     <Compile Include="DAL_TaiKhoan.cs" />
     <Compile Include="DatabaseAccess.cs" />

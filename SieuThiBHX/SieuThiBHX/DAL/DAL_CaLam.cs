@@ -39,7 +39,7 @@ namespace DAL
                     var query2 = da.Db.CaLams.OrderByDescending(x => x.id).FirstOrDefault();
                     da.Db.CaLams.InsertOnSubmit(new CaLam
                     {
-                        MaCaLam = query2 != null && query2.id < 10 ? "CL0" + (query2.id + 1) : "CL" + (query2?.id + 1),
+                        MaCaLam = query2 != null && query2.id < 10 ? "C00" + (query2.id + 1) : "C0" + (query2?.id + 1),
                         TenCaLam = caLam.TenCaLam,
                         GioBatDau = caLam.GioBatDau,
                         GioKetThuc = caLam.GioKetThuc

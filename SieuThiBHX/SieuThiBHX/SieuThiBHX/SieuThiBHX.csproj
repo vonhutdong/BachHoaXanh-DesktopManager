@@ -143,6 +143,12 @@
     <Compile Include="Item.Designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhutDong\BaoCaoBangLuongTheoMaBangLuong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoBangLuongTheoMaBangLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NhutDong\frmBangLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,24 @@
     <EmbeddedResource Include="frm_ApDungMaKhuyenMai.resx">
       <DependentUpon>frm_ApDungMaKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Trong\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trong\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trong\InThongKeTheoMaPhieuNhap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InThongKeTheoMaPhieuNhap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Trong\ThongKeTheoMaPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trong\ThongKeTheoMaPhieuNhap.Designer.cs">
+      <DependentUpon>ThongKeTheoMaPhieuNhap.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frm_BanHang.resx">
       <DependentUpon>frm_BanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
+    <EmbeddedResource Include="NhutDong\BaoCaoBangLuongTheoMaBangLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoBangLuongTheoMaBangLuong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="NhutDong\frmBangLuong.resx">
       <DependentUpon>frmBangLuong.cs</DependentUpon>
@@ -364,6 +391,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trong\frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trong\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trong\InThongKeTheoMaPhieuNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InThongKeTheoMaPhieuNhap.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trong\ThongKeTheoMaPhieuNhap.resx">
+      <DependentUpon>ThongKeTheoMaPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\SieuThiBHX.csproj.dtbcache.json" />
     <None Include=".vs\SieuThiBHX\config\applicationhost.config" />

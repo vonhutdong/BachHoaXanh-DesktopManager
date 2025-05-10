@@ -1,6 +1,8 @@
 create database SieuThiBHX
 go
 use SieuThiBHX
+
+
 go
 set dateformat dmy;
 go
@@ -241,16 +243,16 @@ VALUES
 -- NhaCungCap
 INSERT INTO NhaCungCap (MaNhaCungCap, TenNhaCungCap, SoDienThoai, DiaChi) 
 VALUES 
-(N'NCC01', N'LG', N'0123456789', N'23/7 Võ Văn Ngân'),
-(N'NCC02', N'LeNoVo', N'0123456789', N'7/11 Hoàng Diệu 2'),
-(N'NCC03', N'SamSung', N'0123456789', N'50/7 Trần Phú'),
-(N'NCC04', N'Dell', N'0123456789', N'16 Đặng Văn Bi'),
-(N'NCC05', N'CellsPhone', N'0123456789', N'16/3 Võ Nguyên Giáp'),
-(N'NCC06', N'Family Mart', N'0123456789', N'25/16 đường số 25'),
-(N'NCC07', N'GS25', N'0123456789', N'29/16 Hiệp Bình'),
-(N'NCC08', N'Xiaomi', N'0123456789', N'12/3 D2'),
-(N'NCC09', N'Vissan', N'0123456789', N'27 Đường 16'),
-(N'NCC10', N'Sạch', N'0123456789', N'2 Đường 21');
+(N'NCC001', N'LG', N'0123456789', N'23/7 Võ Văn Ngân'),
+(N'NCC002', N'LeNoVo', N'0123456789', N'7/11 Hoàng Diệu 2'),
+(N'NCC003', N'SamSung', N'0123456789', N'50/7 Trần Phú'),
+(N'NCC004', N'Dell', N'0123456789', N'16 Đặng Văn Bi'),
+(N'NCC005', N'CellsPhone', N'0123456789', N'16/3 Võ Nguyên Giáp'),
+(N'NCC006', N'Family Mart', N'0123456789', N'25/16 đường số 25'),
+(N'NCC007', N'GS25', N'0123456789', N'29/16 Hiệp Bình'),
+(N'NCC008', N'Xiaomi', N'0123456789', N'12/3 D2'),
+(N'NCC009', N'Vissan', N'0123456789', N'27 Đường 16'),
+(N'NCC010', N'Sạch', N'0123456789', N'2 Đường 21');
 
 -- KhuyenMai
 INSERT INTO KhuyenMai (MaKhuyenMai, TenKhuyenMai, GiaTri) VALUES
@@ -459,6 +461,72 @@ INSERT INTO KhoHang (soLuong, idSanPham, idChiTietPhieuNhap) VALUES
 
 
 -----------------------------------------------------------------------------------------
+--ChiTietPhieuNhap
+INSERT INTO ChiTietPhieuNhap (SoLuong, DonGia, idPhieuNhap, idSanPham) VALUES 
+(10, 150000.00, 1, 1),
+(5, 275000.00, 1, 2),
+(20, 99000.00, 2, 3),
+(15, 120000.00, 2, 1),
+(8, 450000.00, 3, 4),
+(12, 199000.00, 3, 5);
+
+
+select * from SanPham
+
+-- --------ndong------------
+-- --calam--
+--ALTER TABLE [LichLam]  WITH CHECK ADD  CONSTRAINT [FK_LichLam_CaLam] FOREIGN KEY([idCaLam])
+--REFERENCES [CaLam] ([id])
+--GO
+--ALTER TABLE [LichLam] CHECK CONSTRAINT [FK_LichLam_CaLam]
+--GO
+--ALTER TABLE [LichLam]  WITH CHECK ADD  CONSTRAINT [FK_LichLam_NhanVien] FOREIGN KEY([idNhanVien])
+--REFERENCES [NhanVien] ([id])
+--GO
+--ALTER TABLE [LichLam] CHECK CONSTRAINT [FK_LichLam_NhanVien]
+--GO
+-----nhanvien---
+--ALTER TABLE [NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_LoaiNhanVien] FOREIGN KEY([idLoaiNhanVien])
+--REFERENCES [LoaiNhanVien] ([id])
+--GO
+--ALTER TABLE [NhanVien] CHECK CONSTRAINT [FK_NhanVien_LoaiNhanVien]
+--GO
+--ALTER TABLE [NhanVien]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_TaiKhoan] FOREIGN KEY([idTaiKhoan])
+--REFERENCES [TaiKhoan] ([id])
+--GO
+--ALTER TABLE [NhanVien] CHECK CONSTRAINT [FK_NhanVien_TaiKhoan]
+--GO
+-----bangluong----
+--ALTER TABLE [BangLuong]  WITH CHECK ADD  CONSTRAINT [FK_BangLuong_NhanVien] FOREIGN KEY([idNhanVien])
+--REFERENCES [NhanVien] ([id])
+--GO
+--ALTER TABLE [BangLuong] CHECK CONSTRAINT [FK_BangLuong_NhanVien]
+--GO
+--ALTER TABLE [ChiTietBangLuong]  WITH CHECK ADD  CONSTRAINT [FK_ChiTietBangLuong_BangLuong] FOREIGN KEY([idBangLuong])
+--REFERENCES [BangLuong] ([id])
+--GO
+--ALTER TABLE [ChiTietBangLuong] CHECK CONSTRAINT [FK_ChiTietBangLuong_BangLuong]
+--GO
+
+-------trong----
+------------------------FK ChiTietPhieuNhap-------------------------
+--ALTER TABLE ChiTietPhieuNhap  WITH CHECK ADD  CONSTRAINT [FK_ChiTietPhieuNhap_PhieuNhap] FOREIGN KEY([idPhieuNhap])
+--REFERENCES PhieuNhap ([id])
+--GO
+--ALTER TABLE ChiTietPhieuNhap CHECK CONSTRAINT [FK_ChiTietPhieuNhap_PhieuNhap]
+--GO
+--ALTER TABLE ChiTietPhieuNhap  WITH CHECK ADD  CONSTRAINT [FK_ChiTietPhieuNhap_SanPham] FOREIGN KEY([idSanPham])
+--REFERENCES SanPham ([id])
+--GO
+--ALTER TABLE ChiTietPhieuNhap CHECK CONSTRAINT [FK_ChiTietPhieuNhap_SanPham]
+--GO
+
+------------------------FK PhieuNHap-------------------------
+--ALTER TABLE PhieuNhap  WITH CHECK ADD  CONSTRAINT [FK_PhieuNhap_NhanVien] FOREIGN KEY([idNhanVien])
+--REFERENCES NhanVien ([id])
+--GO
+--ALTER TABLE PhieuNhap CHECK CONSTRAINT [FK_PhieuNhap_NhanVien]
+--GO
 
 
 ALTER TABLE KhoHang
@@ -528,3 +596,129 @@ FROM HoaDon hd
 JOIN ChiTietHoaDon cthd ON hd.id = cthd.idHoaDon
 JOIN SanPham sp ON cthd.idSanPham = sp.id
 WHERE hd.maHD = 'HD034'
+
+--ALTER TABLE ChiTietHoaDon  WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_HoaDon] FOREIGN KEY([idHoaDon])
+--REFERENCES [HoaDon]([id])
+--GO
+--ALTER TABLE ChiTietHoaDon CHECK CONSTRAINT [FK_ChiTietHoaDon_HoaDon]
+--GO
+--ALTER TABLE ChiTietHoaDon WITH CHECK ADD  CONSTRAINT [FK_ChiTietHoaDon_SanPham] FOREIGN KEY([idSanPham])
+--REFERENCES [SanPham] ([id])
+--GO
+--ALTER TABLE [ChiTietHoaDon] CHECK CONSTRAINT [FK_ChiTietHoaDon_SanPham]
+--GO
+
+--ALTER TABLE KhoHang  WITH CHECK ADD  CONSTRAINT [FK_KhoHang_SanPham] FOREIGN KEY([idSanPham])
+--REFERENCES [SanPham] ([id])
+--GO
+--ALTER TABLE [KhoHang] CHECK CONSTRAINT [FK_KhoHang_SanPham]
+--GO
+
+--ALTER TABLE [SanPham]  WITH CHECK ADD  CONSTRAINT [FK_SanPham_NhaCungCap] FOREIGN KEY([idNhaCungCap])
+--REFERENCES [NhaCungCap] ([id])
+--GO
+--ALTER TABLE [SanPham] CHECK CONSTRAINT [FK_SanPham_NhaCungCap]
+--GO
+--ALTER TABLE [SanPham]  WITH CHECK ADD  CONSTRAINT [FK_SanPham_LoaiHang] FOREIGN KEY([idLoaiHang])
+--REFERENCES [LoaiHang] ([id])
+--GO
+--ALTER TABLE [SanPham] CHECK CONSTRAINT [FK_SanPham_LoaiHang]
+--GO
+go
+create proc [dbo].[abc]
+as
+GO
+/****** Object:  StoredProcedure [dbo].[sp_BaoCaoBangLuong]    Script Date: 11/22/2024 7:29:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create PROCEDURE [dbo].[sp_BaoCaoBangLuong1]
+    @idBangLuong INT = 1
+AS
+BEGIN
+    -- Tắt thông báo lỗi tạm thời nếu có
+    SET NOCOUNT ON;
+
+    -- Lấy báo cáo bảng lương
+    SELECT 
+        nv.TenNhanVien,  -- Tên nhân viên từ bảng nhân viên
+        ctl.NgayLam AS NgayLam,  -- Ngày làm việc
+        ctl.SoGioCongThucTe AS GioCong,  -- Số giờ công thực tế
+        bl.TongGioCong,  -- Tổng giờ công từ bảng lương
+        bl.Luong,  -- Lương từ bảng lương
+		Month(NgayLam) as Thang,
+		DAY(NgayLam) as Ngay
+    FROM BangLuong bl
+    INNER JOIN ChiTietBangLuong ctl ON bl.id = ctl.idBangLuong
+    INNER JOIN NhanVien nv ON bl.idNhanVien = nv.id
+    WHERE 
+        ctl.idBangLuong = @idBangLuong; -- Không lấy dữ liệu chi tiết bị xóa
+END;
+GO
+
+
+CREATE PROCEDURE [dbo].[sp_BaoCaoTongLuongTheoThang]
+    @Thang INT = 10
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        YEAR(ctl.NgayLam) AS Nam,
+        MONTH(ctl.NgayLam) AS Thang,
+        SUM(bl.Luong) AS TongLuong
+    FROM BangLuong bl
+    INNER JOIN ChiTietBangLuong ctl ON bl.id = ctl.idBangLuong
+    INNER JOIN NhanVien nv ON bl.idNhanVien = nv.id
+    WHERE MONTH(ctl.NgayLam) = @Thang
+    GROUP BY YEAR(ctl.NgayLam), MONTH(ctl.NgayLam)
+    ORDER BY Nam, Thang;
+END;
+GO
+
+
+go
+
+exec sp_BaoCaoTongLuongTheoThang  11
+
+select * from BangLuong
+ 
+select * from ChiTietBangLuong
+select * from PhieuNhap
+select * from ChiTietPhieuNhap
+
+
+delete from BangLuong where id = 8
+CREATE PROCEDURE GetPhieuNhapAndDetails
+    @MaPhieuNhap VARCHAR(30)
+AS
+BEGIN
+    -- Lấy thông tin phiếu nhập
+    SELECT 
+        pn.MaPhieuNhap,
+        pn.NgayNhap,
+        pn.ThanhTien,
+        pn.idNhanVien
+    FROM 
+        PhieuNhap pn
+    WHERE 
+        pn.MaPhieuNhap = @MaPhieuNhap;
+
+    -- Lấy thông tin chi tiết phiếu nhập
+    SELECT 
+        ctn.id AS ChiTietID,
+        ctn.SoLuong,
+        ctn.DonGia,
+        ctn.idPhieuNhap,
+        ctn.idSanPham,
+        sp.TenSanPham -- giả sử có trường TenSanPham trong bảng SanPham
+    FROM 
+        ChiTietPhieuNhap ctn
+    JOIN 
+        SanPham sp ON ctn.idSanPham = sp.id
+    WHERE 
+        ctn.idPhieuNhap = (SELECT id FROM PhieuNhap WHERE MaPhieuNhap = @MaPhieuNhap);
+END
+EXEC GetPhieuNhapAndDetails @MaPhieuNhap = 'PN002';

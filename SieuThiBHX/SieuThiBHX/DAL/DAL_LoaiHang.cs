@@ -19,6 +19,9 @@ namespace DAL
                 MaLoaiHang = lh.maLoaiHang,
                 TenLoaiHang = lh.tenLoaiHang
             });
+        public IQueryable LayDSLH()
+        {
+            return da.Db.LoaiHangs.Select(lh => new { lh.id, lh.maLoaiHang, lh.tenLoaiHang });
         }
         public void ThemLoaiHang(DTO_LoaiHang loaihangdto)
         {
@@ -108,4 +111,5 @@ namespace DAL
 
 
     }
+}
 }

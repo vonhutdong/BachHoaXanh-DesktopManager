@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaCungCap));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -36,8 +39,6 @@
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.gbQLNCC = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gbDSNCC = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tableFields = new System.Windows.Forms.TableLayoutPanel();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,12 +46,14 @@
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtTenNCC = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvNCC = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gbDSNCC = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.dgvNCC = new Guna.UI2.WinForms.Guna2DataGridView();
             this.toolStrip1.SuspendLayout();
             this.gbQLNCC.SuspendLayout();
+            this.tableFields.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbDSNCC.SuspendLayout();
-            this.tableFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,41 +133,13 @@
             this.gbQLNCC.Text = "Quản lí nhà cung cấp";
             this.gbQLNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.gbDSNCC, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 326);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(989, 297);
-            this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // gbDSNCC
-            // 
-            this.gbDSNCC.Controls.Add(this.dgvNCC);
-            this.gbDSNCC.CustomBorderColor = System.Drawing.Color.DarkSeaGreen;
-            this.gbDSNCC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbDSNCC.FillColor = System.Drawing.SystemColors.Window;
-            this.gbDSNCC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gbDSNCC.ForeColor = System.Drawing.Color.White;
-            this.gbDSNCC.Location = new System.Drawing.Point(3, 3);
-            this.gbDSNCC.Name = "gbDSNCC";
-            this.gbDSNCC.Size = new System.Drawing.Size(983, 291);
-            this.gbDSNCC.TabIndex = 4;
-            this.gbDSNCC.Text = "Danh sách nhà cung cấp";
-            this.gbDSNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // tableFields
             // 
             this.tableFields.BackColor = System.Drawing.Color.Transparent;
             this.tableFields.ColumnCount = 3;
             this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableFields.Controls.Add(this.txtDiaChi, 1, 2);
             this.tableFields.Controls.Add(this.guna2HtmlLabel6, 0, 0);
             this.tableFields.Controls.Add(this.guna2HtmlLabel11, 0, 1);
@@ -296,15 +271,83 @@
             this.txtTenNCC.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTenNCC.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.gbDSNCC, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 326);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(989, 297);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // gbDSNCC
+            // 
+            this.gbDSNCC.Controls.Add(this.dgvNCC);
+            this.gbDSNCC.CustomBorderColor = System.Drawing.Color.DarkSeaGreen;
+            this.gbDSNCC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbDSNCC.FillColor = System.Drawing.SystemColors.Window;
+            this.gbDSNCC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.gbDSNCC.ForeColor = System.Drawing.Color.White;
+            this.gbDSNCC.Location = new System.Drawing.Point(3, 3);
+            this.gbDSNCC.Name = "gbDSNCC";
+            this.gbDSNCC.Size = new System.Drawing.Size(983, 291);
+            this.gbDSNCC.TabIndex = 4;
+            this.gbDSNCC.Text = "Danh sách nhà cung cấp";
+            this.gbDSNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // dgvNCC
             // 
-            this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvNCC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNCC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNCC.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNCC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNCC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNCC.Location = new System.Drawing.Point(0, 40);
             this.dgvNCC.Name = "dgvNCC";
+            this.dgvNCC.RowHeadersVisible = false;
             this.dgvNCC.Size = new System.Drawing.Size(983, 251);
             this.dgvNCC.TabIndex = 0;
+            this.dgvNCC.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvNCC.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvNCC.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvNCC.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvNCC.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvNCC.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvNCC.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvNCC.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvNCC.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvNCC.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dgvNCC.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvNCC.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNCC.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvNCC.ThemeStyle.ReadOnly = false;
+            this.dgvNCC.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvNCC.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvNCC.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dgvNCC.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvNCC.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvNCC.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvNCC.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvNCC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellContentClick);
             // 
             // frmNhaCungCap
@@ -326,9 +369,9 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gbQLNCC.ResumeLayout(false);
+            this.tableFields.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbDSNCC.ResumeLayout(false);
-            this.tableFields.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,6 +396,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTenNCC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2GroupBox gbDSNCC;
-        private System.Windows.Forms.DataGridView dgvNCC;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvNCC;
     }
 }

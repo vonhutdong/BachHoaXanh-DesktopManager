@@ -126,10 +126,7 @@ namespace SieuThiBHX
             }
         }
 
-        private void guna2GroupBox3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
