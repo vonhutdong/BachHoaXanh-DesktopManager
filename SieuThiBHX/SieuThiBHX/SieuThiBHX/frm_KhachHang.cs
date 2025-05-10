@@ -28,7 +28,6 @@ namespace SieuThiBHX
             dgvDSKH.Columns["MaKH"].HeaderText = "Mã khách hàng";
             dgvDSKH.Columns["TenKH"].HeaderText = "Tên khách hàng";
             dgvDSKH.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
-            dgvDSKH.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dgvDSKH.Columns["Diem"].HeaderText = "Điểm";
             dgvDSKH.Columns["id"].Visible = false;
             lblMaKH.Visible = false;
@@ -39,7 +38,6 @@ namespace SieuThiBHX
         {
             txtTenKH.Text = string.Empty;
             txtSDT.Text = string.Empty;
-            txtDiaChi.Text = string.Empty;
             txtDiem.Text = string.Empty;
         }
 
@@ -89,17 +87,11 @@ namespace SieuThiBHX
                 MessageBox.Show("Vui lòng nhập điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtDiaChi.Text))
-            {
-                MessageBox.Show("Vui lòng nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             // Tạo DTO và thêm
             DTO_KhachHang kh = new DTO_KhachHang(
                 txtTenKH.Text.Trim(),
                 txtSDT.Text.Trim(),
-                txtDiaChi.Text.Trim(),
                 int.Parse(txtDiem.Text.Trim())
             );
 
@@ -157,19 +149,28 @@ namespace SieuThiBHX
 
         private void dgvDSKH_Click(object sender, EventArgs e)
         {
-            int dong = dgvDSKH.CurrentRow.Index;
+            int n = dgvDSKH.CurrentCell.RowIndex;
 
-            // Lưu ID vào biến để dùng khi cập nhật
-            currentID = int.Parse(dgvDSKH.Rows[dong].Cells["id"].Value.ToString());
+            if (n >= 0)
+            {
+                // txtTenKhachHang
+                txtTenKH.Text = dgvDSKH.Rows[n].Cells["TenKH"].Value.ToString();
 
-            txtTenKH.Text = dgvDSKH.Rows[dong].Cells["TenKH"].Value.ToString();
-            txtSDT.Text = dgvDSKH.Rows[dong].Cells["SoDienThoai"].Value.ToString();
-            txtDiaChi.Text = dgvDSKH.Rows[dong].Cells["DiaChi"].Value != null
-            ? dgvDSKH.Rows[dong].Cells["DiaChi"].Value.ToString()
-    :        string.Empty;
-            txtDiem.Text = dgvDSKH.Rows[dong].Cells["Diem"].Value.ToString();
+                // txtSDT
+                txtSDT.Text = dgvDSKH.Rows[n].Cells["SoDienThoai"].Value.ToString();
 
+                //txtDiemTichLuy
+                txtDiem.Text = dgvDSKH.Rows[n].Cells["Diem"].Value.ToString();
 
+                //ID
+                currentID = int.Parse(dgvDSKH.Rows[n].Cells["id"].Value.ToString());
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -204,7 +205,6 @@ namespace SieuThiBHX
                     currentID,
                     txtTenKH.Text.Trim(),
                     txtSDT.Text.Trim(),
-                    txtDiaChi.Text.Trim(),
                     int.Parse(txtDiem.Text.Trim())
                 );
 
@@ -250,21 +250,6 @@ namespace SieuThiBHX
 
             var result = bus_kh.TimKiemTheoTenHoacSDT(keyword).ToList();
             dgvDSKH.DataSource = result;
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTimKiemKH_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDiem_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

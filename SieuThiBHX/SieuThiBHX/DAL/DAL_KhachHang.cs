@@ -21,7 +21,6 @@ namespace DAL
                        kh.maKhachHang,
                        kh.tenKhachHang,
                        kh.soDienThoai,
-                       kh.DiaChi,
                        kh.diem ?? 0
                    );
         }
@@ -40,7 +39,6 @@ namespace DAL
                 TenKH = linqKH.tenKhachHang,
                 MaKH = linqKH.maKhachHang,
                 SoDienThoai = linqKH.soDienThoai,
-                DiaChi = linqKH.DiaChi,
                 Diem = (float)(linqKH.diem ?? 0)
             };
 
@@ -63,7 +61,6 @@ namespace DAL
                     maKhachHang = maKH,
                     tenKhachHang = khachHang.TenKH,
                     soDienThoai = khachHang.SoDienThoai,
-                    DiaChi = khachHang.DiaChi,
                     diem = khachHang.Diem
                 };
 
@@ -104,7 +101,6 @@ namespace DAL
                 {
                     kh.tenKhachHang = khachHang.TenKH;
                     kh.soDienThoai = khachHang.SoDienThoai;
-                    kh.DiaChi = khachHang.DiaChi;
                     kh.diem = khachHang.Diem;
 
                     da.Db.SubmitChanges();
@@ -145,16 +141,12 @@ namespace DAL
                     ||
                     (!string.IsNullOrEmpty(kh.soDienThoai) &&
                         kh.soDienThoai.Contains(tukhoa))
-                    ||
-                    (!string.IsNullOrEmpty(kh.DiaChi) &&
-                        RemoveDiacritics(kh.DiaChi.ToLower()).Contains(keyword))
                 )
                 .Select(kh => new DTO_KhachHang(
                     kh.id,
                     kh.maKhachHang,
                     kh.tenKhachHang,
                     kh.soDienThoai,
-                    kh.DiaChi,
                     (float)(kh.diem ?? 0)))
                 .AsQueryable();
 

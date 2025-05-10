@@ -57,7 +57,10 @@
     <Compile Include="DAL_ChiNhanh.cs" />
     <Compile Include="DAL_ChiTietBangLuong.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="DAL_ChiTietHoaDon.cs" />
+=======
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
     <Compile Include="DAL_HoaDon.cs" />
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_KhoHang.cs" />

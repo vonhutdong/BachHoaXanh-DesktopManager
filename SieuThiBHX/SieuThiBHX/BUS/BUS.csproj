@@ -52,7 +52,10 @@
     <Compile Include="BUS_ChiNhanh.cs" />
     <Compile Include="BUS_ChiTietBangLuong.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="BUS_ChiTietHoaDon.cs" />
+=======
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_KhoHang.cs" />

@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SieuThiBHX",
+    "\\SieuThiBHX\\SieuThiBHX",
+    "\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX"
   ],
+  "SelectedNode": "\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX\\SieuThiBHX.csproj",
   "PreviewInSolutionExplorer": false
 }

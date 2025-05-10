@@ -12,6 +12,7 @@ namespace DAL
         private DatabaseAccess da = new DatabaseAccess();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public IQueryable<DTO_LoaiHang> LayDSLH()
         {
             return da.Db.LoaiHangs.Select(lh => new DTO_LoaiHang
@@ -25,6 +26,11 @@ namespace DAL
         {
             return da.Db.LoaiHangs.Select(lh => new { lh.id, lh.maLoaiHang, lh.tenLoaiHang });
 >>>>>>> branch-2
+=======
+        public IQueryable LayDSLH()
+        {
+            return da.Db.LoaiHangs.Select(lh => new { lh.id, lh.maLoaiHang, lh.tenLoaiHang });
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
         }
         public void ThemLoaiHang(DTO_LoaiHang loaihangdto)
         {

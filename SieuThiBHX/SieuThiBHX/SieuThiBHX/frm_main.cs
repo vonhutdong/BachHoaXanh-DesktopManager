@@ -14,16 +14,18 @@ using System.Windows.Forms;
 using SieuThiBHX.NhutDong;
 using SieuThiBHX.Trong;
 using System.Data.SqlClient;
+<<<<<<< HEAD
 using DTO;
 using DAL;
 =======
 >>>>>>> branch-2
+=======
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
 
 namespace SieuThiBHX
 {
     public partial class frm_main : Form
     {
-        public static DTO_NhanVien nhanVien = null;
         public frm_main()
         {
             InitializeComponent();
@@ -164,24 +166,12 @@ namespace SieuThiBHX
                 ActForm("frm_HoaDon");
             }
         }
-        private void OpenCTHoaDonForm()
-        {
-            // Đóng các MDI child cũ nếu có
-            foreach (Form frm in this.MdiChildren)
-            {
-                frm.Close();
-            }
 
-            frm_ChiTietHoaDon hoaDonForm = new frm_ChiTietHoaDon();
-            hoaDonForm.MdiParent = this;
-            hoaDonForm.FormBorderStyle = FormBorderStyle.None; // Không viền
-            hoaDonForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
-            hoaDonForm.Show();
-        }
         private void chiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_ChiTietHoaDon"))
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 OpenCTHoaDonForm();
 =======
@@ -189,6 +179,11 @@ namespace SieuThiBHX
                 //f.MdiParent = this;
                 f.Show();
 >>>>>>> branch-2
+=======
+                frm_ChiTietHoaDon f = new frm_ChiTietHoaDon();
+                f.MdiParent = this;
+                f.Show();
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
             }
             else
             {
@@ -473,6 +468,7 @@ namespace SieuThiBHX
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         private void OpenBanHangForm()
         {
             // Đóng các MDI child cũ nếu có
@@ -511,5 +507,7 @@ namespace SieuThiBHX
             this.Close();
 >>>>>>> branch-2
         }
+=======
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
     }
 }

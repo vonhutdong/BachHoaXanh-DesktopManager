@@ -215,7 +215,7 @@ SET IDENTITY_INSERT dbo.TaiKhoan ON;
 SET IDENTITY_INSERT dbo.TaiKhoan OFF;
 
 
-SET IDENTITY_INSERT select * from TaiKhoan ON;
+SET IDENTITY_INSERT TaiKhoan ON;
 
 INSERT INTO TaiKhoan (id, MaTaiKhoan, TenTaiKhoan, MatKhau, Quyen)
 VALUES 
@@ -336,17 +336,7 @@ VALUES
 ('HD007', '2024-03-07', '14:00', 600000, 510000, 1, 1, 2),
 ('HD008', '2024-03-08', '15:00', 900000, 810000, 2, 2, 3),
 ('HD009', '2024-03-09', '16:00', 700000, 595000, 3, 3, 1),
-('HD010', '2024-03-10', '17:00', 1000000, 850000, 1, 4, 2),
-('HD006', '01/05/2025', '08:00:00', 300000, 285000, 1, 1, 1),
-('HD007', '01/05/2025', '09:15:00', 250000, 240000, 2, 2, 2),
-('HD008', '02/05/2025', '10:30:00', 180000, 175000, 3, 3, 3),
-('HD009', '02/05/2025', '11:45:00', 220000, 200000, 1, 4, 1),
-('HD010', '03/05/2025', '13:00:00', 150000, 145000, 2, 5, 2),
-('HD011', '03/05/2025', '14:15:00', 280000, 270000, 3, 6, 3),
-('HD012', '04/05/2025', '15:30:00', 320000, 300000, 1, 1, 1),
-('HD013', '04/05/2025', '16:45:00', 400000, 380000, 2, 2, 2),
-('HD014', '05/05/2025', '17:00:00', 350000, 330000, 3, 3, 3),
-('HD015', '05/05/2025', '18:15:00', 290000, 275000, 1, 4, 1);
+('HD010', '2024-03-10', '17:00', 1000000, 850000, 1, 4, 2);
 
 INSERT INTO SanPham (maSanPham, tenSanPham, donViTinh, donGia, ngaySanXuat, hanSuDung, anhSanPham, idLoaiHang, idNhaCungCap)
 VALUES
@@ -555,6 +545,7 @@ BEGIN
     ORDER BY pn.NgayNhap DESC;
 END;
 
+<<<<<<< HEAD
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -728,3 +719,5 @@ BEGIN
 END
 EXEC GetPhieuNhapAndDetails @MaPhieuNhap = 'PN002';
 >>>>>>> branch-2
+=======
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)

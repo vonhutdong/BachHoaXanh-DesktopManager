@@ -30,9 +30,5 @@ namespace BUS
         {
             dal_km.DelKM(id);
         }
-        public int getIdKhuyenMai(string maKM)
-        {
-            return dal_km.getIdKhuyenMai(maKM);
-        }
     }
 }

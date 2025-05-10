@@ -24,14 +24,13 @@ namespace SieuThiBHX
         int currentID = -1;
         public void LoadDSLoaiHang()
         {
+            //load danh sách
             dgvLoaiHang.DataSource = bus_lh.LayDSLH();
-
+            //đổi tên cột
             dgvLoaiHang.Columns["MaLoaiHang"].HeaderText = "Mã Loại Hàng";
             dgvLoaiHang.Columns["TenLoaiHang"].HeaderText = "Tên Loại Hàng";
+            //ẩn cột id
             dgvLoaiHang.Columns["id"].Visible = false;
-
-            dgvLoaiHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLoaiHang.EnableHeadersVisualStyles = true;
         }
 
         private void dgvLoaiHang_CellContentClick(object sender, DataGridViewCellEventArgs e)

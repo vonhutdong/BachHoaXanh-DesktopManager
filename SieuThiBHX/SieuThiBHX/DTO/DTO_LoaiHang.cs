@@ -29,10 +29,14 @@ namespace DTO
             this.tenLoaiHang = tenLoaiHang;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         public DTO_LoaiHang() { }
 =======
 
 >>>>>>> branch-2
+=======
+
+>>>>>>> parent of d3a4bab (Merge branch 'MinhDev_V1' into tempNew)
         public int Id { get => id; set => id = value; }
         public string MaLoaiHang { get => maLoaiHang; set => maLoaiHang = value; }
         public string TenLoaiHang { get => tenLoaiHang; set => tenLoaiHang = value; }
