@@ -49,8 +49,8 @@
             this.txtGioBatDau = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dgvCaLam = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.dgvCaLam = new Guna.UI2.WinForms.Guna2DataGridView();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -121,6 +121,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(71, 24);
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // guna2GroupBox3
             // 
@@ -277,8 +278,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCaLam.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCaLam.ColumnHeadersHeight = 4;
-            this.dgvCaLam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCaLam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
@@ -295,7 +295,7 @@
             this.dgvCaLam.RowHeadersWidth = 51;
             this.dgvCaLam.RowTemplate.Height = 24;
             this.dgvCaLam.Size = new System.Drawing.Size(1260, 299);
-            this.dgvCaLam.TabIndex = 0;
+            this.dgvCaLam.TabIndex = 1;
             this.dgvCaLam.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCaLam.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvCaLam.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -307,7 +307,7 @@
             this.dgvCaLam.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCaLam.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.dgvCaLam.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvCaLam.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCaLam.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCaLam.ThemeStyle.HeaderStyle.Height = 4;
             this.dgvCaLam.ThemeStyle.ReadOnly = false;
             this.dgvCaLam.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -317,6 +317,7 @@
             this.dgvCaLam.ThemeStyle.RowsStyle.Height = 24;
             this.dgvCaLam.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCaLam.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCaLam.Click += new System.EventHandler(this.dgvCaLam_Click);
             // 
             // frmCaLam
             // 
@@ -330,6 +331,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCaLam";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCaLam_FormClosing);
             this.Load += new System.EventHandler(this.frmCaLam_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

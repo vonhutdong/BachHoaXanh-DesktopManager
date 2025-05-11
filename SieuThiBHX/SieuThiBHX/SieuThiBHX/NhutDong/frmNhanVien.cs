@@ -62,10 +62,15 @@ namespace SieuThiBHX
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             loadDSNV();
-
+            loadCboNhanVien();
 
         }
-
+        void loadCboNhanVien()
+        {
+            cboMaTaiKhoan.DataSource = bus_tk.GetListTaiKhoan();
+            cboMaTaiKhoan.DisplayMember = "TenTaiKhoan";
+            cboMaTaiKhoan.ValueMember = "id";
+        }
         private void dgvNV_Click(object sender, EventArgs e)
         {
             if (dgvNV.CurrentCell != null)
@@ -275,6 +280,7 @@ namespace SieuThiBHX
             cboMaLoaiNhanVien.SelectedValue = -1;
             cboMaTaiKhoan.SelectedValue = -1;
             loadDSNV();
+            loadCboNhanVien();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

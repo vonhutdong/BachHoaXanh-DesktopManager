@@ -77,12 +77,12 @@ namespace SieuThiBHX
 
             // Others
 
-            nhânViênToolStripMenuItem.Enabled = false;
-            nhânViênToolStripMenuItem.Visible = false;
+            //nhânViênToolStripMenuItem.Enabled = false;
+            //nhânViênToolStripMenuItem.Visible = false;
             //hóaĐơnToolStripMenuItem.Enabled = false;
             //hóaĐơnToolStripMenuItem.Visible = false;
-            chiTiếtHóaĐơnToolStripMenuItem.Enabled = false;
-            chiTiếtHóaĐơnToolStripMenuItem.Visible = false;
+            //chiTiếtHóaĐơnToolStripMenuItem.Enabled = false;
+            //chiTiếtHóaĐơnToolStripMenuItem.Visible = false;
 
             // Role
             if (q == 0)

@@ -33,7 +33,7 @@ namespace SieuThiBHX
             dgvCaLam.Columns["id"].Visible = false;
 
             dgvCaLam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCaLam.ColumnHeadersHeight = 30; // hoặc cao hơn
+            dgvCaLam.ColumnHeadersHeight = 40; // hoặc cao hơn
 
             // Thiết lập lại style để dữ liệu hiện rõ
             dgvCaLam.DefaultCellStyle.BackColor = Color.White;  
@@ -210,6 +210,22 @@ namespace SieuThiBHX
             }
         }
 
-        
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmCaLam_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.No)
+            {
+                e.Cancel = true; // Hủy bỏ việc đóng form
+            }
+            else
+            {
+                e.Cancel = false; // Cho phép đóng form
+            }
+        }
     }
 }

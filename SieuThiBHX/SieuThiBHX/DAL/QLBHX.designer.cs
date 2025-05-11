@@ -87,7 +87,7 @@ namespace DAL
     #endregion
 		
 		public QLBHXDataContext() : 
-				base(global::DAL.Properties.Settings.Default.SieuThiBHXConnectionString2, mappingSource)
+				base(global::DAL.Properties.Settings.Default.SieuThiBHXConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

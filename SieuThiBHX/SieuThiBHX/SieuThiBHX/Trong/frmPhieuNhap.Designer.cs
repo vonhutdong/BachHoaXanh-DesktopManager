@@ -310,6 +310,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmPhieuNhap";
             this.Text = "frmPhieuNhap";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPhieuNhap_FormClosing);
             this.Load += new System.EventHandler(this.frmPhieuNhap_Load_1);
             this.toolStrip1.ResumeLayout(false);
