@@ -96,26 +96,34 @@ namespace DAL
         {
             try
             {
+                // Lấy bản ghi có id lớn nhất
                 var query2 = da.Db.BangLuongs.OrderByDescending(x => x.id).FirstOrDefault();
-                var data = da.Db.BangLuongs.SingleOrDefault(cn => cn.MaBangLuong == bangluong.MaBangLuong);
+
+                // Kiểm tra xem đã có bảng lương nào cho nhân viên đó trong tháng/năm đó chưa
+                var data = da.Db.BangLuongs.SingleOrDefault(cn =>
+                    cn.ThangNam.Value.Month == bangluong.ThangNam.Month &&
+                    cn.ThangNam.Value.Year == bangluong.ThangNam.Year &&
+                    cn.idNhanVien == bangluong.IdNhanVien);
+
                 if (data == null)
                 {
                     da.Db.BangLuongs.InsertOnSubmit(new BangLuong
                     {
-                        MaBangLuong = query2 != null && query2.id < 10 ? "BL00" + (query2.id + 1) : "BL0" + (query2?.id + 1),
+                        MaBangLuong = query2 != null && query2.id < 10
+                            ? "BL00" + (query2.id + 1)
+                            : "BL0" + (query2?.id + 1),
                         ThangNam = bangluong.ThangNam,
                         Luong = bangluong.Luong,
                         TongGioCong = bangluong.TongGioCong,
                         idNhanVien = bangluong.IdNhanVien
-
                     });
+
                     da.Db.SubmitChanges();
                 }
                 else
                 {
-                    throw new Exception("Mã bảng lương đã tồn tại");
+                    throw new Exception("Đã tồn tại bảng lương cho nhân viên này trong tháng/năm này.");
                 }
-
             }
             catch (Exception ex)
             {

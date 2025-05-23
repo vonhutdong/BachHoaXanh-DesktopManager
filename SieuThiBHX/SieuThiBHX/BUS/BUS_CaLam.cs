@@ -30,5 +30,13 @@ namespace BUS
         {
             return dal_cl.SuaCaLam(caLam);
         }
+        public string TinhGioLam(CaLam cl)
+        {
+            return dal_cl.TinhGioLam(cl);
+        }
+        public CaLam GetCaLamById(int idCaLam)
+        {
+            return dal_cl.GetCaLamById(idCaLam);
+        }
     }
 }

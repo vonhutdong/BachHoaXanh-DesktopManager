@@ -49,28 +49,56 @@ namespace DAL
             try
             {
                 var query2 = da.Db.ChiTietBangLuongs.OrderByDescending(x => x.id).FirstOrDefault();
-                ChiTietBangLuong chi = new ChiTietBangLuong
+
+                // Lấy bảng lương cần kiểm tra
+                var bangluong = da.Db.BangLuongs.FirstOrDefault(bl => bl.id == ctbl.IdBangLuong);
+
+                if (bangluong == null)
+                    throw new Exception("Không tìm thấy bảng lương tương ứng.");
+
+                if (bangluong.ThangNam.HasValue &&
+                    bangluong.ThangNam.Value.Month == ctbl.NgayLam.Month &&
+                    bangluong.ThangNam.Value.Year == ctbl.NgayLam.Year)
                 {
-                    MaChiTietBangLuong = query2 != null && query2.id < 10 ? "CTBL00" + (query2.id + 1) : "CTBL0" + (query2?.id + 1),
-                    idBangLuong = ctbl.IdBangLuong,
-                    idLichLam = ctbl.IdLichLam,
-                    SoGioCongThucTe = ctbl.SoGioCongThucTe,
-                    NgayLam = ctbl.NgayLam
-                };
-                da.Db.ChiTietBangLuongs.InsertOnSubmit(chi);
-                da.Db.SubmitChanges();
-                var bangluongcapnhat = da.Db.BangLuongs.FirstOrDefault(bl => bl.id == ctbl.IdBangLuong);
-                var tongGioCong = da.Db.ChiTietBangLuongs
-                         .Where(ct => ct.idBangLuong == ctbl.IdBangLuong)
-                         .Sum(ct => ct.SoGioCongThucTe);
+                    // Kiểm tra trùng ngày làm
+                    bool trungNgayLam = da.Db.ChiTietBangLuongs.Any(ct =>
+                        ct.idBangLuong == ctbl.IdBangLuong &&
+                        ct.NgayLam.Value.Date == ctbl.NgayLam.Date);
 
-                // Cập nhật tổng số giờ công cho bảng lương tương ứng
-                bangluongcapnhat.TongGioCong = tongGioCong;
+                    if (trungNgayLam)
+                    {
+                        throw new Exception("Đã tồn tại chi tiết bảng lương cho ngày này.");
+                    }
 
-                // Cập nhật lương (ví dụ với hệ số lương là 50.000 VND cho mỗi giờ làm)
-                bangluongcapnhat.Luong = tongGioCong * 50000;
+                    // Cho phép thêm vì cùng tháng
+                    ChiTietBangLuong chi = new ChiTietBangLuong
+                    {
+                        MaChiTietBangLuong = query2 != null && query2.id < 10
+                            ? "CTBL00" + (query2.id + 1)
+                            : "CTBL0" + (query2?.id + 1),
+                        idBangLuong = ctbl.IdBangLuong,
+                        idLichLam = ctbl.IdLichLam,
+                        SoGioCongThucTe = ctbl.SoGioCongThucTe,
+                        NgayLam = ctbl.NgayLam
+                    };
 
-                da.Db.SubmitChanges();
+                    da.Db.ChiTietBangLuongs.InsertOnSubmit(chi);
+                    da.Db.SubmitChanges();
+
+                    // Cập nhật bảng lương
+                    var tongGioCong = da.Db.ChiTietBangLuongs
+                        .Where(ct => ct.idBangLuong == ctbl.IdBangLuong)
+                        .Sum(ct => ct.SoGioCongThucTe);
+
+                    bangluong.TongGioCong = tongGioCong;
+                    bangluong.Luong = tongGioCong * 50000;
+                    da.Db.SubmitChanges();
+                }
+                else
+                {
+                    throw new Exception("Chỉ được thêm chi tiết bảng lương trong cùng tháng/năm với bảng lương.");
+                }
+
 
 
             }

@@ -53,7 +53,7 @@ namespace DAL
 
                     da.Db.LichLams.InsertOnSubmit(new LichLam
                     {
-                        MaLichLam = query2.id < 10 ? "LL0" + (query2.id + 1) : "LL" + (query2.id + 1),
+                        MaLichLam = query2.id < 10 ? "LL00" + (query2.id + 1) : "LL0" + (query2.id + 1),
                         NgayLam = lichLam.NgayLam,
                         idNhanVien = lichLam.IdNhanVien,
                         idCaLam = lichLam.IdCaLam,
@@ -204,6 +204,12 @@ namespace DAL
             }
             return false;
         }
+        public LichLam GetLichLamByMa(int maLichLam)
+        {
+            return da.Db.LichLams
+                .FirstOrDefault(ll => ll.id == maLichLam);
+        }
+
 
 
     }
