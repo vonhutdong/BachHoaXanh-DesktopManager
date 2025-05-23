@@ -257,6 +257,9 @@ namespace SieuThiBHX
             }
         }
 
-     
+        private void dgvChiTietPhieuNhap_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace DAL
         }
         public DatabaseAccess()
         {
-            Db = new QLBHXDataContext(Properties.Settings.Default.SieuThiBHXConnectionString);
+            Db = new QLBHXDataContext(Properties.Settings.Default.SieuThiBHXConnectionString1);
         }
         public QLBHXDataContext Db { get; set; }
         public string ServerName { get; set; }
