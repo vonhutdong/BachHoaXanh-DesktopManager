@@ -88,7 +88,7 @@
             this.dgvHD.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvHD.Location = new System.Drawing.Point(0, 40);
-            this.dgvHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHD.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHD.MultiSelect = false;
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.RowHeadersVisible = false;
@@ -127,7 +127,7 @@
             this.guna2GroupBox2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(2, 162);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(803, 372);
             this.guna2GroupBox2.TabIndex = 1;
@@ -182,7 +182,7 @@
             this.tableContainer.Controls.Add(this.guna2GroupBox1, 0, 0);
             this.tableContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableContainer.Location = new System.Drawing.Point(0, 28);
-            this.tableContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableContainer.Margin = new System.Windows.Forms.Padding(2);
             this.tableContainer.Name = "tableContainer";
             this.tableContainer.RowCount = 2;
             this.tableContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -199,7 +199,7 @@
             this.guna2GroupBox1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(2, 2);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(803, 156);
             this.guna2GroupBox1.TabIndex = 0;
@@ -219,7 +219,7 @@
             this.tableFields.Controls.Add(this.cboMaKH, 1, 0);
             this.tableFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableFields.Location = new System.Drawing.Point(0, 40);
-            this.tableFields.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableFields.Margin = new System.Windows.Forms.Padding(2);
             this.tableFields.Name = "tableFields";
             this.tableFields.RowCount = 3;
             this.tableFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -241,7 +241,7 @@
             this.cboMaNV.ForeColor = System.Drawing.Color.Black;
             this.cboMaNV.ItemHeight = 30;
             this.cboMaNV.Location = new System.Drawing.Point(403, 78);
-            this.cboMaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(398, 36);
             this.cboMaNV.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -260,7 +260,7 @@
             this.cboMaKM.ForeColor = System.Drawing.Color.Black;
             this.cboMaKM.ItemHeight = 30;
             this.cboMaKM.Location = new System.Drawing.Point(403, 40);
-            this.cboMaKM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboMaKM.Margin = new System.Windows.Forms.Padding(2);
             this.cboMaKM.Name = "cboMaKM";
             this.cboMaKM.Size = new System.Drawing.Size(398, 36);
             this.cboMaKM.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -274,7 +274,7 @@
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(2, 2);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(397, 34);
             this.guna2HtmlLabel2.TabIndex = 14;
@@ -289,7 +289,7 @@
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(2, 40);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(397, 34);
             this.guna2HtmlLabel3.TabIndex = 15;
@@ -304,7 +304,7 @@
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(2, 78);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(397, 36);
             this.guna2HtmlLabel4.TabIndex = 16;
@@ -324,7 +324,7 @@
             this.cboMaKH.ForeColor = System.Drawing.Color.Black;
             this.cboMaKH.ItemHeight = 30;
             this.cboMaKH.Location = new System.Drawing.Point(403, 2);
-            this.cboMaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboMaKH.Margin = new System.Windows.Forms.Padding(2);
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(398, 36);
             this.cboMaKH.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -354,7 +354,7 @@
             this.ClientSize = new System.Drawing.Size(807, 564);
             this.Controls.Add(this.tableContainer);
             this.Controls.Add(this.menuToolStrip);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_HoaDon";
             this.Text = "frm_HoaDon";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
