@@ -569,6 +569,31 @@ END
 
 EXEC GetPhieuNhapAndDetails @MaPhieuNhap = 'PN002';
 
+CREATE PROCEDURE sp_GetDanhSachPhieuNhapVaChiTiet
+AS
+BEGIN
+    SELECT 
+        pn.MaPhieuNhap,
+        pn.NgayNhap,
+        pn.ThanhTien,
+        nv.TenNhanVien,
+        ct.SoLuong,
+        ct.DonGia,
+        sp.TenSanPham,
+        (ct.SoLuong * ct.DonGia) AS ThanhTienChiTiet
+    FROM 
+        PhieuNhap pn
+    INNER JOIN 
+        ChiTietPhieuNhap ct ON pn.id = ct.idPhieuNhap
+    INNER JOIN 
+        SanPham sp ON sp.id = ct.idSanPham
+    INNER JOIN 
+        NhanVien nv ON nv.id = pn.idNhanVien
+    ORDER BY 
+        pn.NgayNhap, pn.MaPhieuNhap;
+END
+EXEC sp_GetDanhSachPhieuNhapVaChiTiet;
+
 select * from TaiKhoan
 select*from NhanVien
 select*from LichLam
