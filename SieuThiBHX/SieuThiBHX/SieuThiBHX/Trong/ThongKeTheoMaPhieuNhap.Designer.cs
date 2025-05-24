@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(941, 37);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(945, 37);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -63,7 +63,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 37);
+            this.label1.Size = new System.Drawing.Size(183, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phiếu nhập";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,15 +73,15 @@
             this.cboMaPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboMaPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaPhieuNhap.FormattingEnabled = true;
-            this.cboMaPhieuNhap.Location = new System.Drawing.Point(191, 3);
+            this.cboMaPhieuNhap.Location = new System.Drawing.Point(192, 3);
             this.cboMaPhieuNhap.Name = "cboMaPhieuNhap";
-            this.cboMaPhieuNhap.Size = new System.Drawing.Size(182, 32);
+            this.cboMaPhieuNhap.Size = new System.Drawing.Size(183, 32);
             this.cboMaPhieuNhap.TabIndex = 1;
             // 
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(379, 3);
+            this.btnTim.Location = new System.Drawing.Point(381, 3);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(106, 31);
             this.btnTim.TabIndex = 2;
@@ -99,7 +99,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(941, 501);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(945, 501);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // rpt_ThongKeTheoMaPhieuNhap
@@ -111,19 +111,20 @@
             this.rpt_ThongKeTheoMaPhieuNhap.Location = new System.Drawing.Point(3, 3);
             this.rpt_ThongKeTheoMaPhieuNhap.Name = "rpt_ThongKeTheoMaPhieuNhap";
             this.rpt_ThongKeTheoMaPhieuNhap.ReportSource = this.InThongKeTheoMaPhieuNhap1;
-            this.rpt_ThongKeTheoMaPhieuNhap.Size = new System.Drawing.Size(935, 495);
+            this.rpt_ThongKeTheoMaPhieuNhap.Size = new System.Drawing.Size(939, 495);
             this.rpt_ThongKeTheoMaPhieuNhap.TabIndex = 1;
             // 
             // frm_ThongKeTheoMaPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 538);
+            this.ClientSize = new System.Drawing.Size(945, 538);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frm_ThongKeTheoMaPhieuNhap";
             this.Text = "Thống kê theo mã phiếu nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ThongKeTheoMaPhieuNhap_FormClosing);
             this.Load += new System.EventHandler(this.frm_ThongKeTheoMaPhieuNhap_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

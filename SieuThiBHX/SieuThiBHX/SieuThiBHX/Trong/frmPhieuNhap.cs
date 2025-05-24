@@ -33,7 +33,8 @@ namespace SieuThiBHX.Trong
         {
             btnThemPN.Enabled = true;
             btnThemCTPN.Enabled = true;
-            btnSua.Enabled = false;
+            btnSuaPN.Enabled = false;
+            btnSuaCTPN.Enabled = false;
             btnXoa.Enabled = false;
             dgvPhieuNhap.DataSource = bus_pnALL.LayDSPhieuNhap();
 
@@ -44,7 +45,10 @@ namespace SieuThiBHX.Trong
             dgvPhieuNhap.Columns["MaNhanVien"].HeaderText = "Nhân viên";
             dgvPhieuNhap.Columns["id"].Visible = false;
 
+
             // Thiết lập lại style để dữ liệu hiện rõ
+            dgvPhieuNhap.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPhieuNhap.ColumnHeadersHeight = 40; // hoặc cao hơn
             dgvPhieuNhap.DefaultCellStyle.BackColor = Color.White;
             dgvPhieuNhap.DefaultCellStyle.ForeColor = Color.Black;
             dgvPhieuNhap.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
@@ -61,10 +65,12 @@ namespace SieuThiBHX.Trong
         }
         private void LoadDataChiTietPN()
         {
-            btnThemPN.Enabled = true;
-            btnThemCTPN.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            //btnThemPN.Enabled = true;
+            //btnThemCTPN.Enabled = true;
+            //btnSuaPN.Enabled = false;
+            //btnSuaCTPN.Enabled = false;
+            //btnXoa.Enabled = false;
+            
             dgvChiTietPhieuNhap.DataSource = bus_ctpn.LayDSCTPN();
 
             //đổi tên cột
@@ -131,8 +137,9 @@ namespace SieuThiBHX.Trong
             }
             btnThemCTPN.Enabled = false;
             btnThemPN.Enabled = false;
-            btnSua.Enabled = true;
+            btnSuaPN.Enabled = true;
             btnXoa.Enabled = true;
+            btnSuaCTPN.Enabled = false;
         }
         public bool CheckNumber(string n)
         {
@@ -169,7 +176,7 @@ namespace SieuThiBHX.Trong
                 {
                     MessageBox.Show("Thêm phiếu nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadDataPhieuNhap();
-                    LoadDataChiTietPN(); // Có thể làm mới danh sách chi tiết nếu cần
+                    LoadDataChiTietPN();
                 }
                 else
                 {
@@ -259,6 +266,7 @@ namespace SieuThiBHX.Trong
                     MessageBox.Show("Sửa thành công!!", "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     //làm mới
                     LoadDataPhieuNhap();
+                    LoadDataChiTietPN();
 
                 }
                 else
@@ -339,8 +347,9 @@ namespace SieuThiBHX.Trong
             }
             btnThemCTPN.Enabled = false;
             btnThemPN.Enabled = false;
-            btnSua.Enabled = true;
+            btnSuaPN.Enabled = false;
             btnXoa.Enabled = true;
+            btnSuaCTPN.Enabled = true;
         }
 
         private void btnThemCTPN_Click(object sender, EventArgs e)
@@ -384,8 +393,15 @@ namespace SieuThiBHX.Trong
                 if (bus_ctpn.ThemChiTiet(ct))
                 {
                     MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDataPhieuNhap();
-                    LoadDataChiTietPN();
+
+                    // Lưu lại mã phiếu nhập đã chọn
+                    var selectedMaPhieuNhap = cbMaPhieuNhap.SelectedValue;
+
+                    LoadDataPhieuNhap();     // Cập nhật lại danh sách phiếu nhập
+                    LoadDataChiTietPN();     // Cập nhật danh sách chi tiết
+
+                    // Gán lại giá trị đã chọn
+                    cbMaPhieuNhap.SelectedValue = selectedMaPhieuNhap;
                 }
                 else
                 {
@@ -396,6 +412,77 @@ namespace SieuThiBHX.Trong
             {
                 MessageBox.Show("Đã xảy ra lỗi trong quá trình thêm chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSuaCTPN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra dữ liệu đầu vào trước
+                if (string.IsNullOrWhiteSpace(txtSoLuong.Text) || string.IsNullOrWhiteSpace(txtDonGia.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ số lượng và đơn giá!", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtSoLuong.Text, out int soLuong) || soLuong <= 0)
+                {
+                    MessageBox.Show("Số lượng phải là số nguyên dương!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!float.TryParse(txtDonGia.Text, out float donGia) || donGia < 0)
+                {
+                    MessageBox.Show("Đơn giá phải là số hợp lệ!", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DTO_ChiTietPhieuNhap ct = new DTO_ChiTietPhieuNhap
+                {
+                    Id = currentID,
+                    IdPhieuNhap = Convert.ToInt32(cbMaPhieuNhap.SelectedValue),
+                    IdSanPham = Convert.ToInt32(cbTenSanPham.SelectedValue),
+                    SoLuong = soLuong,
+                    DonGia = donGia
+                };
+
+                if (bus_ctpn.SuaChiTiet(ct))
+                {
+                    MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Lưu lại mã phiếu nhập đã chọn
+                    var selectedMaPhieuNhap = cbMaPhieuNhap.SelectedValue;
+
+                    LoadDataPhieuNhap();     // Cập nhật lại danh sách phiếu nhập
+                    LoadDataChiTietPN();     // Cập nhật danh sách chi tiết
+
+                    // Gán lại giá trị đã chọn
+                    cbMaPhieuNhap.SelectedValue = selectedMaPhieuNhap;
+                }
+                else
+                {
+                    MessageBox.Show("Không thể sửa chi tiết phiếu nhập!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi sửa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void inThongKePhieuNhapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+                frm_ThongKeTheoMaPhieuNhap f = new frm_ThongKeTheoMaPhieuNhap();
+                //f.MdiParent = this;
+                f.Show();
+            
+        }
+
+        private void inDanhSachPhieuNhapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_InDanhSachPN f = new frm_InDanhSachPN();
+            //f.MdiParent = this;
+            f.Show();
         }
     }
 }

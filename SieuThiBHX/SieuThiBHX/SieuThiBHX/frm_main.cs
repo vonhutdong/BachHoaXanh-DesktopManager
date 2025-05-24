@@ -366,5 +366,19 @@ namespace SieuThiBHX
         {
             this.Close();
         }
+
+        private void inDanhSáchPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExit("frm_InDanhSachPN"))
+            {
+                frm_InDanhSachPN f = new frm_InDanhSachPN();
+                //f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frm_InDanhSachPN");
+            }
+        }
     }
 }

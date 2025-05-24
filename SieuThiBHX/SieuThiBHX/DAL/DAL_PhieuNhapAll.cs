@@ -1,9 +1,11 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
@@ -165,7 +167,24 @@ namespace DAL
                 throw new Exception("Lỗi khi cập nhật thành tiền: " + ex.Message);
             }
         }
+        public DataTable LayDSPhieuNhapVaChiTiet_BaoCao()
+        {
+            string connectionString = da.Db.Connection.ConnectionString;
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_GetDanhSachPhieuNhapVaChiTiet", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
 
     }
 }

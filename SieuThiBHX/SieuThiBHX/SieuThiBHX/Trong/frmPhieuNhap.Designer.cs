@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuNhap));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuNhap));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grCTPN = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvChiTietPhieuNhap = new Guna.UI2.WinForms.Guna2DataGridView();
             this.gbDSTK = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dgvPhieuNhap = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gbQLCN = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,23 +59,28 @@
             this.txtThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnThemPN = new System.Windows.Forms.ToolStripButton();
             this.btnThemCTPN = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
-            this.btnSua = new System.Windows.Forms.ToolStripButton();
+            this.btnSuaCTPN = new System.Windows.Forms.ToolStripButton();
+            this.btnSuaPN = new System.Windows.Forms.ToolStripButton();
             this.btnLamMoi = new System.Windows.Forms.ToolStripButton();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
-            this.btnThemPN = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.inThongKePhieuNhapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inDanhSachPhieuNhapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvPhieuNhap = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel2.SuspendLayout();
             this.grCTPN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).BeginInit();
             this.gbDSTK.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbQLCN.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.gbCTPN.SuspendLayout();
             this.tableFields.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -108,26 +115,26 @@
             // 
             // dgvChiTietPhieuNhap
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvChiTietPhieuNhap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietPhieuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvChiTietPhieuNhap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietPhieuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietPhieuNhap.ColumnHeadersHeight = 4;
             this.dgvChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietPhieuNhap.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietPhieuNhap.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvChiTietPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietPhieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(0, 40);
@@ -172,18 +179,6 @@
             this.gbDSTK.TabIndex = 11;
             this.gbDSTK.Text = "Danh sách phiếu nhập";
             this.gbDSTK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dgvPhieuNhap
-            // 
-            this.dgvPhieuNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPhieuNhap.Location = new System.Drawing.Point(0, 40);
-            this.dgvPhieuNhap.Name = "dgvPhieuNhap";
-            this.dgvPhieuNhap.RowHeadersWidth = 51;
-            this.dgvPhieuNhap.Size = new System.Drawing.Size(692, 266);
-            this.dgvPhieuNhap.TabIndex = 0;
-            this.dgvPhieuNhap.Click += new System.EventHandler(this.dgvPhieuNhap_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -406,7 +401,7 @@
             this.tableFields.ColumnCount = 3;
             this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
             this.tableFields.Controls.Add(this.dtpNgayNhap, 1, 0);
             this.tableFields.Controls.Add(this.guna2HtmlLabel12, 0, 0);
             this.tableFields.Controls.Add(this.cbNhanVien, 1, 2);
@@ -536,68 +531,164 @@
             this.btnThemPN,
             this.btnThemCTPN,
             this.btnXoa,
-            this.btnSua,
+            this.btnSuaCTPN,
+            this.btnSuaPN,
             this.btnLamMoi,
-            this.btnThoat});
+            this.btnThoat,
+            this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1340, 39);
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btnThemPN
+            // 
+            this.btnThemPN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemPN.Image = ((System.Drawing.Image)(resources.GetObject("btnThemPN.Image")));
+            this.btnThemPN.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThemPN.Name = "btnThemPN";
+            this.btnThemPN.Size = new System.Drawing.Size(145, 36);
+            this.btnThemPN.Text = "Thêm phiếu nhập";
+            this.btnThemPN.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // btnThemCTPN
             // 
+            this.btnThemCTPN.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnThemCTPN.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCTPN.Image")));
             this.btnThemCTPN.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThemCTPN.Name = "btnThemCTPN";
-            this.btnThemCTPN.Size = new System.Drawing.Size(258, 36);
+            this.btnThemCTPN.Size = new System.Drawing.Size(187, 36);
             this.btnThemCTPN.Text = "Thêm chi tiết phiếu nhập";
             this.btnThemCTPN.Click += new System.EventHandler(this.btnThemCTPN_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 36);
+            this.btnXoa.Size = new System.Drawing.Size(67, 36);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnSua
+            // btnSuaCTPN
             // 
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(79, 36);
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnSuaCTPN.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnSuaCTPN.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaCTPN.Image")));
+            this.btnSuaCTPN.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSuaCTPN.Name = "btnSuaCTPN";
+            this.btnSuaCTPN.Size = new System.Drawing.Size(177, 36);
+            this.btnSuaCTPN.Text = "Sửa chi tiết phiếu nhập";
+            this.btnSuaCTPN.Click += new System.EventHandler(this.btnSuaCTPN_Click);
+            // 
+            // btnSuaPN
+            // 
+            this.btnSuaPN.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnSuaPN.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaPN.Image")));
+            this.btnSuaPN.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSuaPN.Name = "btnSuaPN";
+            this.btnSuaPN.Size = new System.Drawing.Size(137, 36);
+            this.btnSuaPN.Text = "Sửa Phiếu Nhập";
+            this.btnSuaPN.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLamMoi
             // 
+            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(120, 36);
+            this.btnLamMoi.Size = new System.Drawing.Size(94, 36);
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnThoat
             // 
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(96, 36);
+            this.btnThoat.Size = new System.Drawing.Size(77, 36);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnThemPN
+            // toolStripDropDownButton1
             // 
-            this.btnThemPN.Image = ((System.Drawing.Image)(resources.GetObject("btnThemPN.Image")));
-            this.btnThemPN.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnThemPN.Name = "btnThemPN";
-            this.btnThemPN.Size = new System.Drawing.Size(196, 36);
-            this.btnThemPN.Text = "Thêm phiếu nhập";
-            this.btnThemPN.Click += new System.EventHandler(this.btnThem_Click);
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inThongKePhieuNhapToolStripMenuItem,
+            this.inDanhSachPhieuNhapToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(45, 36);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // inThongKePhieuNhapToolStripMenuItem
+            // 
+            this.inThongKePhieuNhapToolStripMenuItem.Name = "inThongKePhieuNhapToolStripMenuItem";
+            this.inThongKePhieuNhapToolStripMenuItem.Size = new System.Drawing.Size(279, 30);
+            this.inThongKePhieuNhapToolStripMenuItem.Text = "InThongKePhieuNhap";
+            this.inThongKePhieuNhapToolStripMenuItem.Click += new System.EventHandler(this.inThongKePhieuNhapToolStripMenuItem_Click);
+            // 
+            // inDanhSachPhieuNhapToolStripMenuItem
+            // 
+            this.inDanhSachPhieuNhapToolStripMenuItem.Name = "inDanhSachPhieuNhapToolStripMenuItem";
+            this.inDanhSachPhieuNhapToolStripMenuItem.Size = new System.Drawing.Size(279, 30);
+            this.inDanhSachPhieuNhapToolStripMenuItem.Text = "InDanhSachPhieuNhap";
+            this.inDanhSachPhieuNhapToolStripMenuItem.Click += new System.EventHandler(this.inDanhSachPhieuNhapToolStripMenuItem_Click);
+            // 
+            // dgvPhieuNhap
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPhieuNhap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPhieuNhap.ColumnHeadersHeight = 4;
+            this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhieuNhap.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPhieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPhieuNhap.Location = new System.Drawing.Point(0, 40);
+            this.dgvPhieuNhap.Name = "dgvPhieuNhap";
+            this.dgvPhieuNhap.RowHeadersVisible = false;
+            this.dgvPhieuNhap.Size = new System.Drawing.Size(692, 266);
+            this.dgvPhieuNhap.TabIndex = 1;
+            this.dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvPhieuNhap.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPhieuNhap.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPhieuNhap.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvPhieuNhap.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPhieuNhap.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dgvPhieuNhap.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPhieuNhap.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvPhieuNhap.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvPhieuNhap.ThemeStyle.ReadOnly = false;
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPhieuNhap.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPhieuNhap.Click += new System.EventHandler(this.dgvPhieuNhap_Click);
             // 
             // frmPhieuNhap
             // 
@@ -618,7 +709,6 @@
             this.grCTPN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).EndInit();
             this.gbDSTK.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbQLCN.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -627,6 +717,7 @@
             this.tableFields.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,7 +729,6 @@
         private Guna.UI2.WinForms.Guna2GroupBox grCTPN;
         private Guna.UI2.WinForms.Guna2DataGridView dgvChiTietPhieuNhap;
         private Guna.UI2.WinForms.Guna2GroupBox gbDSTK;
-        private System.Windows.Forms.DataGridView dgvPhieuNhap;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2GroupBox gbQLCN;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -661,9 +751,14 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnThemCTPN;
         private System.Windows.Forms.ToolStripButton btnXoa;
-        private System.Windows.Forms.ToolStripButton btnSua;
+        private System.Windows.Forms.ToolStripButton btnSuaPN;
         private System.Windows.Forms.ToolStripButton btnLamMoi;
         private System.Windows.Forms.ToolStripButton btnThoat;
         private System.Windows.Forms.ToolStripButton btnThemPN;
+        private System.Windows.Forms.ToolStripButton btnSuaCTPN;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem inThongKePhieuNhapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inDanhSachPhieuNhapToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvPhieuNhap;
     }
 }

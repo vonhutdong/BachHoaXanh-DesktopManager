@@ -216,6 +216,18 @@
     <Compile Include="Trong\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trong\InDanhSachPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trong\InDanhSachPN.Designer.cs">
+      <DependentUpon>InDanhSachPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trong\InDSPhieuNhap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InDSPhieuNhap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Trong\InThongKeTheoMaPhieuNhap.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -334,6 +346,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trong\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trong\InDanhSachPN.resx">
+      <DependentUpon>InDanhSachPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trong\InDSPhieuNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InDSPhieuNhap.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Trong\InThongKeTheoMaPhieuNhap.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
