@@ -306,7 +306,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDanhSachTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDanhSachTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachTaiKhoan.ColumnHeadersHeight = 4;
+            this.dgvDanhSachTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
@@ -320,6 +321,7 @@
             this.dgvDanhSachTaiKhoan.Location = new System.Drawing.Point(0, 40);
             this.dgvDanhSachTaiKhoan.Name = "dgvDanhSachTaiKhoan";
             this.dgvDanhSachTaiKhoan.RowHeadersVisible = false;
+            this.dgvDanhSachTaiKhoan.RowHeadersWidth = 51;
             this.dgvDanhSachTaiKhoan.Size = new System.Drawing.Size(1032, 318);
             this.dgvDanhSachTaiKhoan.TabIndex = 0;
             this.dgvDanhSachTaiKhoan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -333,7 +335,7 @@
             this.dgvDanhSachTaiKhoan.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDanhSachTaiKhoan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.dgvDanhSachTaiKhoan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvDanhSachTaiKhoan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachTaiKhoan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDanhSachTaiKhoan.ThemeStyle.HeaderStyle.Height = 4;
             this.dgvDanhSachTaiKhoan.ThemeStyle.ReadOnly = false;
             this.dgvDanhSachTaiKhoan.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -358,6 +360,7 @@
             this.Name = "frmTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmTaiKhoan";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTaiKhoan_FormClosing);
             this.Load += new System.EventHandler(this.frmTaiKhoan_Load);
             this.toolStrip1.ResumeLayout(false);

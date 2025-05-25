@@ -88,6 +88,7 @@ namespace DAL
 		
 		public QLBHXDataContext() : 
 				base(global::DAL.Properties.Settings.Default.SieuThiBHXConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.SieuThiBHXConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

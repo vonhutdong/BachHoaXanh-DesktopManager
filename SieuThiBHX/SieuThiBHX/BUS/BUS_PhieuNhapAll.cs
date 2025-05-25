@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DAL;
+using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
-using DTO;
 
 namespace BUS
 {
@@ -38,6 +39,10 @@ namespace BUS
         public void CapNhatThanhTien(int idPhieuNhap)
         {
             dal_pnAll.CapNhatThanhTien(idPhieuNhap);
+        }
+        public DataTable LayDSPhieuNhapVaChiTiet_BaoCao()
+        {
+            return dal_pnAll.LayDSPhieuNhapVaChiTiet_BaoCao();
         }
     }
 }

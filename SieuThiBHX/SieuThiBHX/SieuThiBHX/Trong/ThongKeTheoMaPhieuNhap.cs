@@ -57,5 +57,14 @@ namespace SieuThiBHX.Trong
         {
             LoadMaPhieuNhap();
         }
+
+        private void frm_ThongKeTheoMaPhieuNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát chương trình", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

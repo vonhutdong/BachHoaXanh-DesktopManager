@@ -45,6 +45,7 @@ namespace SieuThiBHX.Trong
                     this.Hide(); // Ẩn form đăng nhập
 
                     frm_main f = new frm_main(taiKhoan, quyen, nvLogin);
+                   
                     f.ShowDialog();
 
                     this.Show(); // Hiện lại nếu cần quay lại đăng nhập
@@ -58,6 +59,15 @@ namespace SieuThiBHX.Trong
             {
                 MessageBox.Show("Tên tài khoản hoặc mật khẩu không đúng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void frm_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát chương trình", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }

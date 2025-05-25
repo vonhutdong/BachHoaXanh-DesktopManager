@@ -28,6 +28,7 @@ namespace DAL
                               };
             return temp;
         }
+      
 
         public bool ThemCaLam(DTO_CaLam caLam)
         {
@@ -39,7 +40,7 @@ namespace DAL
                     var query2 = da.Db.CaLams.OrderByDescending(x => x.id).FirstOrDefault();
                     da.Db.CaLams.InsertOnSubmit(new CaLam
                     {
-                        MaCaLam = query2 != null && query2.id < 10 ? "C00" + (query2.id + 1) : "C0" + (query2?.id + 1),
+                        MaCaLam = query2 != null && query2.id < 10 ? "C" + (query2.id + 1) : "C" + (query2?.id + 1),
                         TenCaLam = caLam.TenCaLam,
                         GioBatDau = caLam.GioBatDau,
                         GioKetThuc = caLam.GioKetThuc
@@ -106,7 +107,49 @@ namespace DAL
             }
             return false;
         }
-            
+        public string TinhGioLam(CaLam calam)
+        {
+            if (calam != null)
+            {
+                if (TimeSpan.TryParse(calam.GioBatDau, out TimeSpan start) &&
+                    TimeSpan.TryParse(calam.GioKetThuc, out TimeSpan end))
+                {
+                    // Nếu giờ kết thúc nhỏ hơn giờ bắt đầu, cộng thêm 1 ngày
+                    if (end < start)
+                    {
+                        end = end.Add(TimeSpan.FromDays(1));
+                    }
+
+                    TimeSpan timeSpan = end - start;
+                    return timeSpan.TotalHours.ToString("0.##"); // làm tròn 2 chữ số
+                }
+                else
+                {
+                    return "Định dạng giờ bắt đầu/kết thúc không hợp lệ!";
+                }
+            }
+            else
+            {
+                return "Ca làm không tồn tại!";
+            }
+        }
+
+
+        public CaLam GetCaLamById(int idCaLam)
+        {
+            try
+            {
+                var caLam = da.Db.CaLams.SingleOrDefault(cl => cl.id == idCaLam);
+                return caLam;
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Lỗi khi lấy ca làm: {ex.Message}");
+                return null;
+            }
+        }
+
+
 
 
     }

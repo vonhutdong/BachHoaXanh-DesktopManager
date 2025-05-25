@@ -16,6 +16,8 @@ namespace SieuThiBHX.NhutDong
     {
         BUS_BangLuong bus_bangluong = new BUS_BangLuong();
         BUS_ChiTietBangLuong bus_chitietbangluong = new BUS_ChiTietBangLuong();
+        BUS_CaLam bus_calam = new BUS_CaLam();
+        BUS_LichLam bus_lichlam = new BUS_LichLam();
         //id bang lương đang chọn
         int currentIDBangLuong = 0;
         int currentIDNhanVien = 0;
@@ -74,7 +76,8 @@ namespace SieuThiBHX.NhutDong
                 btnHuy.Enabled = false;
                 //cb lich lam
                 LoadCBLichLam();
-                
+               // cbLichLam.SelectedIndex = -1;
+
             }
             catch (Exception ex)
             {
@@ -230,7 +233,7 @@ namespace SieuThiBHX.NhutDong
                 //thêm bảng lương
                 if (checkbtn)
                 {
-                    if (txtMaPhieuNhap.Text.Length > 0)
+                    if (cbNhanVien.SelectedIndex > 0)
                     {
                         bus_bangluong.ThemBangLuong(new DTO_BangLuong(dtNgayNhap.Value, 0, 0, int.Parse(cbNhanVien.SelectedValue.ToString())));
                         MessageBox.Show("Thêm thành công!!");
@@ -246,7 +249,7 @@ namespace SieuThiBHX.NhutDong
                 //thêm chi tiết
                 else
                 {
-                    if (txtMaPhieuNhap.Text.Length > 0 && txtGioCong.Text.Length > 0)
+                    if (txtGioCong.Text.Length > 0)
                     {
                         int gioCong = int.Parse(txtGioCong.Text);
                         if (gioCong > 15)
@@ -349,6 +352,40 @@ namespace SieuThiBHX.NhutDong
             
         }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            btnThemChiTiet.Enabled = true;
+            btnThem.Enabled = true;
+        }
+
         
+        private void cbLichLam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLichLam.SelectedValue != null && int.TryParse(cbLichLam.SelectedValue.ToString(), out int maLichLam))
+            {
+                //MessageBox.Show(maLichLam.ToString());
+                var lichLam = bus_lichlam.GetLichLamByMa(maLichLam);
+                if (lichLam == null)
+                {
+                    MessageBox.Show("Không tìm thấy lịch làm!");
+                    return;
+                }
+
+                var caLam = bus_calam.GetCaLamById(lichLam.idCaLam.Value);
+                if (caLam == null)
+                {
+                    MessageBox.Show("Không tìm thấy ca làm việc!");
+                    return;
+                }
+
+                // Tính giờ làm
+                string soGio = bus_calam.TinhGioLam(caLam);
+                txtGioCong.Text = soGio;
+            }
+
+            
+        }
+
+    
     }
 }

@@ -57,5 +57,11 @@ namespace BUS
         {
            return dal_ll.DellLL(id);
         }
+        public LichLam GetLichLamByMa(int maLichLam)
+        {
+            return dal_ll.GetLichLamByMa(maLichLam);
+        }
+
+
     }
 }

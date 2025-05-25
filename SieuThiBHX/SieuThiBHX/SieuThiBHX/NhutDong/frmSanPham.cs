@@ -231,7 +231,7 @@ namespace SieuThiBHX.NhutDong
 
             private void btnSua_Click(object sender, EventArgs e)
             {
-                MessageBox.Show($"{int.Parse(cbMaNhomHang.SelectedValue.ToString())}");
+                //MessageBox.Show($"{int.Parse(cbMaNhomHang.SelectedValue.ToString())}");
 
                 try
                 {
@@ -251,10 +251,10 @@ namespace SieuThiBHX.NhutDong
                                                                     float.Parse(txtDonGia.Text),
                                                                     dtpNgaySanXuat.Value.Date,
                                                                     dtpHanSuDung.Value.Date,
-                                                                    //idLoaiHang,
-                                                                    //idNhaCungCap,
-                                                                    Convert.ToInt32(cbMaNhomHang.SelectedValue.ToString()),
-                                                                    Convert.ToInt32(cbNhaCungCap.SelectedValue.ToString()),
+                                                                    idLoaiHang,
+                                                                    idNhaCungCap,
+                                                                    //Convert.ToInt32(cbMaNhomHang.SelectedValue.ToString()),
+                                                                    //Convert.ToInt32(cbNhaCungCap.SelectedValue.ToString()),
                                                                     imageData
                             ));
                         MessageBox.Show("Sửa thành công thành công!", "Thoát", MessageBoxButtons.OK);
@@ -278,7 +278,7 @@ namespace SieuThiBHX.NhutDong
         {
             try
             {
-                if (txtMaSanPham.Text.Length > 0 &&
+                if (
               txtTenSanPham.Text.Length > 0 &&
               txtDonViTinh.Text.Length > 0 &&
               txtDonGia.Text.Length > 0

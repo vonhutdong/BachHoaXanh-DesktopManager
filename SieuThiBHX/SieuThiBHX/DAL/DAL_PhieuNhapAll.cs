@@ -1,9 +1,11 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
@@ -51,17 +53,32 @@ namespace DAL
             {
                 if (pn != null)
                 {
-                    var query2 = da.Db.PhieuNhaps.OrderByDescending(l => l.id).FirstOrDefault();
+                    // Tìm MaPhieuNhap lớn nhất hiện tại
+                    var lastMaPN = da.Db.PhieuNhaps
+                        .OrderByDescending(p => p.MaPhieuNhap)
+                        .Select(p => p.MaPhieuNhap)
+                        .FirstOrDefault();
 
-                    string maPhieuNhap = query2 != null && query2.id < 10
-                        ? "PN00" + (query2.id + 1)
-                        : "PN0" + (query2 != null ? (query2.id + 1) : 1);
+                    int nextNumber = 1;
 
+                    if (!string.IsNullOrEmpty(lastMaPN) && lastMaPN.StartsWith("PN"))
+                    {
+                        string numberPart = lastMaPN.Substring(2); // Bỏ "PN", lấy phần số
+                        if (int.TryParse(numberPart, out int parsed))
+                        {
+                            nextNumber = parsed + 1;
+                        }
+                    }
+
+                    // Tạo mã phiếu nhập mới: PN001, PN010, PN105,...
+                    string maPhieuNhap = "PN" + nextNumber.ToString("D3");
+
+                    // Tạo đối tượng mới
                     var newPhieuNhap = new PhieuNhap
                     {
                         MaPhieuNhap = maPhieuNhap,
                         NgayNhap = pn.NgayNhap,
-                        ThanhTien = 0, // Tạm thời 0, sẽ cập nhật sau
+                        ThanhTien = 0, // Tạm thời gán 0
                         idNhanVien = pn.IdNhanVien
                     };
 
@@ -80,6 +97,7 @@ namespace DAL
                 throw new Exception("Lỗi khi thêm phiếu nhập: " + ex.Message);
             }
         }
+
 
         // Sửa phiếu nhập
         public bool SuaPhieuNhap(DTO_PhieuNhap pn)
@@ -149,7 +167,24 @@ namespace DAL
                 throw new Exception("Lỗi khi cập nhật thành tiền: " + ex.Message);
             }
         }
+        public DataTable LayDSPhieuNhapVaChiTiet_BaoCao()
+        {
+            string connectionString = da.Db.Connection.ConnectionString;
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_GetDanhSachPhieuNhapVaChiTiet", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
 
     }
 }

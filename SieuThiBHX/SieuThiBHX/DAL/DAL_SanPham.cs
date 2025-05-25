@@ -60,12 +60,13 @@ namespace DAL
             try
             {
                 //kiểm tra mã sản phẩm có tồn tại chưa
+                var query2 = da.Db.SanPhams.OrderByDescending(x => x.id).FirstOrDefault();
                 var data = da.Db.SanPhams.FirstOrDefault(dt => dt.maSanPham == sanpham.MaSanPham);
                 if (data == null)
                 {
                     //Sản phẩm được thêm
                     SanPham sp = new SanPham();
-                    sp.maSanPham = sanpham.MaSanPham;
+                    sp.maSanPham = query2 != null && query2.id < 10 ? "SP00" + (query2.id + 1) : "SP0" + (query2?.id + 1);
                     sp.tenSanPham = sanpham.TenSanPham;
                     sp.donViTinh = sanpham.DonViTinh;
                     sp.donGia = sanpham.DonGia;

@@ -340,6 +340,10 @@ namespace DAL
         public DTO_NhanVien getNhanVien(int idTaiKhoan)
         {
             var nhanvien = da.Db.NhanViens.FirstOrDefault(nv => nv.id == idTaiKhoan);
+
+            if (nhanvien == null)
+                return null; 
+
             DTO_NhanVien dto_NhanVien = new DTO_NhanVien
             {
                 Id = nhanvien.id,
@@ -347,10 +351,11 @@ namespace DAL
                 SoDT1 = nhanvien.SoDienThoai,
                 DiaChi = nhanvien.DiaChi,
                 IdLNV = (int)nhanvien.idLoaiNhanVien,
-                IdTK = (int)nhanvien.idLoaiNhanVien
-
+                IdTK = (int)nhanvien.idTaiKhoan 
             };
+
             return dto_NhanVien;
         }
+
     }
 }

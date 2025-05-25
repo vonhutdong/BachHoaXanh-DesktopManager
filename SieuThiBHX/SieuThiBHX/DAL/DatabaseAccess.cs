@@ -12,6 +12,7 @@ namespace DAL
         {
             // Lấy từ Settings.settings (chứ không lấy từ App.config)
             Db = new QLBHXDataContext(Properties.Settings.Default.SieuThiBHXConnectionString);
+            Db = new QLBHXDataContext(Properties.Settings.Default.SieuThiBHXConnectionString1);
         }
 
         public DatabaseAccess(QLBHXDataContext db, string serverName, string dbName)
