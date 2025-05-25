@@ -55,5 +55,16 @@ namespace DAL.Properties {
                 return ((string)(this["SieuThiBHXConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=SieuThiBHX;Integrated Security=True;Trus" +
+            "tServerCertificate=True")]
+        public string SieuThiBHXConnectionString3 {
+            get {
+                return ((string)(this["SieuThiBHXConnectionString3"]));
+            }
+        }
     }
 }

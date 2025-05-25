@@ -484,5 +484,10 @@ namespace SieuThiBHX.Trong
             //f.MdiParent = this;
             f.Show();
         }
+
+        private void frmPhieuNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
