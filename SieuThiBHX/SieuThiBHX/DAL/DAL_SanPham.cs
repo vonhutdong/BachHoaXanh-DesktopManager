@@ -54,7 +54,32 @@ namespace DAL
                 throw new Exception("Có lỗi xảy ra: " + ex.Message);
             }
         }
+        public List<DTO_SanPhamKhoHang> ListSanPham_BanHang()
+        {
+            try
+            {
+                return (from sp in da.Db.SanPhams
+                        join kho in da.Db.KhoHangs on sp.id equals kho.idSanPham
+                        select new DTO_SanPhamKhoHang
+                        {
+                            Id = sp.id,
+                            MaSanPham = sp.maSanPham,
+                            TenSanPham = sp.tenSanPham,
+                            IdLoaiHang = (int)sp.idLoaiHang,
+                            GiaBan = (double)sp.donGia,
+                            SoLuong = (int)kho.soLuong,
+                            AnhSanPham = sp.anhSanPham
+                        })
+         .GroupBy(x => x.Id)
+         .Select(g => g.First())
+         .ToList();
+            }
+            catch (Exception ex)
+            {
 
+                throw new Exception("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
         public void ThemSanPham(DTO_SanPham sanpham)
         {
             try

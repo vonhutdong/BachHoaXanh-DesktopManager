@@ -57,7 +57,7 @@ CREATE TABLE ChiNhanh (
 );
 
 -- 2. Các bảng có phụ thuộc
-CREATE TABLE SanPham (
+CREATE TABLE select * from SanPham (
 	id INT IDENTITY(1,1) NOT NULL,
 	maSanPham NVARCHAR(30),
 	tenSanPham NVARCHAR(100),
@@ -146,7 +146,7 @@ CREATE TABLE ChiTietBangLuong (
 	FOREIGN KEY (idBangLuong) REFERENCES BangLuong(id),
 	FOREIGN KEY (idLichLam) REFERENCES LichLam(id)
 );
-
+select * from SanPham
 CREATE TABLE HoaDon (
 	id INT IDENTITY(1,1) NOT NULL,
 	maHD VARCHAR(50),

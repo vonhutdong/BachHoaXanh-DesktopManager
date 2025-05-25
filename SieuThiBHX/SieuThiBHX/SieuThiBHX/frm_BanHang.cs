@@ -20,7 +20,9 @@ namespace SieuThiBHX
         public frm_BanHang()
         {
             InitializeComponent();
-            sanPhams = bus_SanPham.ListSanPham();
+            TaiDanhSachSanPhamTuDatabase();
+
+            sanPhams = bus_SanPham.ListSP_BH();
             MessageBox.Show("Tổng số sản phẩm: " + sanPhams.Count);
 
             dgvThongTinHoaDon.Columns["MaSanPham"].Visible = false;
@@ -149,6 +151,7 @@ namespace SieuThiBHX
             dgvThongTinHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             LoadCbLoaiSanPham();
             LoadLayoutSanPham(sanPhams);
+            TaiDanhSachSanPhamTuDatabase();
         }
         private void Item_Click(object sender, EventArgs e)
         {
@@ -446,8 +449,27 @@ namespace SieuThiBHX
             // In hóa đơn
             string maHoaDonMoiNhat = bus_HoaDon.TimMaHoaDon(bus_HoaDon.GetMaxIdHD());
             frm_InHD f = new frm_InHD(maHoaDonMoiNhat);
-            f.ShowDialog();
+                f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
 
+            this.Controls.Clear();            // Xóa control cũ nếu muốn
+            this.Controls.Add(f);           // Nhúng form vào panel chính hoặc form
+            f.BringToFront();
+            f.Show();
+
+        }
+        private void OpenRpKhoHangForm()
+        {
+            frm_InHD frm = new frm_InHD();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            this.Controls.Clear();            // Xóa control cũ nếu muốn
+            this.Controls.Add(frm);           // Nhúng form vào panel chính hoặc form
+            frm.BringToFront();
+            frm.Show();
         }
         private List<DTO_SanPhamKhoHang> timKiemSanPhamBangLoaiHang(int idLoaiHang)
         {
@@ -649,5 +671,19 @@ namespace SieuThiBHX
                 txtTenKhachHang.Text = "";
             }
         }
+
+        private void TaiDanhSachSanPhamTuDatabase()
+        {
+            try
+            {
+                sanPhams = bus_SanPham.ListSanPham(); // lấy danh sách mới từ database
+                LoadLayoutSanPham(sanPhams);         // load lại giao diện
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

@@ -457,7 +457,7 @@ namespace SieuThiBHX
 
             frm_BanHang khoHangForm = new frm_BanHang();
             khoHangForm.MdiParent = this;
-            khoHangForm.FormBorderStyle = FormBorderStyle.None; // Không viền
+            khoHangForm.FormBorderStyle = FormBorderStyle.FixedSingle; // Không viền
             khoHangForm.Dock = DockStyle.Fill;                  // Fill toàn bộ cha
             khoHangForm.Show();
         }

@@ -22,7 +22,7 @@ namespace SieuThiBHX.Trong
             dtpNgayNhap.CustomFormat = "dd/MM/yyyy";
         }
 
-       
+
         BUS_ChiTietPhieuNhap bus_ctpn = new BUS_ChiTietPhieuNhap();
         BUS_PhieuNhapAll bus_pn = new BUS_PhieuNhapAll();
         BUS_PhieuNhapAll bus_pnALL = new BUS_PhieuNhapAll();
@@ -70,7 +70,7 @@ namespace SieuThiBHX.Trong
             //btnSuaPN.Enabled = false;
             //btnSuaCTPN.Enabled = false;
             //btnXoa.Enabled = false;
-            
+
             dgvChiTietPhieuNhap.DataSource = bus_ctpn.LayDSCTPN();
 
             //đổi tên cột
@@ -108,7 +108,7 @@ namespace SieuThiBHX.Trong
             cbTenSanPham.SelectedIndex = 0;
         }
 
-      
+
 
         private void dgvPhieuNhap_Click(object sender, EventArgs e)
         {
@@ -286,7 +286,7 @@ namespace SieuThiBHX.Trong
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            
+
             dtpNgayNhap.Value = DateTime.Now;
             txtThanhTien.Text = string.Empty;
             cbNhanVien.SelectedIndex = 0;
@@ -313,7 +313,7 @@ namespace SieuThiBHX.Trong
             this.Close();
         }
 
-        
+
 
         private void frmPhieuNhap_Load_1(object sender, EventArgs e)
         {
@@ -471,11 +471,11 @@ namespace SieuThiBHX.Trong
 
         private void inThongKePhieuNhapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-                frm_ThongKeTheoMaPhieuNhap f = new frm_ThongKeTheoMaPhieuNhap();
-                //f.MdiParent = this;
-                f.Show();
-            
+
+            frm_ThongKeTheoMaPhieuNhap f = new frm_ThongKeTheoMaPhieuNhap();
+            //f.MdiParent = this;
+            f.Show();
+
         }
 
         private void inDanhSachPhieuNhapToolStripMenuItem_Click(object sender, EventArgs e)
@@ -483,11 +483,6 @@ namespace SieuThiBHX.Trong
             frm_InDanhSachPN f = new frm_InDanhSachPN();
             //f.MdiParent = this;
             f.Show();
-        }
-
-        private void frmPhieuNhap_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -41,7 +41,10 @@ namespace BUS
         //{
         //    return dal_sp.ListTimKiemSanPhamBangMa(tukhoa);
         //}
-
+        public List<DTO_SanPhamKhoHang> ListSP_BH()
+        {
+            return dal_sp.ListSanPham_BanHang();
+        }
 
         public IQueryable LocSpTheoTen(string key)
         {
