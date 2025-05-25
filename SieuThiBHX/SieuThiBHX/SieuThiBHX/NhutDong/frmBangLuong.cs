@@ -237,7 +237,6 @@ namespace SieuThiBHX.NhutDong
                     {
                         bus_bangluong.ThemBangLuong(new DTO_BangLuong(dtNgayNhap.Value, 0, 0, int.Parse(cbNhanVien.SelectedValue.ToString())));
                         MessageBox.Show("Thêm thành công!!");
-                        MessageBox.Show(cbNhanVien.SelectedValue.ToString());
                         LamMoi();
                     }
                     else
@@ -251,7 +250,7 @@ namespace SieuThiBHX.NhutDong
                 {
                     if (txtGioCong.Text.Length > 0)
                     {
-                        int gioCong = int.Parse(txtGioCong.Text);
+                        float gioCong = float.Parse(txtGioCong.Text);
                         if (gioCong > 15)
                         {
                             throw new Exception("Giờ công 1 ngày không quá 15 tiếng!");
@@ -356,6 +355,10 @@ namespace SieuThiBHX.NhutDong
         {
             btnThemChiTiet.Enabled = true;
             btnThem.Enabled = true;
+            cbLichLam.Enabled = true;
+            txtGioCong.Enabled = true;
+            txtLuong.Enabled = true;
+            cbNhanVien.Enabled = true;
         }
 
         

@@ -207,4 +207,82 @@
       <Association Name="NhaCungCap_SanPham" Member="NhaCungCap" ThisKey="idNhaCungCap" OtherKey="id" Type="NhaCungCap" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.abc" Method="abc">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ThongKeSanPhamTonKho" Method="sp_ThongKeSanPhamTonKho">
+    <ElementType Name="sp_ThongKeSanPhamTonKhoResult">
+      <Column Name="maSanPham" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="tenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPhieuNhapAndDetails" Method="GetPhieuNhapAndDetails">
+    <Parameter Name="MaPhieuNhap" Parameter="maPhieuNhap" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="GetPhieuNhapAndDetailsResult">
+      <Column Name="MaPhieuNhap" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="idNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="idSanPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThanhTienDong" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BaoCaoBangLuong1" Method="sp_BaoCaoBangLuong1">
+    <Parameter Name="idBangLuong" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_BaoCaoBangLuong1Result">
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NgayLam" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GioCong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongGioCong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Luong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BaoCaoTongLuongTheoThang" Method="sp_BaoCaoTongLuongTheoThang">
+    <Parameter Name="Thang" Parameter="thang" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_BaoCaoTongLuongTheoThangResult">
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetDanhSachPhieuNhapVaChiTiet" Method="sp_GetDanhSachPhieuNhapVaChiTiet">
+    <ElementType Name="sp_GetDanhSachPhieuNhapVaChiTietResult">
+      <Column Name="MaPhieuNhap" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ThanhTienChiTiet" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetHdByMaHd" Method="sp_GetHdByMaHd">
+    <Parameter Name="maHoaDon" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="sp_GetHdByMaHdResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHoaDon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongTienHoaDon" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TienKhuyenMai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TienPhaiTra" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayLapHD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenKhuyenMai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaxSTT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

@@ -45,89 +45,90 @@ namespace DAL
         {
             try
             {
-                // Check mã lịch làm có != null hay không?
-                if (lichLam != null)
+                if (lichLam == null || lichLam.IdCaLam <= 0 || lichLam.IdNhanVien <= 0)
+                    return false;
+
+                int newId = 1;
+                var lastLichLam = da.Db.LichLams.OrderByDescending(l => l.id).FirstOrDefault();
+                if (lastLichLam != null)
                 {
-                    // Check có lịch làm trong DB LichLam hay chưa?
-                    var query2 = da.Db.LichLams.OrderByDescending(l => l.id).FirstOrDefault();
-
-                    da.Db.LichLams.InsertOnSubmit(new LichLam
-                    {
-                        MaLichLam = query2.id < 10 ? "LL00" + (query2.id + 1) : "LL0" + (query2.id + 1),
-                        NgayLam = lichLam.NgayLam,
-                        idNhanVien = lichLam.IdNhanVien,
-                        idCaLam = lichLam.IdCaLam,
-                    });
-
-
-                    da.Db.SubmitChanges(); // Xác nhận thay đổi DB LichLam
-                    return true;
+                    newId = lastLichLam.id + 1;
                 }
+
+                string maLichLam = newId < 10 ? "LL00" + newId : "LL0" + newId;
+
+                da.Db.LichLams.InsertOnSubmit(new LichLam
+                {
+                    MaLichLam = maLichLam,
+                    NgayLam = lichLam.NgayLam,
+                    idNhanVien = lichLam.IdNhanVien,
+                    idCaLam = lichLam.IdCaLam,
+                });
+
+                da.Db.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception("Lỗi khi thêm lịch làm: " + ex.Message, ex);
             }
-            return false;
         }
+
 
         // XoaLichLam()
         public bool XoaLichLam(int id)
         {
             try
             {
-                try
-                {
-                    //tìm lịch làm
-                    var data = da.Db.LichLams.FirstOrDefault(dt => dt.id == id);
-                    da.Db.LichLams.DeleteOnSubmit(data);
-                    da.Db.SubmitChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Có lỗi xảy ra: " + ex.Message);
-                }
+                var data = da.Db.LichLams.FirstOrDefault(dt => dt.id == id);
+                if (data == null)
+                    return false;
+
+                da.Db.LichLams.DeleteOnSubmit(data);
+                da.Db.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             {
-                throw;
+                throw new Exception("Lỗi khi xóa lịch làm: " + ex.Message, ex);
             }
-            return false;
         }
+
 
         // SuaLichLam()
         public bool SuaLichLam(DTO_LichLam lichLam)
         {
             try
             {
-                // Kiểm tra mã lịch làm có tồn tại chưa
+                if (lichLam == null || lichLam.Id <= 0)
+                    return false;
+
                 var ll = da.Db.LichLams.FirstOrDefault(dt => dt.id == lichLam.Id);
                 if (ll != null)
                 {
-                    ll.MaLichLam = lichLam.MaLichLam;
+                    // Tránh gán null cho cột không cho phép null
+                    if (!string.IsNullOrWhiteSpace(lichLam.MaLichLam))
+                        ll.MaLichLam = lichLam.MaLichLam;
+
                     ll.NgayLam = lichLam.NgayLam;
                     ll.idNhanVien = lichLam.IdNhanVien;
                     ll.idCaLam = lichLam.IdCaLam;
 
-                    // Cập nhật thay đổi
                     da.Db.SubmitChanges();
                     return true;
                 }
                 else
                 {
-                    // Trường hợp mã lịch làm không tồn tại
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                // Ghi lại lỗi nếu có
-                // Bạn có thể log lỗi ở đây hoặc xử lý lỗi theo cách của mình
-                Console.WriteLine(ex.Message);
-                return false;
+                throw new Exception("Lỗi khi cập nhật lịch làm: " + ex.Message, ex);
             }
         }
+
+
 
 
 

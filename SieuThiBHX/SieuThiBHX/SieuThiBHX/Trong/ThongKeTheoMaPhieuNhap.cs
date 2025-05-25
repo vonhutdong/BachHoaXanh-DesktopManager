@@ -66,5 +66,15 @@ namespace SieuThiBHX.Trong
                 e.Cancel = true;
             }
         }
+
+        private void cboMaPhieuNhap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rpt_ThongKeTheoMaPhieuNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

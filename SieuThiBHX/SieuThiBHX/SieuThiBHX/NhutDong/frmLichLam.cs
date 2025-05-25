@@ -34,6 +34,8 @@ namespace SieuThiBHX
             dgvLichLam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvLichLam.ColumnHeadersHeight = 30; // hoặc cao hơn
 
+
+
             // Thiết lập lại style để dữ liệu hiện rõ
             dgvLichLam.DefaultCellStyle.BackColor = Color.White;
             dgvLichLam.DefaultCellStyle.ForeColor = Color.Black;
@@ -189,32 +191,43 @@ namespace SieuThiBHX
 
         private void dgvLichLam_Click(object sender, EventArgs e)
         {
-            // Initialize Variable
-            int n = dgvLichLam.CurrentCell.RowIndex;
+            if (dgvLichLam.CurrentRow == null || dgvLichLam.CurrentRow.Index < 0)
+                return;
 
-            if (n >= 0)
+            int n = dgvLichLam.CurrentRow.Index;
+
+            try
             {
-                // dtpNgay
-                dtpNgay.Text = dgvLichLam.Rows[n].Cells["NgayLam"].Value.ToString();
+                // Ngày làm
+                var ngayLam = dgvLichLam.Rows[n].Cells["NgayLam"].Value?.ToString();
+                if (DateTime.TryParse(ngayLam, out DateTime ngay))
+                    dtpNgay.Value = ngay;
 
-                // cbNhanVien
-                //cbNhanVien.Text = dgvLichLam.Rows[n].Cells["TenNhanVien"].Value.ToString();
-                cbNhanVien.Text = dgvLichLam.Rows[n].Cells["TenNhanVien"].Value.ToString();
+                // Nhân viên
+                var tenNhanVien = dgvLichLam.Rows[n].Cells["TenNhanVien"].Value?.ToString();
+                if (!string.IsNullOrEmpty(tenNhanVien))
+                    cbNhanVien.Text = tenNhanVien;
+                else
+                    cbNhanVien.SelectedIndex = -1;
 
-                //txtMaCaLam
-                //cbMaCaLam.Text = dgvLichLam.Rows[n].Cells["TenCaLam"].Value.ToString();
-                cbMaCaLam.SelectedIndex = int.Parse(dgvLichLam.Rows[n].Cells["Ten"].Value.ToString()) - 1;
+                // Ca làm
+                var tenCaLam = dgvLichLam.Rows[n].Cells["TenCaLam"].Value?.ToString();
+                if (!string.IsNullOrEmpty(tenCaLam))
+                    cbMaCaLam.Text = tenCaLam;
+                else
+                    cbMaCaLam.SelectedIndex = -1;
 
-                //ID
+                // ID (ẩn trong DataSource hoặc hiển thị cột "id")
                 currentID = int.Parse(dgvLichLam.Rows[n].Cells["id"].Value.ToString());
-
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lỗi khi chọn dữ liệu: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void cbTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -265,6 +278,11 @@ namespace SieuThiBHX
                 //                LoadData();
                 //            }
             }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

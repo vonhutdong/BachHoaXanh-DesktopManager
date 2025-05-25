@@ -38,5 +38,10 @@ namespace SieuThiBHX.Trong
                 e.Cancel = true;
             }
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

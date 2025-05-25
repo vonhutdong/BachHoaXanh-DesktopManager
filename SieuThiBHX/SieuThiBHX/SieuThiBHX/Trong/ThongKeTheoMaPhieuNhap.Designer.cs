@@ -35,6 +35,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.rpt_ThongKeTheoMaPhieuNhap = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.InThongKeTheoMaPhieuNhap1 = new SieuThiBHX.Trong.InThongKeTheoMaPhieuNhap();
+            this.InThongKeTheoMaPhieuNhap2 = new SieuThiBHX.Trong.InThongKeTheoMaPhieuNhap();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             this.cboMaPhieuNhap.Name = "cboMaPhieuNhap";
             this.cboMaPhieuNhap.Size = new System.Drawing.Size(275, 41);
             this.cboMaPhieuNhap.TabIndex = 1;
+            this.cboMaPhieuNhap.SelectedIndexChanged += new System.EventHandler(this.cboMaPhieuNhap_SelectedIndexChanged);
             // 
             // btnTim
             // 
@@ -116,10 +118,11 @@
             this.rpt_ThongKeTheoMaPhieuNhap.Location = new System.Drawing.Point(4, 5);
             this.rpt_ThongKeTheoMaPhieuNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rpt_ThongKeTheoMaPhieuNhap.Name = "rpt_ThongKeTheoMaPhieuNhap";
-            this.rpt_ThongKeTheoMaPhieuNhap.ReportSource = this.InThongKeTheoMaPhieuNhap1;
+            this.rpt_ThongKeTheoMaPhieuNhap.ReportSource = this.InThongKeTheoMaPhieuNhap2;
             this.rpt_ThongKeTheoMaPhieuNhap.Size = new System.Drawing.Size(1410, 761);
             this.rpt_ThongKeTheoMaPhieuNhap.TabIndex = 1;
             this.rpt_ThongKeTheoMaPhieuNhap.ToolPanelWidth = 300;
+            this.rpt_ThongKeTheoMaPhieuNhap.Load += new System.EventHandler(this.rpt_ThongKeTheoMaPhieuNhap_Load);
             // 
             // frm_ThongKeTheoMaPhieuNhap
             // 
@@ -149,5 +152,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer rpt_ThongKeTheoMaPhieuNhap;
         private System.Windows.Forms.Button btnTim;
+        private InThongKeTheoMaPhieuNhap InThongKeTheoMaPhieuNhap2;
     }
 }

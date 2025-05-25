@@ -54,7 +54,7 @@ namespace SieuThiBHX
         }
         private void frmCaLam_Load(object sender, EventArgs e)
         {
-            LoadData();
+         LoadData();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -227,5 +227,7 @@ namespace SieuThiBHX
                 e.Cancel = false; // Cho phép đóng form
             }
         }
+
+        
     }
 }

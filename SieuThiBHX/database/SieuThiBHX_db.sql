@@ -104,6 +104,7 @@ CREATE TABLE NhanVien (
 	FOREIGN KEY (idTaiKhoan) REFERENCES TaiKhoan(id)
 );
 
+
 CREATE TABLE CaLam (
 	id INT IDENTITY(1,1) NOT NULL,
 	MaCaLam VARCHAR(30),
@@ -112,7 +113,7 @@ CREATE TABLE CaLam (
 	GioKetThuc NVARCHAR(100),
 	PRIMARY KEY(id)
 );
-
+drop database SieuThiBHX
 CREATE TABLE LichLam (
 	id INT IDENTITY(1,1) NOT NULL,
 	MaLichLam NVARCHAR(30) NOT NULL,
@@ -637,28 +638,34 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create PROCEDURE [dbo].[sp_BaoCaoBangLuong1]
-    @idBangLuong INT = 1
+    @idBangLuong INT = 1
 AS
 BEGIN
-    -- Tắt thông báo lỗi tạm thời nếu có
-    SET NOCOUNT ON;
+    -- Tắt thông báo lỗi tạm thời nếu có
+    SET NOCOUNT ON;
 
-    -- Lấy báo cáo bảng lương
-    SELECT 
-        nv.TenNhanVien,  -- Tên nhân viên từ bảng nhân viên
-        ctl.NgayLam AS NgayLam,  -- Ngày làm việc
-        ctl.SoGioCongThucTe AS GioCong,  -- Số giờ công thực tế
-        bl.TongGioCong,  -- Tổng giờ công từ bảng lương
-        bl.Luong,  -- Lương từ bảng lương
+    -- Lấy báo cáo bảng lương
+    SELECT 
+        nv.TenNhanVien,  -- Tên nhân viên từ bảng nhân viên
+        ctl.NgayLam AS NgayLam,  -- Ngày làm việc
+        ctl.SoGioCongThucTe AS GioCong,  -- Số giờ công thực tế
+        bl.TongGioCong,  -- Tổng giờ công từ bảng lương
+        bl.Luong,  -- Lương từ bảng lương
 		Month(NgayLam) as Thang,
-		DAY(NgayLam) as Ngay
-    FROM BangLuong bl
-    INNER JOIN ChiTietBangLuong ctl ON bl.id = ctl.idBangLuong
-    INNER JOIN NhanVien nv ON bl.idNhanVien = nv.id
-    WHERE 
-        ctl.idBangLuong = @idBangLuong; -- Không lấy dữ liệu chi tiết bị xóa
+		DAY(NgayLam) as Ngay,
+		nv.MaNhanVien,
+		nv.SoDienThoai,
+		nv.DiaChi,
+		lnv.TenLoaiNhanVien
+    FROM BangLuong bl
+    INNER JOIN ChiTietBangLuong ctl ON bl.id = ctl.idBangLuong
+    INNER JOIN NhanVien nv ON bl.idNhanVien = nv.id
+	INNER JOIN LoaiNhanVien lnv ON nv.idLoaiNhanVien = lnv.id
+    WHERE 
+        ctl.idBangLuong = @idBangLuong; -- Không lấy dữ liệu chi tiết bị xóa
 END;
 GO
+drop proc [sp_BaoCaoBangLuong1]
 
 
 CREATE PROCEDURE [dbo].[sp_BaoCaoTongLuongTheoThang]
@@ -692,9 +699,8 @@ select * from PhieuNhap
 select * from ChiTietPhieuNhap
 
 
+DROP PROCEDURE GetPhieuNhapAndDetails;
 
-
-drop PROCEDURE GetPhieuNhapAndDetails
 CREATE PROCEDURE GetPhieuNhapAndDetails
     @MaPhieuNhap VARCHAR(30)
 AS
@@ -746,8 +752,18 @@ BEGIN
 END
 EXEC sp_GetDanhSachPhieuNhapVaChiTiet;
 
-select * from TaiKhoan
-select*from NhanVien
-select*from LichLam
+select*from LichLam	
+select*from CaLam
+
+select*from BangLuong
+select*from ChiTietBangLuong
 select*from SanPham
 
+delete from CaLam where id = 1
+delete from CaLam where id = 2
+delete from CaLam where id = 3
+delete from CaLam where id = 4
+delete from CaLam where id = 5
+
+DELETE FROM LichLam WHERE idCaLam = 16
+DELETE FROM CaLam WHERE id = 16
