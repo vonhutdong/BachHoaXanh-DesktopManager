@@ -138,6 +138,15 @@ namespace SieuThiBHX
 
         private void frm_BanHang_Load(object sender, EventArgs e)
         {
+            // Thiết lập lại style để dữ liệu hiện rõ
+            dgvThongTinHoaDon.DefaultCellStyle.BackColor = Color.White;
+            dgvThongTinHoaDon.DefaultCellStyle.ForeColor = Color.Black;
+            dgvThongTinHoaDon.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dgvThongTinHoaDon.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvThongTinHoaDon.EnableHeadersVisualStyles = false;
+            dgvThongTinHoaDon.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
+            dgvThongTinHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             LoadCbLoaiSanPham();
             LoadLayoutSanPham(sanPhams);
         }
@@ -619,6 +628,25 @@ namespace SieuThiBHX
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thoát", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void layoutSanPham_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtSoDienThoai_MouseLeave(object sender, EventArgs e)
+        {
+            khachhang = bus_KhachHang.LayKhachHang_SDT(txtSoDienThoai.Text);
+            //MessageBox.Show(khachhang.TenKhachHang);
+            if (khachhang != null)
+            {
+                txtTenKhachHang.Text = khachhang.TenKH;
+            }
+            else
+            {
+                txtTenKhachHang.Text = "";
             }
         }
     }

@@ -10,10 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SieuThiBHX.NhutDong;
-using SieuThiBHX.Trong;
 using System.Data.SqlClient;
-using DTO;
 using DAL;
 
 namespace SieuThiBHX
@@ -30,26 +27,26 @@ namespace SieuThiBHX
         private string tk = string.Empty;
         private int q = 0;
         private Form frmOld = null;
-        //public static DTO_NhanVien nhanVien = null;
+        public static DTO_NhanVien NhanVien = null;
 
         //public DTO_NhanVien NhanVien { get => nhanVien; set => nhanVien = value; }
 
         public frm_main(string taiKhoan, int quyen, DTO_NhanVien nhanVien)
         {
             this.tk = taiKhoan;
-            //this.NhanVien = nhanVien;
+            frm_main.NhanVien = nhanVien; // Gọi static property
             this.q = quyen;
             InitializeComponent();
         }
 
-        //public static DTO_NhanVien getNhanVien()
-        //{
-        //    return nhanVien;
-        //}
+        public static DTO_NhanVien getNhanVien()
+        {
+            return NhanVien;
+        }
 
         private void TestSQLConnection()
         {
-            string connectionString = "Server=DESKTOP-UBB0F3U\\SQLEXPRESS;Database=SieuThiBHX;Integrated Security=True;";
+            string connectionString = "Server=.\\SQLEXPRESS;Database=SieuThiBHX;Integrated Security=True;";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -92,6 +89,7 @@ namespace SieuThiBHX
         {
             this.IsMdiContainer = true;
             TestSQLConnection();
+            ApplyRolePermissions();
         }
         private void OpenHoaDonForm()
         {
@@ -121,21 +119,27 @@ namespace SieuThiBHX
 
             nhânViênToolStripMenuItem.Enabled = false;
             nhânViênToolStripMenuItem.Visible = false;
-            //hóaĐơnToolStripMenuItem.Enabled = false;
-            //hóaĐơnToolStripMenuItem.Visible = false;
 
-            // Role
-            if (q == 0)
+        }
+        private void ApplyRolePermissions()
+        {
+            // Ẩn các chức năng mặc định
+            nhânViênToolStripMenuItem.Visible = false;
+            nhânViênToolStripMenuItem.Enabled = false;
+            quảnLýToolStripMenuItem.Visible = false;
+            quảnLýToolStripMenuItem.Enabled = false;
+
+            // Phân quyền dựa theo biến q
+            if (q == 0) // quản lý
             {
                 quảnLýToolStripMenuItem.Visible = true;
                 quảnLýToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                quảnLýToolStripMenuItem.Visible = false;
-                quảnLýToolStripMenuItem.Enabled = false;
+                nhânViênToolStripMenuItem.Visible = true;
+                nhânViênToolStripMenuItem.Enabled = true;
+                // Thêm mục khác nếu cần
             }
         }
+
         private void hóaĐơnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!CheckFormExit("frm_HoaDon"))
@@ -249,9 +253,6 @@ namespace SieuThiBHX
             if (!CheckFormExit("frm_KhachHang"))
             {
                 OpenKhachHangForm();
-                frm_KhachHang f = new frm_KhachHang();
-                //f.MdiParent = this;
-                f.Show();
             }
             else
             {
@@ -456,7 +457,16 @@ namespace SieuThiBHX
         }
         private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenBanHangForm();
+            if (!CheckFormExit("frm_BanHang"))
+            {
+                OpenBanHangForm();
+
+            }
+            else
+            {
+                ActForm("frm_BanHang");
+            }
+            
         }
 
         private void thốngKêPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)

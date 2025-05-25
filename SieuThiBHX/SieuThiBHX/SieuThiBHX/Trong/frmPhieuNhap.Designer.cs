@@ -59,7 +59,7 @@
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(111, 36);
+            this.btnThem.Size = new System.Drawing.Size(124, 44);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -68,7 +68,7 @@
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(90, 36);
+            this.btnXoa.Size = new System.Drawing.Size(102, 44);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -77,7 +77,7 @@
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(89, 36);
+            this.btnSua.Size = new System.Drawing.Size(100, 44);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -86,7 +86,7 @@
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(142, 36);
+            this.btnLamMoi.Size = new System.Drawing.Size(164, 44);
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
@@ -95,7 +95,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(111, 36);
+            this.btnThoat.Size = new System.Drawing.Size(126, 44);
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -111,7 +111,7 @@
             this.btnThoat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1340, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1340, 49);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -121,11 +121,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.gbDSTK, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 256);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 266);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1340, 407);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1340, 397);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // gbDSTK
@@ -138,7 +138,7 @@
             this.gbDSTK.ForeColor = System.Drawing.Color.White;
             this.gbDSTK.Location = new System.Drawing.Point(3, 3);
             this.gbDSTK.Name = "gbDSTK";
-            this.gbDSTK.Size = new System.Drawing.Size(1334, 401);
+            this.gbDSTK.Size = new System.Drawing.Size(1334, 391);
             this.gbDSTK.TabIndex = 10;
             this.gbDSTK.Text = "Danh sách phiếu nhập";
             this.gbDSTK.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -151,7 +151,7 @@
             this.dgvPhieuNhap.Location = new System.Drawing.Point(0, 40);
             this.dgvPhieuNhap.Name = "dgvPhieuNhap";
             this.dgvPhieuNhap.RowHeadersWidth = 51;
-            this.dgvPhieuNhap.Size = new System.Drawing.Size(1334, 361);
+            this.dgvPhieuNhap.Size = new System.Drawing.Size(1334, 351);
             this.dgvPhieuNhap.TabIndex = 0;
             this.dgvPhieuNhap.Click += new System.EventHandler(this.dgvPhieuNhap_Click);
             // 
@@ -291,7 +291,7 @@
             this.gbCTPN.FillColor = System.Drawing.SystemColors.Window;
             this.gbCTPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.gbCTPN.ForeColor = System.Drawing.Color.White;
-            this.gbCTPN.Location = new System.Drawing.Point(0, 39);
+            this.gbCTPN.Location = new System.Drawing.Point(0, 49);
             this.gbCTPN.Name = "gbCTPN";
             this.gbCTPN.Size = new System.Drawing.Size(1340, 217);
             this.gbCTPN.TabIndex = 13;
@@ -300,7 +300,7 @@
             // 
             // frmPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 663);
             this.Controls.Add(this.tableLayoutPanel1);

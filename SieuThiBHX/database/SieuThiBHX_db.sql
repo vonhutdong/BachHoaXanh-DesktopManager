@@ -23,7 +23,7 @@ CREATE TABLE LoaiNhanVien (
 	PRIMARY KEY(id)
 );
 
-CREATE TABLE TaiKhoan (
+CREATE TABLE select * from TaiKhoan (
 	id INT IDENTITY(1,1) NOT NULL,
 	MaTaiKhoan VARCHAR(30),
 	TenTaiKhoan VARCHAR(100),
@@ -556,8 +556,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-
-CREATE PROCEDURE [dbo].[sp_GetHdByMaHd](@maHoaDon VARCHAR(30) = 'HD001')
+exec sp_GetHdByMaHd @maHoaDon = 'HD003'
+CREATE PROCEDURE  [dbo].[sp_GetHdByMaHd](@maHoaDon VARCHAR(30) = 'HD001')
 AS
 BEGIN
 	WITH InvoiceDetails AS (

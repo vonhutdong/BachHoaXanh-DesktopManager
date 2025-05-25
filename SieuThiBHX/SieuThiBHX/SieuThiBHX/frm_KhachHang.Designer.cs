@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_KhachHang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuToolStrip = new System.Windows.Forms.ToolStrip();
             this.btnThem = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
@@ -414,8 +414,8 @@
             this.dgvDSKH.AllowUserToDeleteRows = false;
             this.dgvDSKH.AllowUserToResizeColumns = false;
             this.dgvDSKH.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dgvDSKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvDSKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSKH.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDSKH.BackgroundColor = System.Drawing.Color.White;
@@ -428,6 +428,7 @@
             this.dgvDSKH.Name = "dgvDSKH";
             this.dgvDSKH.RowHeadersWidth = 62;
             this.dgvDSKH.RowTemplate.Height = 28;
+            this.dgvDSKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSKH.Size = new System.Drawing.Size(1358, 377);
             this.dgvDSKH.TabIndex = 0;
             this.dgvDSKH.Click += new System.EventHandler(this.dgvDSKH_Click);
