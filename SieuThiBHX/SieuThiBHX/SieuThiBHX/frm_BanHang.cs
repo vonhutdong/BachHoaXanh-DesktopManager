@@ -150,8 +150,9 @@ namespace SieuThiBHX
             dgvThongTinHoaDon.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
             dgvThongTinHoaDon.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             LoadCbLoaiSanPham();
-            LoadLayoutSanPham(sanPhams);
             TaiDanhSachSanPhamTuDatabase();
+
+            LoadLayoutSanPham(sanPhams);
         }
         private void Item_Click(object sender, EventArgs e)
         {
@@ -459,18 +460,7 @@ namespace SieuThiBHX
             f.Show();
 
         }
-        private void OpenRpKhoHangForm()
-        {
-            frm_InHD frm = new frm_InHD();
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            this.Controls.Clear();            // Xóa control cũ nếu muốn
-            this.Controls.Add(frm);           // Nhúng form vào panel chính hoặc form
-            frm.BringToFront();
-            frm.Show();
-        }
+        
         private List<DTO_SanPhamKhoHang> timKiemSanPhamBangLoaiHang(int idLoaiHang)
         {
             var ketQua = sanPhams.Where(sp => sp.IdLoaiHang == idLoaiHang).ToList();
@@ -676,7 +666,7 @@ namespace SieuThiBHX
         {
             try
             {
-                sanPhams = bus_SanPham.ListSanPham(); // lấy danh sách mới từ database
+                sanPhams = bus_SanPham.ListSP_BH(); // lấy danh sách mới từ database
                 LoadLayoutSanPham(sanPhams);         // load lại giao diện
             }
             catch (Exception ex)

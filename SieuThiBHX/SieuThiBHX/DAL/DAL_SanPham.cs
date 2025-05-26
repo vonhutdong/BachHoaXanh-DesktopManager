@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+
 
 namespace DAL
 {
@@ -58,28 +61,35 @@ namespace DAL
         {
             try
             {
-                return (from sp in da.Db.SanPhams
-                        join kho in da.Db.KhoHangs on sp.id equals kho.idSanPham
-                        select new DTO_SanPhamKhoHang
-                        {
-                            Id = sp.id,
-                            MaSanPham = sp.maSanPham,
-                            TenSanPham = sp.tenSanPham,
-                            IdLoaiHang = (int)sp.idLoaiHang,
-                            GiaBan = (double)sp.donGia,
-                            SoLuong = (int)kho.soLuong,
-                            AnhSanPham = sp.anhSanPham
-                        })
-         .GroupBy(x => x.Id)
-         .Select(g => g.First())
-         .ToList();
+                using (var db = new QLBHXDataContext())
+                {
+                    var query = from sp in db.SanPhams
+                                join kho in db.KhoHangs on sp.id equals kho.idSanPham
+                                group new { sp, kho } by sp.id into grp
+                                let tongSoLuong = grp.Sum(x => x.kho.soLuong)
+                                let first = grp.FirstOrDefault()
+                                select new DTO_SanPhamKhoHang
+                                {
+                                    Id = first.sp.id,
+                                    MaSanPham = first.sp.maSanPham,
+                                    TenSanPham = first.sp.tenSanPham,
+                                    IdLoaiHang = (int)first.sp.idLoaiHang,
+                                    GiaBan = (double)first.sp.donGia,
+                                    SoLuong = (int)tongSoLuong,
+                                    AnhSanPham = first.sp.anhSanPham
+                                };
+
+                    return query.ToList();
+                }
             }
             catch (Exception ex)
             {
-
-                throw new Exception("Có lỗi xảy ra: " + ex.Message);
+                throw new Exception("Lỗi khi tải sản phẩm bán hàng: " + ex.Message);
             }
         }
+
+
+
         public void ThemSanPham(DTO_SanPham sanpham)
         {
             try
@@ -101,6 +111,12 @@ namespace DAL
                     sp.idNhaCungCap = sanpham.IdNhaCungCap;
                     sp.anhSanPham = sanpham.AnhSanPham;
                     da.Db.SanPhams.InsertOnSubmit(sp);
+                    da.Db.SubmitChanges();
+
+                    KhoHang kho = new KhoHang();
+                    kho.idSanPham = sp.id;   // lấy id vừa mới insert
+                    kho.soLuong = 0;         // khởi tạo với 0 hoặc số lượng mặc định
+                    da.Db.KhoHangs.InsertOnSubmit(kho);
                     da.Db.SubmitChanges();
                 }
                 else
@@ -147,8 +163,14 @@ namespace DAL
                     sp.hanSuDung = sanphamdto.HanSuDung;
                     sp.idLoaiHang = sanphamdto.IdLoaiHang;
                     sp.idNhaCungCap = sanphamdto.IdNhaCungCap;
-                    //sp.anhSanPham = sanphamdto.AnhSanPham;
+                    sp.anhSanPham = sanphamdto.AnhSanPham;
                     //cập nhật lại
+                    da.Db.SubmitChanges();
+
+                    KhoHang kho = new KhoHang();
+                    kho.idSanPham = sp.id;   // lấy id vừa mới insert
+                    kho.soLuong = 0;         // khởi tạo với 0 hoặc số lượng mặc định
+                    da.Db.KhoHangs.InsertOnSubmit(kho);
                     da.Db.SubmitChanges();
                 }
                 else
