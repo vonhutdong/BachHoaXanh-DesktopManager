@@ -564,40 +564,45 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 exec sp_GetHdByMaHd @maHoaDon = 'HD003'
-CREATE PROCEDURE  [dbo].[sp_GetHdByMaHd](@maHoaDon VARCHAR(30) = 'HD001')
+DROP PROCEDURE IF EXISTS sp_GetHdByMaHd;
+
+CREATE PROCEDURE [dbo].[sp_GetHdByMaHd] (@maHoaDon VARCHAR(30))
 AS
 BEGIN
-	WITH InvoiceDetails AS (
-		SELECT
-			ROW_NUMBER() OVER (ORDER BY hd.id) AS STT,
-			hd.id AS Id,
-			hd.maHD AS MaHoaDon,
-			sp.TenSanPham AS TenSanPham,
-			cthd.SoLuong AS SoLuong,
-			sp.DonGia AS DonGia,
-			(cthd.SoLuong * sp.DonGia) AS ThanhTien,
-			hd.TongTien AS TongTienHoaDon,
-			ROUND(((km.GiaTri) / 100) * hd.TongTien, 0) as TienKhuyenMai,
-			hd.TongTien - ROUND(((km.GiaTri) / 100) * hd.TongTien, 0) as TienPhaiTra,
-			hd.NgayLapHD AS NgayLapHD,
-			kh.TenKhachHang AS TenKhachHang,
-			km.TenKhuyenMai AS TenKhuyenMai,
-			nv.TenNhanVien AS TenNhanVien	
-		FROM HoaDon AS hd
-			JOIN ChiTietHoaDon AS cthd ON hd.id = cthd.idHoaDon
-			JOIN SanPham AS sp ON cthd.idSanPham = sp.id
-			JOIN KhoHang AS kho ON sp.id = kho.idSanPham
-			JOIN NhanVien AS nv ON hd.idNhanVien = nv.id
-			JOIN KhachHang AS kh ON hd.idKhachHang = kh.id
-			JOIN KhuyenMai AS km ON hd.idKhuyenMai = km.id
-		WHERE hd.maHD = @maHoaDon
-	)
-	SELECT *,
-		MAX(STT) OVER () AS MaxSTT
-	FROM InvoiceDetails a;
+    SELECT
+        ROW_NUMBER() OVER (ORDER BY sp.TenSanPham) AS STT,
+        hd.maHD AS MaHoaDon,
+        sp.TenSanPham,
+        cthd.SoLuong,
+        sp.DonGia,
+        (cthd.SoLuong * sp.DonGia) AS ThanhTien,
+
+        SUM(cthd.SoLuong * sp.DonGia) OVER () AS TongTienHoaDon,
+        ROUND((km.GiaTri / 100.0) * SUM(cthd.SoLuong * sp.DonGia) OVER (), 0) AS TienKhuyenMai,
+        SUM(cthd.SoLuong * sp.DonGia) OVER () - ROUND((km.GiaTri / 100.0) * SUM(cthd.SoLuong * sp.DonGia) OVER (), 0) AS TienPhaiTra,
+
+        hd.NgayLapHD,
+        kh.TenKhachHang,
+        km.TenKhuyenMai,
+        nv.TenNhanVien,
+        SUM(cthd.SoLuong) OVER () AS TongSanPham  -- tổng số lượng thật sự
+    FROM HoaDon hd
+    JOIN ChiTietHoaDon cthd ON hd.id = cthd.idHoaDon
+    JOIN SanPham sp ON cthd.idSanPham = sp.id
+    JOIN NhanVien nv ON hd.idNhanVien = nv.id
+    JOIN KhachHang kh ON hd.idKhachHang = kh.id
+    JOIN KhuyenMai km ON hd.idKhuyenMai = km.id
+    WHERE hd.maHD = @maHoaDon;
 END;
 GO
 
+
+SELECT *
+FROM ChiTietHoaDon cthd
+JOIN SanPham sp ON cthd.idSanPham = sp.id
+WHERE cthd.idHoaDon = (SELECT id FROM HoaDon WHERE maHD = 'HD043')
+
+select * from HoaDon
 SELECT hd.maHD, sp.TenSanPham, cthd.SoLuong, sp.DonGia
 FROM HoaDon hd
 JOIN ChiTietHoaDon cthd ON hd.id = cthd.idHoaDon

@@ -106,19 +106,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4C4132F50972DEF000D48BE7E4BA4196"
+        "OwnerKey" = "8:_078DD9D154ADE1D9B148FDC6D679093D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4666EBCF1B9A450A990A23568BC80A69"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_078DD9D154ADE1D9B148FDC6D679093D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -163,6 +157,12 @@
         "OwnerKey" = "8:_CC38FEE2FFFB91F151F87B8AD962BA83"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4C4132F50972DEF000D48BE7E4BA4196"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -181,6 +181,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -197,6 +213,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -613,7 +637,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupBHX"
         "ProductCode" = "8:{16375023-8E33-43AA-91E1-5C0C89BCC1C7}"
-        "PackageCode" = "8:{E806149A-433A-409A-B61A-398F4C467850}"
+        "PackageCode" = "8:{D2841FE0-3556-4BA1-80DD-F0352A125566}"
         "UpgradeCode" = "8:{10AEC45A-E928-4781-A1BA-BFB17B182292}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

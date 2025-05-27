@@ -288,13 +288,6 @@ namespace DAL
 			return ((ISingleResult<sp_BaoCaoBangLuong1Result>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_BaoCaoTongLuongTheoThang")]
-		public ISingleResult<sp_BaoCaoTongLuongTheoThangResult> sp_BaoCaoTongLuongTheoThang([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Thang", DbType="Int")] System.Nullable<int> thang)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), thang);
-			return ((ISingleResult<sp_BaoCaoTongLuongTheoThangResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetDanhSachPhieuNhapVaChiTiet")]
 		public ISingleResult<sp_GetDanhSachPhieuNhapVaChiTietResult> sp_GetDanhSachPhieuNhapVaChiTiet()
 		{
@@ -4918,6 +4911,14 @@ namespace DAL
 		
 		private System.Nullable<int> _Ngay;
 		
+		private string _MaNhanVien;
+		
+		private string _SoDienThoai;
+		
+		private string _DiaChi;
+		
+		private string _TenLoaiNhanVien;
+		
 		public sp_BaoCaoBangLuong1Result()
 		{
 		}
@@ -5033,65 +5034,67 @@ namespace DAL
 				}
 			}
 		}
-	}
-	
-	public partial class sp_BaoCaoTongLuongTheoThangResult
-	{
 		
-		private System.Nullable<int> _Nam;
-		
-		private System.Nullable<int> _Thang;
-		
-		private System.Nullable<double> _TongLuong;
-		
-		public sp_BaoCaoTongLuongTheoThangResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nam", DbType="Int")]
-		public System.Nullable<int> Nam
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhanVien", DbType="NVarChar(30) NOT NULL", CanBeNull=false)]
+		public string MaNhanVien
 		{
 			get
 			{
-				return this._Nam;
+				return this._MaNhanVien;
 			}
 			set
 			{
-				if ((this._Nam != value))
+				if ((this._MaNhanVien != value))
 				{
-					this._Nam = value;
+					this._MaNhanVien = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thang", DbType="Int")]
-		public System.Nullable<int> Thang
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="VarChar(10)")]
+		public string SoDienThoai
 		{
 			get
 			{
-				return this._Thang;
+				return this._SoDienThoai;
 			}
 			set
 			{
-				if ((this._Thang != value))
+				if ((this._SoDienThoai != value))
 				{
-					this._Thang = value;
+					this._SoDienThoai = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongLuong", DbType="Float")]
-		public System.Nullable<double> TongLuong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(100)")]
+		public string DiaChi
 		{
 			get
 			{
-				return this._TongLuong;
+				return this._DiaChi;
 			}
 			set
 			{
-				if ((this._TongLuong != value))
+				if ((this._DiaChi != value))
 				{
-					this._TongLuong = value;
+					this._DiaChi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiNhanVien", DbType="NVarChar(100)")]
+		public string TenLoaiNhanVien
+		{
+			get
+			{
+				return this._TenLoaiNhanVien;
+			}
+			set
+			{
+				if ((this._TenLoaiNhanVien != value))
+				{
+					this._TenLoaiNhanVien = value;
 				}
 			}
 		}
@@ -5254,8 +5257,6 @@ namespace DAL
 		
 		private System.Nullable<long> _STT;
 		
-		private int _Id;
-		
 		private string _MaHoaDon;
 		
 		private string _TenSanPham;
@@ -5272,6 +5273,8 @@ namespace DAL
 		
 		private System.Nullable<double> _TienPhaiTra;
 		
+		private System.Nullable<int> _TongSanPham;
+		
 		private System.Nullable<System.DateTime> _NgayLapHD;
 		
 		private string _TenKhachHang;
@@ -5279,8 +5282,6 @@ namespace DAL
 		private string _TenKhuyenMai;
 		
 		private string _TenNhanVien;
-		
-		private System.Nullable<long> _MaxSTT;
 		
 		public sp_GetHdByMaHdResult()
 		{
@@ -5298,22 +5299,6 @@ namespace DAL
 				if ((this._STT != value))
 				{
 					this._STT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this._Id = value;
 				}
 			}
 		}
@@ -5446,6 +5431,22 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongSanPham", DbType="Int")]
+		public System.Nullable<int> TongSanPham
+		{
+			get
+			{
+				return this._TongSanPham;
+			}
+			set
+			{
+				if ((this._TongSanPham != value))
+				{
+					this._TongSanPham = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayLapHD", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NgayLapHD
 		{
@@ -5506,22 +5507,6 @@ namespace DAL
 				if ((this._TenNhanVien != value))
 				{
 					this._TenNhanVien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxSTT", DbType="BigInt")]
-		public System.Nullable<long> MaxSTT
-		{
-			get
-			{
-				return this._MaxSTT;
-			}
-			set
-			{
-				if ((this._MaxSTT != value))
-				{
-					this._MaxSTT = value;
 				}
 			}
 		}
