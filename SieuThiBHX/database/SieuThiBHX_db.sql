@@ -57,7 +57,7 @@ CREATE TABLE ChiNhanh (
 );
 
 -- 2. Các bảng có phụ thuộc
-CREATE TABLE SanPham (
+CREATE TABLE select * from SanPham (
 	id INT IDENTITY(1,1) NOT NULL,
 	maSanPham NVARCHAR(30),
 	tenSanPham NVARCHAR(100),
@@ -183,10 +183,6 @@ CREATE TABLE PhieuNhap (
 	PRIMARY KEY(id),
 	FOREIGN KEY (idNhanVien) REFERENCES NhanVien(id)
 );
-SELECT idSanPham, COUNT(*) 
-FROM KhoHang 
-GROUP BY idSanPham 
-HAVING COUNT(*) > 1
 
 CREATE TABLE ChiTietPhieuNhap (
 	id INT IDENTITY(1,1) NOT NULL,
@@ -776,8 +772,3 @@ delete from CaLam where id = 5
 
 DELETE FROM LichLam WHERE idCaLam = 16
 DELETE FROM CaLam WHERE id = 16
-
-SELECT sp.id, sp.maSanPham, sp.tenSanPham, kho.*
-FROM SanPham sp
-LEFT JOIN KhoHang kho ON sp.id = kho.idSanPham
-WHERE sp.tenSanPham = N'Nước ép cam'
